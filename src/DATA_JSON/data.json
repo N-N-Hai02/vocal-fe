@@ -1,0 +1,3525 @@
+[
+    {
+       "Kanji":"結果",
+       "Kana":"けっか",
+       "YomiKata":"KẾT QuẢ",
+       "Imi":"Kết quả",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"検証",
+       "Kana":"けんしょう",
+       "YomiKata":"KiỂM CHỨNG ",
+       "Imi":"Kiểm chứng ",
+       "Example":"検証結果: Kết quả kiểm chứng ",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"検査",
+       "Kana":"けんさ",
+       "YomiKata":"KiỂM TRA",
+       "Imi":"Kiểm tra",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"課題",
+       "Kana":"かだい",
+       "YomiKata":"KHÓA ĐỀ ",
+       "Imi":"Kadai",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"不具合",
+       "Kana":"ふぐあい",
+       "YomiKata":"PHỦ CỤ HỢP ",
+       "Imi":"Bug ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"対応",
+       "Kana":"たいおう",
+       "YomiKata":"ĐỐI ỨNG",
+       "Imi":"Đối ứng",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"並び順",
+       "Kana":"ならびじゅん",
+       "YomiKata":"TỊNH THUẬN",
+       "Imi":"Trình tự sắp xếp (Sort)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"昇順",
+       "Kana":"しょうじゅん",
+       "YomiKata":"THĂNG THUẬN",
+       "Imi":"Trình tự tăng",
+       "Example":"～昇順にソートする。: Sort theo trình tự tăng",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"降順",
+       "Kana":"こうじゅん",
+       "YomiKata":"GIÁNG THUẬN",
+       "Imi":"Trình tự giảm ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"共通",
+       "Kana":"きょうつう",
+       "YomiKata":"CUNG THÔNG",
+       "Imi":"Chung (Common )",
+       "Example":"共通項目: Item common ",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"履歴  ",
+       "Kana":"たいおう",
+       "YomiKata":"LỊCH SỬ",
+       "Imi":"Lich sử",
+       "Example":"修正履歴: Lịch sử  chỉnh sửa  ",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"該当",
+       "Kana":"がいとう",
+       "YomiKata":"CAI ĐƯƠNG ",
+       "Imi":"Tương ứng ",
+       "Example":"該当なデータ: Data tương ứng ",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"遷移",
+       "Kana":"せんい",
+       "YomiKata":"THIÊN DI",
+       "Imi":"Chuyển qua , chuyển tiếp đến ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"判断",
+       "Kana":"はんだん",
+       "YomiKata":"PHÁN ĐOÁN",
+       "Imi":"Phán đoán ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"最大/最小",
+       "Kana":"さいだい/さいしょう",
+       "YomiKata":"TỐI ĐẠI/TỐI THIỂU ",
+       "Imi":"Tối đa (Maximum)/Minimum",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"以下/以上",
+       "Kana":"いじょう/いか",
+       "YomiKata":"DĨ HẠ/DĨ THƯỢNG ",
+       "Imi":"Dưới đây /Trên đây",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"下記/上記",
+       "Kana":"じょうき/かき",
+       "YomiKata":"HẠ KÝ/THƯỢNG KÝ",
+       "Imi":"Ghi dưới đây/Ghi trên ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"属性",
+       "Kana":"ぞくせい",
+       "YomiKata":"THUÔC TÍNH ",
+       "Imi":"Thuộc tính ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"型",
+       "Kana":"がた",
+       "YomiKata":"HÌNH",
+       "Imi":"Kiểu , dạng (type) ",
+       "Example":"データ型:　Kiểu dự liệu ",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"固定",
+       "Kana":"こてい",
+       "YomiKata":"CỐ ĐỊNH",
+       "Imi":"Cố định ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"可能",
+       "Kana":"かのう",
+       "YomiKata":"KHẢ NĂNG ",
+       "Imi":"Có thể ",
+       "Example":"処理続行不可: Không thể tiếp tục xử lý ",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"不可",
+       "Kana":"ふか",
+       "YomiKata":"BẤT KHẢ",
+       "Imi":"Không thể ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"必要",
+       "Kana":"ひつよう",
+       "YomiKata":"TẤT YẾU",
+       "Imi":"Cần thiết",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"不要",
+       "Kana":"ふよう",
+       "YomiKata":"BẤT YẾU",
+       "Imi":"Không cần thiết",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"形式",
+       "Kana":"けいしき",
+       "YomiKata":"HÌNH THỨC ",
+       "Imi":"Hiình thức (Format )",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"操作",
+       "Kana":"そうさ",
+       "YomiKata":"THAO TÁC",
+       "Imi":"Thao tác",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"改頁",
+       "Kana":"かいぺーじ",
+       "YomiKata":"CẢI HiỆT",
+       "Imi":"Sang trang ",
+       "Example":"改頁条件: Điều kiện sang trang",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"改行",
+       "Kana":"かいぎょう",
+       "YomiKata":"CẢI HÀNH",
+       "Imi":"Ngắt dòng ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"省略",
+       "Kana":"しょうりゃく",
+       "YomiKata":"TỈNH LƯỢC ",
+       "Imi":"Giản lược, Lược bỏ ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"重複",
+       "Kana":"じゅうふく",
+       "YomiKata":"TRỌNG PHỨC",
+       "Imi":"Trùng lặp ",
+       "Example":"実行手順: Trình tự thực hiện",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"絞込",
+       "Kana":"しぼりこむ",
+       "YomiKata":"GiẢO NHẬP",
+       "Imi":"Trích lọc",
+       "Example":"設定が重複しています: Setting trùng lặp",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"記録",
+       "Kana":"きろく",
+       "YomiKata":"KÝ LỤC ",
+       "Imi":"Ghi (Record)",
+       "Example":"ログの記録: Ghi log",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"比較",
+       "Kana":"ひかく",
+       "YomiKata":"TỶ GiẢO",
+       "Imi":"So sánh ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"利用",
+       "Kana":"りよう",
+       "YomiKata":"LỢI DỤNG",
+       "Imi":"Sử dụng     ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"正常",
+       "Kana":"せいじょう",
+       "YomiKata":"CHÍNH THƯỜNG ",
+       "Imi":"Bình thường (= thành công)",
+       "Example":"正常終了: Kết thúc bình thường",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"異常",
+       "Kana":"いじょう",
+       "YomiKata":"DỊ THƯỜNG",
+       "Imi":"Bất thường ",
+       "Example":"異常　",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"問合せ",
+       "Kana":"といあわせ",
+       "YomiKata":"VẤN ",
+       "Imi":"Truy vấn　（enquiry）",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"同様　",
+       "Kana":"どうよう",
+       "YomiKata":"DỒNG DẠNG",
+       "Imi":"Tương tự  ",
+       "Example":"流用元: Nguồn tham chiếu ",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"警告",
+       "Kana":"けいこく",
+       "YomiKata":"CẢNH CÁO",
+       "Imi":"Cảnh báo (Warning)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"結合",
+       "Kana":"けつごう",
+       "YomiKata":"KẾT HỢP",
+       "Imi":"Kết hợp ",
+       "Example":"結合条件: Điều kiện kết hợp (Join)",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"統合",
+       "Kana":"とうごう",
+       "YomiKata":"THỐNG HỢP",
+       "Imi":"Tổng hợp ",
+       "Example":"統合テスト: Combine test",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"単体",
+       "Kana":"たんたい",
+       "YomiKata":"ĐƠN THỂ ",
+       "Imi":"Đơn thể, (Unique) ",
+       "Example":"単体テスト: Unit test",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"一致",
+       "Kana":"いっち",
+       "YomiKata":"NHẤT THỐNG",
+       "Imi":"Thống nhất",
+       "Example":"前方一致: Thống nhất phía trước, 完全一致: Thống nhất hoàn toàn",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"合致",
+       "Kana":"がっち",
+       "YomiKata":"HỢP THỐNG",
+       "Imi":"Thỏa , Phù hợp  ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"丸める",
+       "Kana":"まるめる",
+       "YomiKata":"HOÀN  ",
+       "Imi":"Làm tròn ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"小数　",
+       "Kana":"しょうすう",
+       "YomiKata":"TiỂU SỐ",
+       "Imi":"Số lẻ ",
+       "Example":"小数点付の値: Trị có số lẻ",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"例外",
+       "Kana":"れいがい",
+       "YomiKata":"LỆ NGOẠI",
+       "Imi":"Ngoại lệ (Exception)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"標準",
+       "Kana":"ひょうじゅん",
+       "YomiKata":"TIEU CHUẨN",
+       "Imi":"Tiêu chuẩn (Standard)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"初版",
+       "Kana":"しょはん",
+       "YomiKata":"SƠ PHẢN",
+       "Imi":"Version đầu ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"区分",
+       "Kana":"くぶん",
+       "YomiKata":"KHU PHÂN",
+       "Imi":"Class ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"要件",
+       "Kana":"ようけん",
+       "YomiKata":"YẾU KiỆN",
+       "Imi":"Yêu cầu ",
+       "Example":"機能要件: Yêu cầu chức năng",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"見出し",
+       "Kana":"みだし",
+       "YomiKata":"KiẾN XuẤT ",
+       "Imi":"Tiêu đề (Title)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"記載",
+       "Kana":"きさい",
+       "YomiKata":"KÝ TẢI",
+       "Imi":"Đề cập",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"実装",
+       "Kana":"じっそう",
+       "YomiKata":"THỰC TRANG",
+       "Imi":"Thi hành (lệnh)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"担当　",
+       "Kana":"たんとう",
+       "YomiKata":"ĐẢM ĐƯƠNG",
+       "Imi":"Phụ trách ",
+       "Example":"担当者: Người phụ trách ",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"両方",
+       "Kana":"りょうほう",
+       "YomiKata":"LƯỞNG PHƯƠNG",
+       "Imi":"Cả hai ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"位置",
+       "Kana":"いち",
+       "YomiKata":"VỊ TRÍ",
+       "Imi":"Vị trí",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"保持",
+       "Kana":"ほじ",
+       "YomiKata":"BẢO TRÌ",
+       "Imi":"Bảo trì (maintenace)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"追記",
+       "Kana":"ついき",
+       "YomiKata":"TRUY KÝ ",
+       "Imi":"Ghi thêm",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"採番",
+       "Kana":"さいばん",
+       "YomiKata":"THẢI PHIÊN",
+       "Imi":"Đánh số",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"連番",
+       "Kana":"れんばん",
+       "YomiKata":"LIÊN PHIÊN",
+       "Imi":"Số liên tiếp",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"引渡す",
+       "Kana":"ひきわたす",
+       "YomiKata":"DÃN ĐỘ",
+       "Imi":"Truyền qua",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"受け渡す",
+       "Kana":"うけわたす",
+       "YomiKata":"THỤ ĐỘ",
+       "Imi":"Nhận vào ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"排他",
+       "Kana":"はいた",
+       "YomiKata":"BÁI THA",
+       "Imi":"Exclusive , Loai trừ ",
+       "Example":"排他制御: Control exclusive, 排他チェック: Check exclusive",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"論理",
+       "Kana":"ろんり",
+       "YomiKata":"LUÂN LÝ",
+       "Imi":"Logic ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"埋める",
+       "Kana":"うずめる",
+       "YomiKata":"MAI",
+       "Imi":"Chèn vào cho đủ ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"置き換える",
+       "Kana":"おきかえる",
+       "YomiKata":"TRÍ HOÁN",
+       "Imi":"Thay thế ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"引継ぎ",
+       "Kana":"ひきつぎ",
+       "YomiKata":"DÃN KẾ",
+       "Imi":"Định danh ",
+       "Example":"画面間引継ぎ: Thứa kế giữa các MH",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"配列",
+       "Kana":"はいれつ",
+       "YomiKata":"PHỐI LiỆT",
+       "Imi":"Dãy , Array ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"添付",
+       "Kana":"てんぷ",
+       "YomiKata":"THIÊM PHÓ",
+       "Imi":"Đính kèm",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"制御",
+       "Kana":"せいぎょ",
+       "YomiKata":"CHẾ NGỰ",
+       "Imi":"Control ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"汎用",
+       "Kana":"はんよう",
+       "YomiKata":"PHIẾM DỤNG",
+       "Imi":"Dùng chung ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"算出",
+       "Kana":"さんしゅつ",
+       "YomiKata":"TOÁN XUÂT",
+       "Imi":"Tính ra ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"加算",
+       "Kana":"かさん",
+       "YomiKata":"GIA TOÁN ",
+       "Imi":"Cộng vào ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"計算",
+       "Kana":"けいさん",
+       "YomiKata":"KẾ TOÁN ",
+       "Imi":"Tính toán ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"分岐",
+       "Kana":"ぶんき",
+       "YomiKata":"PHÂN KỲ ",
+       "Imi":"Phân nhánh ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"区切り",
+       "Kana":"くきり",
+       "YomiKata":"KHU THIẾT",
+       "Imi":"Cách ra ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"関係",
+       "Kana":"かんけい",
+       "YomiKata":"QUAN HỆ",
+       "Imi":"Quan hệ",
+       "Example":"親子関係: Quan hệ cha con ",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"類似",
+       "Kana":"るいじ",
+       "YomiKata":"LoẠI TỰ",
+       "Imi":"Tương tự , giống nhau",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"流用 ",
+       "Kana":"りゅうよう",
+       "YomiKata":"LƯU DỤNG",
+       "Imi":"Lưu dụng ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"印字",
+       "Kana":"いんじ",
+       "YomiKata":"ẤN TỰ",
+       "Imi":" in ra , đánh máy ra ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"最終",
+       "Kana":"さいしゅう",
+       "YomiKata":"TỐI CHUNG",
+       "Imi":"Sau cùng ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"指定",
+       "Kana":"してい",
+       "YomiKata":"CHỈ ĐỊNH",
+       "Imi":"Chỉ định ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"点線",
+       "Kana":"てんせん",
+       "YomiKata":"ĐiỂM TUYẾN",
+       "Imi":"Đường gạch chấm chấm",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"取込",
+       "Kana":"とりこむ",
+       "YomiKata":"THỦ NHẬP",
+       "Imi":"Nhập vào (Import )",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"格納",
+       "Kana":"かくのう",
+       "YomiKata":"CÁCH NẠP",
+       "Imi":"Lưu trữ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"手順",
+       "Kana":"てじゅん",
+       "YomiKata":"THỦ THUẬN",
+       "Imi":"Trình tự (Manual)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"識別 ",
+       "Kana":"しきべつ",
+       "YomiKata":"THỨC BiỆT",
+       "Imi":"Định danh , Phân biệt (Identifier)",
+       "Example":"識別子 ",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"再現",
+       "Kana":"さいげん",
+       "YomiKata":"TÁI HiỆN",
+       "Imi":"Tái hiện",
+       "Example":"エラーが再現できました。",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"現在",
+       "Kana":"げんざい",
+       "YomiKata":"HiỆN TẠI",
+       "Imi":"Hiện tại ",
+       "Example":"現在日付: Date hiện tại ",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"調査",
+       "Kana":"ちょうさ",
+       "YomiKata":"ĐiỀU TRA",
+       "Imi":"Điều tra ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"引数",
+       "Kana":"ひきすう",
+       "YomiKata":"DÂN SỐ",
+       "Imi":"Dẫn số",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"関数",
+       "Kana":"かんすう",
+       "YomiKata":"QUAN SỐ",
+       "Imi":"Quan số",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"指示",
+       "Kana":"しじ",
+       "YomiKata":"CHỈ THỊ",
+       "Imi":"Chỉ thị ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"変数",
+       "Kana":"へんすう",
+       "YomiKata":"BIẾN SỐ ",
+       "Imi":"Biến số",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"余裕 ",
+       "Kana":"よゆう",
+       "YomiKata":"DƯ DỤ ",
+       "Imi":"Dư thừa , dư ra ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"生成",
+       "Kana":"せいせい",
+       "YomiKata":"SINH THÀNH",
+       "Imi":"Sinh ra (Generation)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"規約",
+       "Kana":"きやく",
+       "YomiKata":"QUY ƯỚC",
+       "Imi":"Quy ước ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"考慮",
+       "Kana":"こうりょ",
+       "YomiKata":"KHẢO LiỂU ",
+       "Imi":"Cân nhắc",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"強制",
+       "Kana":"きょうせい",
+       "YomiKata":"CƯỜNG CHẾ",
+       "Imi":"Ép buộc , miễn cưởng",
+       "Example":"強制終了: Kết thúc ép buộc",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"中止",
+       "Kana":"ちゅうし",
+       "YomiKata":"TRUNG CHỈ ",
+       "Imi":"Dừng (stop)",
+       "Example":"処理中止: Dừng xử lý",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"改訂",
+       "Kana":"かいてい",
+       "YomiKata":"CẢI ĐÍNH ",
+       "Imi":"Chỉnh sửa  ",
+       "Example":"改訂履歴: Lịch sử chỉnh sửa",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"状況",
+       "Kana":"じょうきょう",
+       "YomiKata":"TRẠNG HuỐNG",
+       "Imi":"Trạng huống",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"関連",
+       "Kana":"かんれん",
+       "YomiKata":"QUAN LIÊN",
+       "Imi":"Quan liên ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"集計",
+       "Kana":"しゅうけい",
+       "YomiKata":"TẬP KẾ",
+       "Imi":"Tập kế",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"保留",
+       "Kana":"ほりゅう",
+       "YomiKata":"BẢO LƯU ",
+       "Imi":"Bảo lưu ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"同期",
+       "Kana":"どうき",
+       "YomiKata":"ĐỐNG KỲ",
+       "Imi":"Đồng bộ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"移行",
+       "Kana":"いこう",
+       "YomiKata":"DI HÀNH",
+       "Imi":"Chuyển , Di chuyển ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"別紙",
+       "Kana":"べっし",
+       "YomiKata":"BIỆT CHỈ ",
+       "Imi":"Sheet khác ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"誤記",
+       "Kana":"ごき",
+       "YomiKata":"NGỘ KÝ",
+       "Imi":"Ghi nhầm",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"整数",
+       "Kana":"せいすう",
+       "YomiKata":"CHỈNH SỐ",
+       "Imi":"Số dương",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"端数",
+       "Kana":"はすう",
+       "YomiKata":"ĐOAN SỐ",
+       "Imi":"Phân số",
+       "Example":"端数処理: xử lý phân số",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"特記",
+       "Kana":"とっき",
+       "YomiKata":"ĐẶC KÝ",
+       "Imi":"Đề cập đặc biệt",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"事項",
+       "Kana":"じこう",
+       "YomiKata":"SỰ HẠNG",
+       "Imi":"Hạng mục ",
+       "Example":"特記事項: Hạng mục đề cập đặc biệt",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"越える",
+       "Kana":"こえる",
+       "YomiKata":"ViỆT ",
+       "Imi":"Vượt quá",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"環境",
+       "Kana":"かんきょう",
+       "YomiKata":"HOÀN CẢNH ",
+       "Imi":"Môi trường",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"開発",
+       "Kana":"かいはつ",
+       "YomiKata":"KHAI PHÁT",
+       "Imi":"Lập trình ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"構築",
+       "Kana":"こうちく",
+       "YomiKata":"CẤU TRÚC ",
+       "Imi":"Cấu trúc ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"除外",
+       "Kana":"じょがい",
+       "YomiKata":"TRỪ NGOẠI ",
+       "Imi":"Loại trừ ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"無視",
+       "Kana":"むし",
+       "YomiKata":"VÔ THỊ ",
+       "Imi":"Bỏ qua",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"累計",
+       "Kana":"るいけい",
+       "YomiKata":"LŨY KẾ",
+       "Imi":"Lũy kế",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"積上げる",
+       "Kana":"つみあげる",
+       "YomiKata":"TÍCH THƯỢNG",
+       "Imi":"Cộng dồn",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"組み合わせる",
+       "Kana":"くみあわせる",
+       "YomiKata":"TỔ HỢP",
+       "Imi":"Kết hợp",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"決定",
+       "Kana":"けってい",
+       "YomiKata":"QUYẾT ĐỊNH",
+       "Imi":"Quyết định ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"方法",
+       "Kana":"ほうほう",
+       "YomiKata":"PHƯƠNG PHÁP ",
+       "Imi":"Phương pháp , Cách làm ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"調整",
+       "Kana":"ちょうせい",
+       "YomiKata":"ĐiỀU CHỈNH ",
+       "Imi":"Điều chỉnh ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"列",
+       "Kana":"れつ",
+       "YomiKata":"LIỆT",
+       "Imi":"Cột ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"中断",
+       "Kana":"ちゅうだん",
+       "YomiKata":"TRUNG ĐOẠN",
+       "Imi":"Dừng lại ",
+       "Example":"仕様変更により開発を一旦中断して下さい: Xin hãy tạm dừng lập trình do thay đổi chỉ thị.",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"規定",
+       "Kana":"きてい",
+       "YomiKata":"QUY ĐỊNH ",
+       "Imi":"",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"適用",
+       "Kana":"てきよう",
+       "YomiKata":"THÍCH DỤNG ",
+       "Imi":"Thích hợp ",
+       "Example":"端末画面デザインをアプリに適用する",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"残高",
+       "Kana":"ざんだか",
+       "YomiKata":"TÀN CAO ",
+       "Imi":"Cân đối (Balance)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"上期",
+       "Kana":"かみき",
+       "YomiKata":"THƯỢNG KỲ　",
+       "Imi":"Giữa kỳ đầu ",
+       "Example":"未支払/支払済み",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"下期",
+       "Kana":"しもき",
+       "YomiKata":"HẠ KỲ",
+       "Imi":"Giữa kỳ cuối ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"通期",
+       "Kana":"つうき",
+       "YomiKata":"THÔNG KỲ",
+       "Imi":"Cả năm",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"勘定",
+       "Kana":"かんじょう",
+       "YomiKata":"KHÁM ĐỊNH",
+       "Imi":"Thanh toán ",
+       "Example":"繰越額: số tiền mang sang ",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"繰越",
+       "Kana":"くりこし",
+       "YomiKata":"TAO VIỆT",
+       "Imi":"Mang sang, chuyển qua  ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"借方",
+       "Kana":"かりかた",
+       "YomiKata":"TÁ PHƯƠNG",
+       "Imi":"Bên Nợ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"貸方",
+       "Kana":"かしかた",
+       "YomiKata":"THẢI PHƯƠNG",
+       "Imi":"Bên Có",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"良品",
+       "Kana":"りょうひん",
+       "YomiKata":"LƯƠNG PHẨM",
+       "Imi":"Hàng đạt",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"不良品",
+       "Kana":"ふりょうひん",
+       "YomiKata":"BẤT LƯƠNG PHẨM",
+       "Imi":"Hàng không đạt",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"返品",
+       "Kana":"へんぴん",
+       "YomiKata":"PHẢN PHẨM",
+       "Imi":"Hàng trả lại",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"仕掛品",
+       "Kana":"しかけひん",
+       "YomiKata":"SỈ QuẢI PHẨM",
+       "Imi":"Hàng đang gia công dỡ dang",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"確定",
+       "Kana":"かくてい",
+       "YomiKata":"XÁC ĐỊNH",
+       "Imi":"Xác định ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"予算",
+       "Kana":"よさん",
+       "YomiKata":"DỰ TOÁN",
+       "Imi":"Dự toán , Ngân sách",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"外貨",
+       "Kana":"がいか",
+       "YomiKata":"NGOẠI HÓA",
+       "Imi":"Ngoại tệ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"現金",
+       "Kana":"げんきん",
+       "YomiKata":"HiỆN KIM",
+       "Imi":"Tiền mặt",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"通貨",
+       "Kana":"つうか",
+       "YomiKata":"THÔNG HÓA",
+       "Imi":"Tiền tệ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"決済",
+       "Kana":"けっさい",
+       "YomiKata":"QUYẾT TOÁN",
+       "Imi":"Quyết toán ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"手形",
+       "Kana":"てがた",
+       "YomiKata":"THỦ HÌNH",
+       "Imi":"Tên tài khoản ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"口座名",
+       "Kana":"こざめい",
+       "YomiKata":"KHẢU TỌA DANH",
+       "Imi":"Phòng họp",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"予約",
+       "Kana":"よやく",
+       "YomiKata":"DỰ ƯỚC",
+       "Imi":"Đặt trước",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"会議室",
+       "Kana":"かいぎしつ",
+       "YomiKata":"HỘI NGHỊ THẤT ",
+       "Imi":"Phòng họp",
+       "Example":"参加者: Người tham gia ",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"人数",
+       "Kana":"にんずう",
+       "YomiKata":"NHÂN SỐ",
+       "Imi":"Số người ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"参加",
+       "Kana":"さんか",
+       "YomiKata":"THAM GIA",
+       "Imi":"Tham gia ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"期日",
+       "Kana":"きじつ",
+       "YomiKata":"KỲ NHẬT",
+       "Imi":"Ngày ấn định ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"法人",
+       "Kana":"ほうじん",
+       "YomiKata":"PHÁP NHÂN",
+       "Imi":"Pháp nhân ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"解約",
+       "Kana":"かいやく",
+       "YomiKata":"GiẢI ƯỚC",
+       "Imi":"Hủy hợp đồng ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"照会",
+       "Kana":"しょうかい",
+       "YomiKata":"CHIẾU HỘI ",
+       "Imi":"Đối chiếu ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"売掛 (未収金）",
+       "Kana":"うりかけ（みしゅきん）",
+       "YomiKata":"MẠI QuẢI",
+       "Imi":"Khoản phải thu (Tiền chưa thu)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"買掛 （未払金）",
+       "Kana":"かいかけ（みばらいきん）",
+       "YomiKata":"MÃI QuẢI",
+       "Imi":"Khoản phải chi (Tiền chưa chi)",
+       "Example":"一括承認: Thừa nhận đồng loạt",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"承認",
+       "Kana":"しょうにん",
+       "YomiKata":"THỪA NHẬN",
+       "Imi":"Thừa nhận ",
+       "Example":"財産償却: Khấu hao tài sản ",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"償却",
+       "Kana":"しょうきゃく",
+       "YomiKata":"THƯỞNG KHƯỚC",
+       "Imi":"Khấu hao ",
+       "Example":"償却割合: Tỷ lệ khấu hao ",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"割合",
+       "Kana":"わりあい",
+       "YomiKata":"CÁT HỢP ",
+       "Imi":"Tỷ lệ (ratio)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"工事",
+       "Kana":"こうじ",
+       "YomiKata":"CÔNG SỰ",
+       "Imi":"Công trình ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"施工",
+       "Kana":"しこう",
+       "YomiKata":"THI CÔNG",
+       "Imi":"Thi công",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"設備",
+       "Kana":"せつび",
+       "YomiKata":"THIẾT BỊ",
+       "Imi":"Thiết bị",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"投稿 ",
+       "Kana":"とうこう",
+       "YomiKata":"ĐẦU KHẢO",
+       "Imi":"Submit ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"公開",
+       "Kana":"こうかい",
+       "YomiKata":"CÔNG KHAI",
+       "Imi":"Công khai ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"記事",
+       "Kana":"きじ",
+       "YomiKata":"KÝ SỰ",
+       "Imi":"Ký sự ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"値引",
+       "Kana":"ねびき",
+       "YomiKata":"TRỊ DẪN",
+       "Imi":"Giảm giá、Bớt giá",
+       "Example":"",
+       "WorkLevel":{
+          "ID":3,
+          "Name":"N3",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"原料",
+       "Kana":"げんりょう",
+       "YomiKata":"NGUYÊN LIÊU",
+       "Imi":"Nguyên liêu ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"商品",
+       "Kana":"しょうひん",
+       "YomiKata":"THƯƠNG PHẨM",
+       "Imi":"Hàng hóa",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"製品",
+       "Kana":"せいひん",
+       "YomiKata":"CHẾ PHẨM",
+       "Imi":"Thành phẩm ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"管理",
+       "Kana":"かんり",
+       "YomiKata":"QuẢN LÝ",
+       "Imi":"Quản lý ",
+       "Example":"管理費",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"住所",
+       "Kana":"じゅしょ",
+       "YomiKata":"TRÚ SỞ",
+       "Imi":"Địa chỉ (Address)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"拠点",
+       "Kana":"きょてん",
+       "YomiKata":"CỨ ĐiỂM",
+       "Imi":"Cứ điểm (Location)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"箇所",
+       "Kana":"かしょ",
+       "YomiKata":"CÁ SỞ",
+       "Imi":"Chỗ ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"郵便",
+       "Kana":"ゆうびん",
+       "YomiKata":"BƯU TiỆN",
+       "Imi":"Bưu điện ",
+       "Example":"郵便番号",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"契約",
+       "Kana":"けいやく",
+       "YomiKata":"KHẾ ƯỚC",
+       "Imi":"Hợp đồng",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"数量",
+       "Kana":"すうりょう",
+       "YomiKata":"SỐ LƯỢNG",
+       "Imi":"Số lượng",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"重量",
+       "Kana":"じゅうりょう",
+       "YomiKata":"TRONG LƯỢNG",
+       "Imi":"Trọng lượng",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"売上",
+       "Kana":"うりあげ",
+       "YomiKata":"MẠI THƯỢNG ",
+       "Imi":"Bán ra /Doanh thu",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"仕入",
+       "Kana":"しいれ",
+       "YomiKata":"SĨ NHẬP",
+       "Imi":"Mua vào ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"仕入先",
+       "Kana":"しいれさき",
+       "YomiKata":"SĨ NHẬP TIÊN",
+       "Imi":"Nhà cung cấp (Supplier)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"得意先",
+       "Kana":"とくいさき",
+       "YomiKata":"ĐẮC Ý TIÊN",
+       "Imi":"Khách hàng (Customers)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"担当者",
+       "Kana":"たんとうしゃ",
+       "YomiKata":"ĐẢM ĐƯƠNG GiẢ",
+       "Imi":"Người phụ trách ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"相手先",
+       "Kana":"あいてさき",
+       "YomiKata":"TƯƠNG THỦ TIÊN",
+       "Imi":"Đối tác (Partner)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"社員",
+       "Kana":"しゃいん",
+       "YomiKata":"XÃ VIÊN",
+       "Imi":"Nhân viên",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"部門",
+       "Kana":"ぶもん",
+       "YomiKata":"BỘ MÔN",
+       "Imi":"Phòng ban",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"名称",
+       "Kana":"めいしょう",
+       "YomiKata":"DANH XƯNG",
+       "Imi":"Tên ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"略称",
+       "Kana":"りゃくしょう",
+       "YomiKata":"LƯỢC XƯNG ",
+       "Imi":"Tên tắt ",
+       "Example":"部門略名称:Tên tắt phòng ban, 社員略名称: Tên tắt nhân viên",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"本店",
+       "Kana":"ほんてん",
+       "YomiKata":"BẢN ĐiẾM",
+       "Imi":"Trụ sở chính ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"支店",
+       "Kana":"してん",
+       "YomiKata":"CHI ĐiẾM",
+       "Imi":"Trụ sở chi nhánh  ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"単価",
+       "Kana":"たんか",
+       "YomiKata":"ĐƠN GIÁ",
+       "Imi":"Đơn giá",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"単位",
+       "Kana":"たんい",
+       "YomiKata":"ĐƠN VỊ",
+       "Imi":"Đơn vị ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"所属",
+       "Kana":"しょぞく",
+       "YomiKata":"SỞ THUỘC",
+       "Imi":"Trực thuộc ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"入荷",
+       "Kana":"にゅうか",
+       "YomiKata":"NHẬP HÀ ",
+       "Imi":"Nhâp hàng",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"出荷",
+       "Kana":"しゅっか",
+       "YomiKata":"XuẤT HÀ",
+       "Imi":"Xuất hàng ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"倉庫",
+       "Kana":"そうこ",
+       "YomiKata":"THƯƠNG KHỐ",
+       "Imi":"Kho ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"在庫",
+       "Kana":"ざいこ",
+       "YomiKata":"TẠI KHỐ",
+       "Imi":"Tồn kho ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"出庫",
+       "Kana":"しゅっこ",
+       "YomiKata":"XuẤT KHỐ",
+       "Imi":"Xuất kho",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"入庫",
+       "Kana":"にゅうこ",
+       "YomiKata":"NHẠP KHỐ",
+       "Imi":"Nhập kho ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"店舗",
+       "Kana":"てんぽ",
+       "YomiKata":"ĐiẾM PHỐ",
+       "Imi":"Cửa hàng ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"引当",
+       "Kana":"ひきあて",
+       "YomiKata":"DẪN ĐƯƠNG",
+       "Imi":"Keep kho ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"伝票",
+       "Kana":"でんぴょう",
+       "YomiKata":"TRUYỀN PHIẾU",
+       "Imi":"Voucher ",
+       "Example":"伝票番号",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"発注",
+       "Kana":"はっちゅう",
+       "YomiKata":"PHÁT CHÚ",
+       "Imi":"Đặt hàng ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"受注",
+       "Kana":"じゅちゅう",
+       "YomiKata":"THỤ CHÚ",
+       "Imi":"Nhận đặt hàng ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"外注",
+       "Kana":"がいちゅう",
+       "YomiKata":"NGOẠI CHÚ",
+       "Imi":"Order bên ngoài (outsourcing)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"販売",
+       "Kana":"はんばい",
+       "YomiKata":"PHIẾN MẠI",
+       "Imi":"Bán hàng ",
+       "Example":"販売費",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"配送",
+       "Kana":"はいそう",
+       "YomiKata":"PHỐI TỐNG",
+       "Imi":"Vận chuyển (Delivery)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"原価",
+       "Kana":"げんか",
+       "YomiKata":"NGUYÊN GIÁ",
+       "Imi":"Giá gốc , giá vốn (Cost)",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"物流",
+       "Kana":"ぶつりゅう",
+       "YomiKata":"VẬT LƯU ",
+       "Imi":"Phân phối ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"納品",
+       "Kana":"のうひん",
+       "YomiKata":"NẠP PHẨM",
+       "Imi":"Giao hàng",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"納期",
+       "Kana":"のうき",
+       "YomiKata":"NẠP KỲ",
+       "Imi":"Kỳ hạn giao hàng",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"閏年",
+       "Kana":"じゅんねん",
+       "YomiKata":"NHUẬN NIÊN",
+       "Imi":"Năm nhuận",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"番号",
+       "Kana":"ばんごう",
+       "YomiKata":"PHIÊN HiỆU",
+       "Imi":"Number ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"仕訳",
+       "Kana":"しわけ",
+       "YomiKata":"SĨ DỊCH ",
+       "Imi":"Phân bổ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"作業",
+       "Kana":"さぎょう",
+       "YomiKata":"TÁC NGHIỆP",
+       "Imi":"Làm việc ",
+       "Example":"作業日, 作業所",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"事業",
+       "Kana":"じぎょう",
+       "YomiKata":"SỰ NGHIỆP",
+       "Imi":"Kinh doanh  ",
+       "Example":"事業所",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"休業 ",
+       "Kana":"きゅうぎょう",
+       "YomiKata":"HƯU NGHIỆP",
+       "Imi":"Nghỉ làm",
+       "Example":"休業日",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"営業",
+       "Kana":"えいぎょう",
+       "YomiKata":"DOANH NGHIỆP",
+       "Imi":"Kinh doanh  ",
+       "Example":"営業者",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"取引",
+       "Kana":"とりひき",
+       "YomiKata":"THỦ DẪN",
+       "Imi":"Giao dịch ",
+       "Example":"取引先",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"見積",
+       "Kana":"みつもり",
+       "YomiKata":"KiỂN TÍCH ",
+       "Imi":"Báo giá",
+       "Example":"見積書　",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"振込　",
+       "Kana":"ふりこむ",
+       "YomiKata":"CHẤN NHẬP",
+       "Imi":"Chuyển tiền ",
+       "Example":"振込先",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"会計",
+       "Kana":"かいけい",
+       "YomiKata":"HÔI KẾ",
+       "Imi":"Kế toán ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"年度",
+       "Kana":"ねんど",
+       "YomiKata":"NIÊN ĐỘ",
+       "Imi":"Niên độ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"元帳",
+       "Kana":"もとちょう",
+       "YomiKata":"NGUYÊN TRƯƠNG ",
+       "Imi":"Số cái ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"合計",
+       "Kana":"ごうけい",
+       "YomiKata":"HƠP KẾ",
+       "Imi":"Total",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"計上",
+       "Kana":"けいじょう",
+       "YomiKata":"KẾ THƯỢNG",
+       "Imi":"Nhập sổ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"消費税",
+       "Kana":"しょうひぜい",
+       "YomiKata":"TIÊU PHÍ THUẾ",
+       "Imi":"Thuế tiêu thụ ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"税抜額",
+       "Kana":"ぜいぬきがく",
+       "YomiKata":"THUẾ BẠT NGẠCH ",
+       "Imi":"Số tiền trừ thuế ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"税込額",
+       "Kana":"ぜいこみがく",
+       "YomiKata":"THUẾ NHẠP NGẠCH ",
+       "Imi":"Số tiền gồm thuế ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"利益",
+       "Kana":"りえき",
+       "YomiKata":"LỢI ÍCH ",
+       "Imi":"Lợi nhuận",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"物件",
+       "Kana":"ぶっけん",
+       "YomiKata":"VẬT KiỆN",
+       "Imi":"Tài sản , Article  ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"期限",
+       "Kana":"きげん",
+       "YomiKata":"KỲ HẠN",
+       "Imi":"Kỳ hạn  ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"科目",
+       "Kana":"かもく",
+       "YomiKata":"KHOA MỤC",
+       "Imi":"Tài khoản (kế toán )",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"支払",
+       "Kana":"しはらい",
+       "YomiKata":"CHI PHÁT",
+       "Imi":"Chi trả",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"分類/",
+       "Kana":"ぶんるい",
+       "YomiKata":"PHÂN LoẠI",
+       "Imi":"Phân loại ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"種別　",
+       "Kana":"しゅべつ",
+       "YomiKata":"CHỦNG BiỆT",
+       "Imi":"Phân loại ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"品名",
+       "Kana":"ひんめい",
+       "YomiKata":"PHẨM DANH",
+       "Imi":"Tên hàng",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"実績",
+       "Kana":"じっせき",
+       "YomiKata":"THỰC TÍCH ",
+       "Imi":"Thực tích ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"予定",
+       "Kana":"よてい",
+       "YomiKata":"DỰ ĐỊNH",
+       "Imi":"Dự định ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"集計",
+       "Kana":"しゅうけい",
+       "YomiKata":"TẬP KẾ",
+       "Imi":"Tính tổng",
+       "Example":"集計単位にて検索",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"投入",
+       "Kana":"とうにゅう",
+       "YomiKata":"ĐẦU NHẬP",
+       "Imi":"Đưa vào, nhập vào",
+       "Example":"投入実績 Thực tích nhập vào",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"金額",
+       "Kana":"きんがく",
+       "YomiKata":"KIM NGẠCH ",
+       "Imi":"Số tiền ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"締日",
+       "Kana":"しめ日",
+       "YomiKata":"ĐẾ NHẬT",
+       "Imi":"Ngày kết sổ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"料金",
+       "Kana":"りょうきん",
+       "YomiKata":"LiỆU KIM",
+       "Imi":"Cước phí",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"無料",
+       "Kana":"むりょう",
+       "YomiKata":"VÔ LiỆU",
+       "Imi":"Miễn phí",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"費用",
+       "Kana":"ひよう",
+       "YomiKata":"PHÍ DỤNG",
+       "Imi":"Chi phí",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"請求",
+       "Kana":"せいきゅう",
+       "YomiKata":"THỈNH CẦU",
+       "Imi":"Yêu cầu thanh toán /Đòi nợ ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":2,
+          "Name":"N4",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"仕様 ",
+       "Kana":"しよう　",
+       "YomiKata":"SĨ DẠNG  ",
+       "Imi":"Chỉ thị ",
+       "Example":"仕様書 Bản chỉ thị",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"設計",
+       "Kana":"せっけい　",
+       "YomiKata":"THIẾT KẾ ",
+       "Imi":"Thiết kế",
+       "Example":"設計書 Bản thiết kế",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"基本",
+       "Kana":"きほん",
+       "YomiKata":"CƠ BẢN",
+       "Imi":"Cơ bản ",
+       "Example":"基本設計 Thiết kế cơ bản ",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"詳細",
+       "Kana":"しょうさい",
+       "YomiKata":"TƯỜNG TẾ",
+       "Imi":"Chi tiết ( tường tận, cụ thể  )",
+       "Example":"詳細設計 Thiết kế chi tiết",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"明細　　",
+       "Kana":"めいさい",
+       "YomiKata":"MINH TẾ",
+       "Imi":"Chi tiết (phần nhỏ trong tổng thể )",
+       "Example":"明細データ Data detail ",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"画面",
+       "Kana":"がめん",
+       "YomiKata":"HoẠCH DiỆN",
+       "Imi":"Màn hình ",
+       "Example":"初期画面 Màn hình init ",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"項目",
+       "Kana":"こうもく",
+       "YomiKata":"HẠNG MỤC ",
+       "Imi":"Item ",
+       "Example":"項目名  　　　Tên item ",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"説明",
+       "Kana":"せつめい",
+       "YomiKata":"THUYẾT MINH ",
+       "Imi":"Giải thích ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"内容",
+       "Kana":"ないよう",
+       "YomiKata":"NÔI DUNG ",
+       "Imi":"Nội dung",
+       "Example":"説明内容 Nội dung giải thích ",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"条件",
+       "Kana":"じょうけん",
+       "YomiKata":"ĐiỀU KiỆN",
+       "Imi":"Điều kiện",
+       "Example":"検索条件 Điều kiện search ",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"備考",
+       "Kana":"びこう",
+       "YomiKata":"BỊ KHẢO",
+       "Imi":"Ghi chú",
+       "Example":"備考カラム Column ghi chú",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"機能",
+       "Kana":"きのう",
+       "YomiKata":"CƠ NĂNG",
+       "Imi":"Chức năng ",
+       "Example":"機能概要 Outline chức năng ",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"概要",
+       "Kana":"がいよう",
+       "YomiKata":"KHÁI YẾU",
+       "Imi":"Outline",
+       "Example":"",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"帳票（レポート）",
+       "Kana":"ちょうひょう",
+       "YomiKata":"TRƯƠNG PHIẾU",
+       "Imi":"Report ",
+       "Example":"帳票レイアウト Layout report",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"一覧（リスト）",
+       "Kana":"いちらん",
+       "YomiKata":"NHẤT LÃM",
+       "Imi":"List",
+       "Example":"",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"補足",
+       "Kana":"ほそく",
+       "YomiKata":"BỔ TÚC ",
+       "Imi":"Bổ sung",
+       "Example":"補足説明 Giải thích bổ sung",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"初期",
+       "Kana":"しょき",
+       "YomiKata":"SƠ KỲ",
+       "Imi":"Khởi tạo , ban đầu 　(Initial)",
+       "Example":"初期値 Trị init",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"使用",
+       "Kana":"しよう",
+       "YomiKata":"SỬ DỤNG",
+       "Imi":"Sử dụng     ",
+       "Example":"帳票項目定義 ĐN Item report",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"定義",
+       "Kana":"ていぎ",
+       "YomiKata":"ĐỊNH NGHĨA",
+       "Imi":"Định nghĩa ",
+       "Example":"画面項目定義 ĐN Item màn hình ",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"実行/行う",
+       "Kana":"じっこう",
+       "YomiKata":"THỰC HÀNH",
+       "Imi":"Thực hiện /Tiến hành ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    },
+    {
+       "Kanji":"実施　",
+       "Kana":"じっし",
+       "YomiKata":"THỰC THI",
+       "Imi":"Thực thi ",
+       "Example":"",
+       "WorkLevel":{
+          "ID":1,
+          "Name":"N5",
+          "Words":null
+       },
+       "AnswerBtnId":null
+    }
+  ]

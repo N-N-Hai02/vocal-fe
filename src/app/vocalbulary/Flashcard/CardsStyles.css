@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner&display=swap");
+
+:root {
+    --fontFamily: "Commissioner", sans-serif;
+    --border-radius: 20px;
+    --grad-one: linear-gradient(#001ec7, #35b7f8);
+    --grad-two: linear-gradient(#179615, #e023da);
+    --layout-height: 350px;
+    --layout-width: 350px;
+}
+
+.navFlashcard {
+    width: var(--layout-width);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.navFlashcard button {
+    border: none;
+    background: #111122;
+    color: white;
+    font-size: 0.9em;
+    padding: 0.8em 1.2em;
+    border-radius: var(--border-radius);
+    margin: 1em 5px;
+    opacity: 0.85;
+    transition: all 0.25s;
+    cursor: pointer;
+}
+
+.navFlashcard button:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.navFlashcard button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    transform: translateY(0px);
+}
+
+.navFlashcard button:focus {
+    outline: none;
+}
+
+.flashcardNumber {
+    display: flex;
+    justify-content: center;
+}
+
+/* =========================================================================================================== */
+
+.card_flash {
+    margin: 10px auto;
+    background: var(--grad-one);
+    height: var(--layout-height);
+    width: var(--layout-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 400;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.1),
+        0px 8px 16px rgba(0, 0, 0, 0.1), 0px 16px 32px rgba(0, 0, 0, 0.1);
+    position: relative;
+    cursor: pointer;
+    /* animated interactivity */
+    transition: 250ms;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+}
+
+/* when card_flash is clicked adding .side_flash class */
+.side_flash {
+    background: var(--grad-two);
+    transform: rotateY(-180deg);
+}
+
+/* card_flash content */
+.card_flash .front,
+.card_flash .back {
+    position: absolute;
+    padding: 1rem;
+    backface-visibility: hidden;
+}
+
+.card_flash .front {
+    transform: rotateY(0deg);
+}
+
+.card_flash.side_flash .front {
+    opacity: 0;
+    display: none;
+}
+
+.card_flash .back {
+    transform: rotateY(180deg);
+}
+
+.card_flash small {
+    opacity: 0.7;
+    font-size: 0.7em;
+    position: absolute;
+    top: 3rem;
+}
+
+.card_flash.side_flash small {
+    transform: rotateY(180deg);
+}
+
+.card_flash small span {
+    display: block;
+    text-align: center;
+    font-size: small;
+}
+
+/* Reponsive... */
+@media (max-width: 576px) {
+    :root {
+        --fontFamily: "Commissioner", sans-serif;
+        --border-radius: 20px;
+        --grad-one: linear-gradient(#942602, #ff9f50f7);
+        --grad-two: linear-gradient(#690726, #f32648);
+        --layout-width: 250px;
+    }
+}

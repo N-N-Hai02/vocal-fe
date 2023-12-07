@@ -1,0 +1,14 @@
+.login-container {
+    margin-top: 20vh;
+    .content-right {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+        box-sizing: border-box;
+        border-radius: 10px;
+        .forgotten-password {
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

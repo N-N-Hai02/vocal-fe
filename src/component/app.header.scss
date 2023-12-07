@@ -1,0 +1,90 @@
+
+// .app-header {
+//     .navbar-brand-right {
+//         .btn-navbar-toggle {
+
+//         }
+//     }
+// }
+
+// @media screen and (max-width: 560px) {
+//     .app-header {
+//         .navbar-brand-right {
+//             .btn-navbar-toggle {
+//                 position: absolute;
+//                 right: 25px;
+//             }
+//         }
+//     }
+// }
+
+// @media screen and (min-width: 561px) {
+//     .app-header {
+//         .navbar-brand-right {
+//             .btn-navbar-toggle {
+//                 position: static;
+//             }
+//         }
+//     }
+// }
+
+.navbar-header {
+    .navbar-light .navbar-toggler {
+        color: #61dafb !important;
+        border-color: #61dafb !important;
+        .navbar-toggler-icon {
+            -webkit-mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            background-color: #61dafb !important;
+            mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+    } 
+    .navbar-brand {
+        color: #61dafb !important;
+
+        img {
+            animation: App-logo-spin infinite 1s linear;
+        }
+        @keyframes App-logo-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    }
+    a, a.nav-link, .nav-item {
+        &:hover {
+            color: #61dafb !important;
+        }
+    }
+    a.active {
+        color: #61dafb !important;
+    }
+
+    a#Action-dropdown, #AdminMenu-dropdown {
+        color: #fff !important;
+    }
+
+    #basic-navbar-nav {
+        .nav-body > * {
+            margin: 0 10px;
+        }
+    }
+
+    @media screen and (max-width: 760px) {
+        #basic-navbar-nav {
+            .nav-body > * {
+                margin: 0 0;
+            }
+        }
+    }
+
+    .dropdown-toggle::after {
+        display: inline-block !important; 
+    }
+}
+
+
+
