@@ -1,12 +1,7 @@
 "use client"
-import { useEffect, useState } from 'react'
-import type { Metadata } from 'next'
+import { useState } from 'react'
 import { fechAllVocal } from '@/services/vocalService'
 
-export const metadata: Metadata = {
-    title: 'Vocalbulary Home',
-    description: 'View Vocalbulary Home',
-}
 
 export default function VocalbularyHome() {
     const [valueSearch, setValueSearch] = useState("")
