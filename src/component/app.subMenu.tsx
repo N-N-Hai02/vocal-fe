@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useContext } from 'react'
 import { Dropdown } from 'react-bootstrap'
 import { UserContext } from '@/context/UserContext'
-import './subMenu.css'
+import './subMenu.scss'
 
 const SubMenu = () => {
     const { user } = useContext(UserContext)
@@ -18,7 +18,7 @@ const SubMenu = () => {
                 <div className="fixed-bottom">
                     <div className="dropdown position-absolute bottom-0 end-0 m-4">
                         <Dropdown>
-                            <Dropdown.Toggle variant="warning" id="dropdown-basic" className="rounded-circle">
+                            <Dropdown.Toggle variant="outline-warning" id="dropdown-basic" className="rounded-circle">
                                 <i className="fas fa-home"></i>
                             </Dropdown.Toggle>
                             <Dropdown.Menu style={{ minWidth: "2rem", backgroundColor: "rgb(0 0 0 / 0%)", border: "none", right: "1px", top: "-65px" }}>
@@ -29,7 +29,7 @@ const SubMenu = () => {
                                     >
                                         Bài kiểm tra
                                     </span>
-                                    <Link href="/vocalbulary/Test" className='btn btn-success rounded-circle'>
+                                    <Link href="/vocalbulary/Test" className='btn btn-outline-success rounded-circle'>
                                         <i className="fas fa-pen"></i>
                                     </Link>
                                 </li>
@@ -40,7 +40,7 @@ const SubMenu = () => {
                                     >
                                         Tra cứu từ
                                     </span>
-                                    <Link href="/vocalbulary/Flashcard" className='btn btn-danger rounded-circle'>
+                                    <Link href="/vocalbulary/Flashcard" className='btn btn-outline-danger rounded-circle'>
                                         <i className="fas fa-book"></i>
                                     </Link>
                                 </li>

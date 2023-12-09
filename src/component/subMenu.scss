@@ -1,0 +1,22 @@
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+.dropdown-menu > .item-1:hover > span,
+.dropdown-menu > .item-2:hover > span {
+    display: block !important;
+}
+
+.dropdown:hover {
+    .dropdown-menu {
+        display: block !important;
+    }
+    .dropdown-menu::before {
+        content: '';
+        position: absolute;
+        top: 65px;
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+      }
+}
