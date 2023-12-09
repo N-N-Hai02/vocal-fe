@@ -1,5 +1,5 @@
-const API_URL = "http://localhost:8400"
-const VERSION = "/api/v1"
+const API_URL = process.env.BA_EN_URL
+const VERSION = process.env.V_S_URL
 
 let GET_JWT_LOCAL_STORAGE: any = ''
 
