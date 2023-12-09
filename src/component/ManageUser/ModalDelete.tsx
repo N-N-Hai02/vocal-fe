@@ -2,12 +2,12 @@ import { Button, Modal } from "react-bootstrap"
 
 interface ModalDelete {
     show: boolean,
-    dataModal: object,
+    dataModal: any,
     handleClose: () => void,
     comfirmDeleteUser: () => void
 }
 
-const ModalDelete = ({ show, dataModal,handleClose,comfirmDeleteUser }: ModalDelete) => {
+const ModalDelete = ({ show, dataModal, handleClose, comfirmDeleteUser }: ModalDelete) => {    
     return (
         <>
            <Modal
@@ -18,7 +18,7 @@ const ModalDelete = ({ show, dataModal,handleClose,comfirmDeleteUser }: ModalDel
                 <Modal.Header closeButton>
                     <Modal.Title>Confirm Delete User</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Woohoo, are you sure to delete this user: <b>{'dataModal.email'}</b> ?</Modal.Body>
+                <Modal.Body>Woohoo, are you sure to delete this user: <b>{dataModal.email}</b> ?</Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={() => handleClose()}>
                         Close
