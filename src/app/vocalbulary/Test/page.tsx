@@ -114,42 +114,78 @@ export default function VocalbularyTest() {
                         </div>
                         {
                             showViewTest && showViewTest === true
-                                ? <div className='text-center'>
-                                    <table className="table table-bordered border-primary">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">No</th>
-                                                <th scope="col">Question</th>
-                                                <th scope="col">Answered</th>
-                                                <th scope="col">Resulted</th>
-                                                <th scope="col">The result is correct</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {
-                                                saveTheCheckList && saveTheCheckList.length > 0
-                                                &&
-                                                saveTheCheckList.map((item: any, index: number) => {
-                                                    return (
-                                                        <tr key={index}>
-                                                            <th scope="row">{index + 1}</th>
-                                                            <td>{language === 'en' ? item.vn : item.en}</td>
-                                                            <td>{item.clickedValue}</td>
-                                                            <td>
-                                                                {
-                                                                    item.compareValue && item.compareValue === true
-                                                                        ? <i className="fa fa-check text-success" aria-hidden="true"></i>
-                                                                        : <i className="fa fa-times text-danger" aria-hidden="true"></i>
-                                                                }
-                                                            </td>
-                                                            <td>{language === 'en' ? item.en : item.vn}</td>
-                                                        </tr>
-                                                    )
-                                                })
-                                            }
+                                ? <div>
+                                    <div className='text-center d-none d-sm-block'>
+                                        <table className="table table-bordered border-primary">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">No</th>
+                                                    <th scope="col">Question</th>
+                                                    <th scope="col">Answered</th>
+                                                    <th scope="col">Resulted</th>
+                                                    <th scope="col">The result is correct</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {
+                                                    saveTheCheckList && saveTheCheckList.length > 0
+                                                    &&
+                                                    saveTheCheckList.map((item: any, index: number) => {
+                                                        return (
+                                                            <tr key={index}>
+                                                                <th scope="row">{index + 1}</th>
+                                                                <td>{language === 'en' ? item.vn : item.en}</td>
+                                                                <td>{item.clickedValue}</td>
+                                                                <td>
+                                                                    {
+                                                                        item.compareValue && item.compareValue === true
+                                                                            ? <i className="fa fa-check text-success" aria-hidden="true"></i>
+                                                                            : <i className="fa fa-times text-danger" aria-hidden="true"></i>
+                                                                    }
+                                                                </td>
+                                                                <td>{language === 'en' ? item.en : item.vn}</td>
+                                                            </tr>
+                                                        )
+                                                    })
+                                                }
 
-                                        </tbody>
-                                    </table>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    {/* Reponsive mobile */}
+                                    <div className="card mb-3 d-block d-sm-none" style={{ maxWidth: '540px' }}>
+                                        <div className="row g-0">
+                                            <div className="col-md-8">
+                                                {saveTheCheckList && saveTheCheckList.length > 0 &&
+                                                    saveTheCheckList.map((item: any, index: number) => {
+                                                        return (
+                                                            <div className="card-body" key={index}>
+                                                                <p className="card-title text-primary fw-bold">No: {index + 1}</p>
+                                                                <p className="card-text"><span className="fw-bold">Question:</span> 
+                                                                    {language === 'en' ? item.vn : item.en} 
+                                                                </p>
+                                                                <p className="card-text"><span className="fw-bold">Answered:</span>{item.clickedValue}</p>
+                                                                <p className="card-text"><span className="fw-bold me-2">Resulted:</span>
+                                                                    {
+                                                                        item.compareValue && item.compareValue === true
+                                                                            ? <i className="fa fa-check text-success" aria-hidden="true"></i>
+                                                                            : <i className="fa fa-times text-danger" aria-hidden="true"></i>
+                                                                    } 
+                                                                </p>
+                                                                <p className="card-text"><span className="fw-bold">The result is correct:</span> 
+                                                                    {language === 'en' ? item.en : item.vn}
+                                                                </p>
+                                                                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                                                                <hr />
+                                                            </div>
+                                                        )
+                                                    })
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* ----->>>>>>>>>>>------- */}
                                 </div>
                                 : <div className="row row-cols-3 gy-2">
                                     {
