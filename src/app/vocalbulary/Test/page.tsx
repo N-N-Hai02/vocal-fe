@@ -3,6 +3,7 @@ import { useContext, useState, useEffect } from 'react'
 import { DataContexts } from '@/context/dataContext'
 import { levelVocal } from '@/contants/level'
 import _ from 'lodash'
+import * as XLSX from 'xlsx';
 
 export default function VocalbularyTest() {
     const { data, setVlaue } = useContext(DataContexts)
@@ -20,9 +21,9 @@ export default function VocalbularyTest() {
         setRawData([...data])
     }, [data])
 
-    const orderSortData = rawData.sort((a:any, b:any) => a.id - b.id)
-    const getFirstElement:any = orderSortData.shift()
-    const getRand_5:any = _.shuffle(orderSortData).slice(0, 5)
+    const orderSortData = rawData.sort((a: any, b: any) => a.id - b.id)
+    const getFirstElement: any = orderSortData.shift()
+    const getRand_5: any = _.shuffle(orderSortData).slice(0, 5)
     const groupIntoArray_6 = [...getRand_5, getFirstElement]
     const getRand_6 = _.shuffle(groupIntoArray_6).slice(0, 6)
 
@@ -47,6 +48,34 @@ export default function VocalbularyTest() {
         setRawData([...data])
     }
 
+    const downloadExcel = (dataExports: any) => {
+        let newDataPrints = dataExports.map((dataExport: any) => {
+            return {
+                Question: language === 'en' ? dataExport.vn : dataExport.en,
+                Answered: dataExport.clickedValue,
+                Resulted: dataExport.compareValue === true ? "Đúng" : "Sai",
+                TheResultIsCorrect: language === 'en' ? dataExport.en : dataExport.vn
+            }
+        })
+        if (saveTheCheckList && showViewTest) {
+            const worksheet = XLSX.utils.json_to_sheet(newDataPrints);
+            const workbook = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
+            XLSX.writeFile(workbook, "practiceTest.xlsx");
+        }
+    }
+
+    const dataTest = [
+        {
+            id: 1,
+            name: "Nguyen Van A"
+        },
+        {
+            id: 2,
+            name: "Nguyen Van B"
+        },
+    ]
+
     return (
         <div className="h-100">
             <div className="card rounded-0 m-4" style={{ marginTop: "4.5rem!important" }}>
@@ -60,7 +89,7 @@ export default function VocalbularyTest() {
                                 aria-label="Default select example"
                                 onChange={(e) => setVlaue(+e.target.value)}
                             >
-                                {levelVocal[0]?.map((item:any, index:number) => <option value={item.id} key={index}>{item.name}</option>)}
+                                {levelVocal[0]?.map((item: any, index: number) => <option value={item.id} key={index}>{item.name}</option>)}
                             </select>
                         </div>
                         <div className="col-12 col-sm-4">
@@ -79,67 +108,67 @@ export default function VocalbularyTest() {
                         <div className="input-group mb-3">
                             {
                                 getRand_6 && getRand_6.length < 6
-                                ? <h4 className='text-success'>Hoàng Thành</h4>
-                                : <h4>{count} - {(language === 'en') ? getFirstElement?.vn : getFirstElement?.en}</h4>
+                                    ? <h4 className='text-success'>Hoàng Thành</h4>
+                                    : <h4>{count} - {(language === 'en') ? getFirstElement?.vn : getFirstElement?.en}</h4>
                             }
                         </div>
                         {
                             showViewTest && showViewTest === true
-                            ? <div className='text-center'>
-                                <table className="table table-bordered border-primary">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">No</th>
-                                            <th scope="col">Question</th>
-                                            <th scope="col">Answered</th>
-                                            <th scope="col">Resulted</th>
-                                            <th scope="col">The result is correct</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {
-                                            saveTheCheckList && saveTheCheckList.length > 0
-                                            &&
-                                            saveTheCheckList.map((item: any, index: number) => {
+                                ? <div className='text-center'>
+                                    <table className="table table-bordered border-primary">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">No</th>
+                                                <th scope="col">Question</th>
+                                                <th scope="col">Answered</th>
+                                                <th scope="col">Resulted</th>
+                                                <th scope="col">The result is correct</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {
+                                                saveTheCheckList && saveTheCheckList.length > 0
+                                                &&
+                                                saveTheCheckList.map((item: any, index: number) => {
+                                                    return (
+                                                        <tr key={index}>
+                                                            <th scope="row">{index + 1}</th>
+                                                            <td>{language === 'en' ? item.vn : item.en}</td>
+                                                            <td>{item.clickedValue}</td>
+                                                            <td>
+                                                                {
+                                                                    item.compareValue && item.compareValue === true
+                                                                        ? <i className="fa fa-check text-success" aria-hidden="true"></i>
+                                                                        : <i className="fa fa-times text-danger" aria-hidden="true"></i>
+                                                                }
+                                                            </td>
+                                                            <td>{language === 'en' ? item.en : item.vn}</td>
+                                                        </tr>
+                                                    )
+                                                })
+                                            }
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                : <div className="row row-cols-3 gy-2">
+                                    {
+                                        getRand_6 && getRand_6.length < 6
+                                            ? <button onClick={() => handleViewTest()}>Diểm số bài test</button>
+                                            : getRand_6.map((item: any, index: number) => {
                                                 return (
-                                                    <tr key={index}>
-                                                        <th scope="row">{index + 1}</th>
-                                                        <td>{language === 'en' ? item.vn : item.en}</td>
-                                                        <td>{item.clickedValue}</td>
-                                                        <td>
-                                                            {
-                                                                item.compareValue && item.compareValue === true
-                                                                    ? <i className="fa fa-check text-success" aria-hidden="true"></i>
-                                                                    : <i className="fa fa-times text-danger" aria-hidden="true"></i>
-                                                            }
-                                                        </td>
-                                                        <td>{language === 'en' ? item.en : item.vn}</td>
-                                                    </tr>
+                                                    <div className="col-lg-4 col-sm-6 col-md-6 col-12" key={index}>
+                                                        <button
+                                                            className="w-100 btn btn-outline-primary"
+                                                            onClick={() => handleClickedValue((language === 'en') ? item?.en : item?.vn)}
+                                                        >
+                                                            {(language === 'en') ? item?.en : item?.vn}
+                                                        </button>
+                                                    </div>
                                                 )
                                             })
-                                        }
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            : <div className="row row-cols-3 gy-2">
-                                {
-                                    getRand_6 && getRand_6.length < 6
-                                    ? <button onClick={() => handleViewTest()}>Diểm số bài test</button>
-                                    : getRand_6.map((item: any, index: number) => {
-                                        return (
-                                            <div className="col-lg-4 col-sm-6 col-md-6 col-12" key={index}>
-                                                <button
-                                                    className="w-100 btn btn-outline-primary"
-                                                    onClick={() => handleClickedValue((language === 'en') ? item?.en : item?.vn)}
-                                                >
-                                                    {(language === 'en') ? item?.en : item?.vn}
-                                                </button>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
+                                    }
+                                </div>
                         }
                     </div>
                     <hr />
@@ -147,6 +176,13 @@ export default function VocalbularyTest() {
                         <button className='fw-bold btn btn-primary text-warning' onClick={() => handleNext()}>Tiếp Tục</button>
                     </div>
                 </div>
+                {
+                    showViewTest && saveTheCheckList.length > 0
+                    &&
+                    <button className='fw-bold btn btn-outline-warning' onClick={() => downloadExcel(saveTheCheckList)}>
+                        Export Result As Excel
+                    </button>
+                }
             </div>
         </div>
     )
