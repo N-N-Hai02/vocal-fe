@@ -287,8 +287,10 @@ const Vocal = () => {
                                                 <p className="card-text"><span className="fw-bold">Spelling:</span> {item.spelling} </p>
                                                 <div className="action">
                                                     <p className="card-text fw-bold">Action: </p>
-                                                    <Link href="" className="btn btn-warning d-block d-sm-inline">Edit</Link>
-                                                    <Link href="" className="btn btn-danger mx-0 my-2 mx-sm-2 d-block d-sm-inline">Delete</Link>
+                                                    <Link href="" className="btn btn-warning d-block d-sm-inline"
+                                                    onClick={() => handleEditVocal(item)}>Edit</Link>
+                                                    <Link href="" className="btn btn-danger mx-0 my-2 mx-sm-2 d-block d-sm-inline"
+                                                    onClick={() => handleDeleteVocal(item)}>Delete</Link>
                                                     <Link href="" className="btn btn-info d-block d-sm-inline">View</Link>
                                                 </div>
                                                 <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
