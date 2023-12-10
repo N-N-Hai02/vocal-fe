@@ -161,4 +161,6 @@ const TableLevel = forwardRef((props, ref) => {
     )
 })
 
+TableLevel.displayName = 'TableLevel'
+
 export default TableLevel

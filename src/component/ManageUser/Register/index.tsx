@@ -126,7 +126,7 @@ const Register = () => {
                         <button className="btn btn-primary" type="button" onClick={() => handleRegister()}>Register</button>
                         <hr />
                         <div className="text-center">
-                            <Link href='/login' className="btn btn-success">Already've a login form</Link>
+                            <Link href='/login' className="btn btn-success">Already have a login form</Link>
                         </div>
                     </div>
                 </div>

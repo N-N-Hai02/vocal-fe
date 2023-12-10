@@ -163,4 +163,6 @@ const TableRole = forwardRef((props, ref) => {
     )
 })
 
+TableRole.displayName = 'TableRole'
+
 export default TableRole
