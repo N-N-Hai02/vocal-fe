@@ -33,8 +33,10 @@ instance.interceptors.response.use(function (response) {
     switch (status) {
         // authentication (token related Issuses)
         case 401: {
-            if (window.location.pathname !== '/' && window.location.pathname !== '/login' && window.location.pathname !== '/register') {
-                toast.error('Unauthorized the user. Please login...')
+            if (typeof window !== "undefined") {
+                if (window.location.pathname !== '/' && window.location.pathname !== '/login' && window.location.pathname !== '/register') {
+                    toast.error('Unauthorized the user. Please login...')
+                }
             }
             return error.response.data
         }
