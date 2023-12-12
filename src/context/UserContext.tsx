@@ -39,6 +39,7 @@ const UserProvider  = ({ children }: {children: any}) => {
     // Login updates the user data with a name parameter
     const loginContext = (userData: any) => {
         setUser({ ...userData, isLoading: false });
+        fetchUser()
     };
 
     // Logout updates the user data to default
@@ -64,7 +65,7 @@ const UserProvider  = ({ children }: {children: any}) => {
     
     useEffect(() => {
         fetchUser()
-    }, [])
+    }, [user.isLoading])
 
     return (
         <UserContext.Provider value={{ user, setUser, loginContext, logoutContext }}>
