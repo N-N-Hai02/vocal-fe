@@ -4,7 +4,8 @@ import { API_URL, GET_JWT_LOCAL_STORAGE } from "./contants";
 
 // Set config defaults when creating the instance
 const instance = axios.create({
-    baseURL: API_URL
+    baseURL: API_URL,
+    withCredentials: true
 });
 
 instance.defaults.withCredentials = true
