@@ -5,7 +5,7 @@ import { VERSION } from "@/setup/contants"
 const registerNewUser = (email:string, phone:string, username:string, password:string, conformPassword:string) => {
     return axios.post(`${VERSION}/user/register`, {email, phone, username, password, conformPassword})
 }
-const loginUser = (valueLogin:string, password:String) => axios.post(`${VERSION}/user/login`, { valueLogin, password })
+const loginUser = (valueLogin:string, password:String) => axios.post(`${VERSION}/user/login`, { valueLogin, password }, { withCredentials: true })
 
 const logoutUser = () => axios.post(`${VERSION}/user/logout`)
 
