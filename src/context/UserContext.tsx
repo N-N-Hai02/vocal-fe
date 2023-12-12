@@ -38,8 +38,7 @@ const UserProvider  = ({ children }: {children: any}) => {
     
     // Login updates the user data with a name parameter
     const loginContext = (userData: any) => {
-        setUser({ ...userData, isLoading: false });
-        fetchUser()
+        setUser({ ...userData, isLoading: false })
     };
 
     // Logout updates the user data to default
