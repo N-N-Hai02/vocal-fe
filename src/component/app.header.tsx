@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { UserContext } from '@/context/UserContext'
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
@@ -8,12 +8,16 @@ import { useRouter, usePathname } from 'next/navigation'
 import logo from '../app/logo_2.svg'
 import './app.header.scss'
 import Image from 'next/image'
+import { DataContexts } from '@/context/dataContext'
 
 const AppHeader = (): JSX.Element | any => {
-    const { user, logoutContext } = useContext(UserContext)
-
     const router = useRouter()
     const pathname = usePathname()
+
+    const { user, logoutContext } = useContext(UserContext)
+    const { toggle, setToggle } = useContext(DataContexts)
+    const [expanded, setExpanded] = useState(false)
+    useEffect(() => setExpanded(toggle), [toggle])
 
     const handleLogoutUser = async () => {
         let res: any = await logoutUser() // clear cookies
@@ -26,6 +30,9 @@ const AppHeader = (): JSX.Element | any => {
             toast.error(res.EM)
         }
     }
+
+    const handleClickNavhiden = () => toggle && setToggle(false)
+    
     const showMenuAdmin = user.account.groupWithRoles
 
     if (user.isLoading && user.isLoading === true) {
@@ -35,7 +42,7 @@ const AppHeader = (): JSX.Element | any => {
     if ((user.isAuthenticated && user.isAuthenticated === true) || pathname === '/' || pathname === '/vocalbulary') {
         return (
             <div className='navbar-header'>
-                <Navbar expand="lg" className="bg-primary fixed-top">
+                <Navbar expand="lg" className="bg-primary fixed-top" expanded={expanded}>
                     <Container>
                         <Navbar.Brand href="#" className='d-flex align-center'>
                             <Image
@@ -47,29 +54,31 @@ const AppHeader = (): JSX.Element | any => {
                             />
                             <div className='ms-2 text-light'>VOCALBULARY</div>
                         </Navbar.Brand>
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Toggle onClick={() => setToggle(!toggle)} />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="nav-body me-auto my-2 my-lg-0">
-                                <Link href="/vocalbulary" className='text-light py-2 text-decoration-none'>Home Vocalbulary</Link>
-                                <Link href="/vocalbulary/List" className='text-light py-2 text-decoration-none'>Vocalbulary List</Link>
+                                <Link onClick={handleClickNavhiden} href="/vocalbulary"  className='text-light py-2 text-decoration-none'>
+                                    Home Vocalbulary
+                                </Link>
+                                <Link onClick={handleClickNavhiden} href="/vocalbulary/List" className='text-light py-2 text-decoration-none'>Vocalbulary List</Link>
                                 {
                                     showMenuAdmin && showMenuAdmin.name === "admin"
                                     &&
                                     <NavDropdown title="Admin Menu" id="AdminMenu-dropdown">
                                         <NavDropdown.Item>
-                                            <Link href="/admin/vocal" className='text-dark py-2 text-decoration-none'>Admin Vocalbulary</Link>
+                                            <Link onClick={handleClickNavhiden} href="/admin/vocal" className='text-dark py-2 text-decoration-none'>Admin Vocalbulary</Link>
                                         </NavDropdown.Item>
                                         <NavDropdown.Item>
-                                            <Link href="/admin/users" className='text-dark py-2 text-decoration-none'>Admin Users</Link>
+                                            <Link onClick={handleClickNavhiden} href="/admin/users" className='text-dark py-2 text-decoration-none'>Admin Users</Link>
                                         </NavDropdown.Item>
                                         <NavDropdown.Item>
-                                            <Link href="/admin/roles" className='text-dark py-2 text-decoration-none'>Admin Roles</Link>
+                                            <Link onClick={handleClickNavhiden} href="/admin/roles" className='text-dark py-2 text-decoration-none'>Admin Roles</Link>
                                         </NavDropdown.Item>
                                         <NavDropdown.Item>
-                                            <Link href="/admin/group-role" className='text-dark py-2 text-decoration-none'>Admin Group Roles</Link>
+                                            <Link onClick={handleClickNavhiden} href="/admin/group-role" className='text-dark py-2 text-decoration-none'>Admin Group Roles</Link>
                                         </NavDropdown.Item>
                                         <NavDropdown.Item>
-                                            <Link href="/admin/level" className='text-dark py-2 text-decoration-none'>Admin levels</Link>
+                                            <Link onClick={handleClickNavhiden} href="/admin/level" className='text-dark py-2 text-decoration-none'>Admin levels</Link>
                                         </NavDropdown.Item>
                                     </NavDropdown>
                                  }
