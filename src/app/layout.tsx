@@ -31,7 +31,8 @@ export default function RootLayout({
                   </div>
                   <SubMenu />
                   <ToastContainer
-                     position="top-center"
+                     position="bottom-right"
+                     className="mb-5"
                      autoClose={5000}
                      hideProgressBar={false}
                      newestOnTop={false}
