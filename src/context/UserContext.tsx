@@ -39,13 +39,12 @@ const UserProvider  = ({ children }: {children: any}) => {
     // Login updates the user data with a name parameter
     const loginContext = (userData: any) => {
         setUser({ ...userData, isLoading: false })
-        getUserAccount()
-    };
+    }
 
     // Logout updates the user data to default
     const logoutContext = () => {
         setUser({ ...userDefaullt, isLoading: false });
-    };
+    }
 
     const fetchUser  = async () => {
         let response: any = await getUserAccount()
@@ -65,7 +64,7 @@ const UserProvider  = ({ children }: {children: any}) => {
     
     useEffect(() => {
         fetchUser()
-    }, [user.isLoading])
+    }, [])
 
     return (
         <UserContext.Provider value={{ user, setUser, loginContext, logoutContext }}>
