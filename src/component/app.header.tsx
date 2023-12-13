@@ -5,7 +5,7 @@ import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
 import { logoutUser } from '@/services/userService'
 import { toast } from 'react-toastify'
 import { useRouter, usePathname } from 'next/navigation'
-import logo from '../app/download.svg'
+import logo from '../app/logo_2.svg'
 import './app.header.scss'
 import Image from 'next/image'
 
@@ -35,7 +35,7 @@ const AppHeader = (): JSX.Element | any => {
     if ((user.isAuthenticated && user.isAuthenticated === true) || pathname === '/' || pathname === '/vocalbulary') {
         return (
             <div className='navbar-header'>
-                <Navbar expand="lg" className="bg-dark fixed-top">
+                <Navbar expand="lg" className="bg-primary fixed-top">
                     <Container>
                         <Navbar.Brand href="#" className='d-flex align-center'>
                             <Image
@@ -45,7 +45,7 @@ const AppHeader = (): JSX.Element | any => {
                                 className="d-inline-block py-1"
                                 alt=''
                             />
-                            <div className='ms-2'>VOCAL</div>
+                            <div className='ms-2 text-light'>VOCALBULARY</div>
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
