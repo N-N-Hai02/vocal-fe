@@ -65,17 +65,6 @@ export default function VocalbularyTest() {
         }
     }
 
-    const dataTest = [
-        {
-            id: 1,
-            name: "Nguyen Van A"
-        },
-        {
-            id: 2,
-            name: "Nguyen Van B"
-        },
-    ]
-
     return (
         <div className="h-100">
             <div className="card rounded-0 m-4" style={{ marginTop: "4.5rem!important" }}>

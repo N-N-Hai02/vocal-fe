@@ -48,6 +48,8 @@ export default function VocabularyList() {
         return accumulator
     }, [])
 
+    if (user.isLoading) return <></>
+    
     return (
         <div className="h-100">
             <div className="card rounded-0">
@@ -61,7 +63,7 @@ export default function VocabularyList() {
                                 aria-label="Default select example"
                                 onChange={(e) => setVlaue(+e.target.value)}
                             >
-                                {levelVocal[0]?.map((item:any, index:number) => <option value={item.id} key={index}>{item.name}</option>)}
+                                {levelVocal[0]?.map((item:any, index:number) => <option key={index} value={item.id}>{item.name}</option>)}
                             </select>
                         </div>
                     </div>

@@ -128,7 +128,7 @@ const Users = () => {
                                                     type="submit"
                                                     onClick={() => handleEditUser(userList)}
                                                 >
-                                                    <i className="fa fa-pencil-square-o me-2" />
+                                                    <i className="fa fa-pen me-2" />
                                                     Edit
                                                 </button>
                                                 <button

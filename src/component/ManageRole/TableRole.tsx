@@ -80,7 +80,7 @@ const TableRole = forwardRef((props, ref) => {
                                                 type="submit"
                                                 onClick={() => handleEditRole(roleList)}
                                             >
-                                                <i className="fa fa-pencil-square-o me-2" />
+                                                <i className="fa fa-pen me-2" />
                                                 Edit
                                             </button>
                                             <button

@@ -78,7 +78,7 @@ const TableLevel = forwardRef((props, ref) => {
                                                 type="submit"
                                                 onClick={() => handleEditLevel(levelList)}
                                             >
-                                                <i className="fa fa-pencil-square-o me-2" />
+                                                <i className="fa fa-pen me-2" />
                                                 Edit
                                             </button>
                                             <button

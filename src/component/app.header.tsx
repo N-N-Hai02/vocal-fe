@@ -32,7 +32,7 @@ const AppHeader = (): JSX.Element | any => {
     }
 
     const handleClickNavhiden = () => toggle && setToggle(false)
-    
+
     const showMenuAdmin = user.account.groupWithRoles
 
     if (user.isLoading && user.isLoading === true) {
@@ -57,10 +57,15 @@ const AppHeader = (): JSX.Element | any => {
                         <Navbar.Toggle onClick={() => setToggle(!toggle)} />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="nav-body me-auto my-2 my-lg-0">
-                                <Link onClick={handleClickNavhiden} href="/vocalbulary"  className='text-light py-2 text-decoration-none'>
-                                    Home Vocalbulary
-                                </Link>
-                                <Link onClick={handleClickNavhiden} href="/vocalbulary/List" className='text-light py-2 text-decoration-none'>Vocalbulary List</Link>
+                                {user && user.isAuthenticated === true
+                                    &&
+                                    <>
+                                        <Link onClick={handleClickNavhiden} href="/vocalbulary" className='text-light py-2 text-decoration-none'>
+                                            Home Vocalbulary
+                                        </Link>
+                                        <Link onClick={handleClickNavhiden} href="/vocalbulary/List" className='text-light py-2 text-decoration-none'>Vocalbulary List</Link>
+                                    </>
+                                }
                                 {
                                     showMenuAdmin && showMenuAdmin.name === "admin"
                                     &&
@@ -81,7 +86,7 @@ const AppHeader = (): JSX.Element | any => {
                                             <Link onClick={handleClickNavhiden} href="/admin/level" className='text-dark py-2 text-decoration-none'>Admin levels</Link>
                                         </NavDropdown.Item>
                                     </NavDropdown>
-                                 }
+                                }
                             </Nav>
                             {user && user.isAuthenticated === true
                                 ?

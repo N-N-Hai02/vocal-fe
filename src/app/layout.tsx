@@ -8,7 +8,6 @@ import SubMenu from '@/component/app.subMenu'
 import AppFooter from '@/component/app.footer'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import Script from 'next/script';
 
 
 export default function RootLayout({
@@ -46,8 +45,6 @@ export default function RootLayout({
                   <AppFooter />
                </DataProvider>
             </UserProvider>
-
-            <Script src='https://kit.fontawesome.com/a076d05399.js'></Script>
          </body>
       </html>
    )

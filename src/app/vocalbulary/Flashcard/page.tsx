@@ -3,10 +3,14 @@ import React, { useState, useEffect, useContext } from "react";
 import "./CardsStyles.css";
 import { DataContexts } from "@/context/dataContext";
 import { levelVocal } from '@/contants/level'
+import { UserContext } from "@/context/UserContext";
 
 export default function VocalbularyFlashcard() {
     const { data, setVlaue } = useContext(DataContexts)
+    const { user } = useContext(UserContext)
     const [flashcarddata, setFlashcarddata] = useState<[]>([]);
+
+    useEffect(() => setVlaue(1), [])
 
     useEffect(() => {
         setFlashcarddata(data)
@@ -16,6 +20,8 @@ export default function VocalbularyFlashcard() {
     const [current, setCurrent] = useState(0)
     const previousCard = () => setCurrent(current - 1)
     const nextCard = () => setCurrent(current + 1)
+
+    if (user.isLoading) return <></>
 
     return (
         <div className="h-100">
