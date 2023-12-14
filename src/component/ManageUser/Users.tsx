@@ -82,31 +82,33 @@ const Users = () => {
                         <div className="title">
                             <h3>Manage User</h3>
                         </div>
-                        <div className="actions">
-                            <button
-                                className="btn btn-success me-2"
-                                onClick={() => window.location.reload()}
-                            >
-                                <i className="fa fa-refresh me-2" />
-                                Refesh
-                            </button>
-                            <button
-                                className="btn btn-primary"
-                                onClick={() => {
-                                    setIsShowModalUser(true);
-                                    setActionModalUser('CREATE');
-                                }}
-                            >
-                                <i className="fa fa-plus me-2" />
-                                Add new user
-                            </button>
+                        <div className="row mx-1">
+                            <div className="col-12 col-lg-6 alert alert-primary d-lg-flex justify-content-around">
+                                <button
+                                    className="col-12 col-lg-6 btn btn-success me-2 mb-2 mb-lg-0"
+                                    onClick={() => window.location.reload()}
+                                >
+                                    <i className="fa fa-refresh me-2" />
+                                    Refesh
+                                </button>
+                                <button
+                                    className="col-12 col-lg-6 btn btn-primary"
+                                    onClick={() => {
+                                        setIsShowModalUser(true);
+                                        setActionModalUser('CREATE');
+                                    }}
+                                >
+                                    <i className="fa fa-plus me-2" />
+                                    Add new user
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div className="user-body">
                         <div className="d-none d-sm-block">
                             <table className="table table-hover table-bordered mt-3">
                                 <thead>
-                                    <tr className="text-center table-dark">
+                                    <tr className="text-center table-primary">
                                         <th colSpan={7}>USERS LIST</th>
                                     </tr>
                                     <tr>
