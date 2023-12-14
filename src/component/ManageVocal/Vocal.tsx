@@ -1,6 +1,6 @@
 "use client"
 import AppPaginate from "@/component/app.paginate"
-import { useEffect, useRef, useState } from "react"
+import { useContext, useEffect, useRef, useState } from "react"
 import _ from 'lodash'
 import { toast } from "react-toastify"
 import { createNewVocal, deleteVocal, fechAllVocal } from "@/services/vocalService"
@@ -10,8 +10,10 @@ import * as XLSX from 'xlsx'
 import './Vocal.scss'
 import ModalImportExcel from "./ModalImportExcel"
 import ModalVocalAdd from "./ModalVocalAdd"
+import { UserContext } from "@/context/UserContext"
 
 const Vocal = () => {
+    const { user } = useContext(UserContext)
     const defaultVocalDataNew: any = {
         en: "",
         vn: "",
@@ -192,47 +194,55 @@ const Vocal = () => {
 
     return (
         <>
-            <div className="admin-vocal">
-                <hr />
-                <div className="row">
-                    <div className="d-sm-flex">
-                        <form className="d-sm-flex col-12 col-sm-6 form-group custom-form custom-file-button" onSubmit={handleFileSubmit}>
-                            <label className="input-group-text fw-bold bg-warning" htmlFor="inputGroupFile">Import Excel File</label>
-                            <input
-                                type="file"
-                                ref={fileInputRef}
-                                id="inputGroupFile"
-                                name="excelFile"
-                                className="form-control"
-                                required
-                                onChange={handleFile}
-                            />
-                            <button
-                                type="submit"
-                                className="my-2 mx-sm-2 my-sm-0 btn btn-outline-warning btn-md w-100 w-sm-0 fw-bold"
-                                onClick={() => setModalShowExcel(true)}
-                            >
-                                REVIEW
-                            </button>
-                        </form>
-                        <div className="col-sm-3"></div>
-                        <div className="col-12 col-sm-3">
-                            <button className="btn btn-primary w-100 float-end" onClick={() => setIsShowModalAdd(true)}>
-                                Create New Vocal <i className="fa fa-plus" aria-hidden="true"></i>
-                            </button>
+            {   
+                user.isAuthenticated && user.account.groupWithRoles.id === 2 
+                && user.account.groupWithRoles.name === 'admin' 
+                && vocalList && vocalList.length > 0
+                ? 
+                <div className="admin-vocal">
+                    <hr />
+                    <div className="row">
+                        <div className="d-sm-flex">
+                            <form className="d-sm-flex col-12 col-sm-6 form-group custom-form custom-file-button" onSubmit={handleFileSubmit}>
+                                <label className="input-group-text fw-bold bg-warning" htmlFor="inputGroupFile">Import Excel File</label>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef}
+                                    id="inputGroupFile"
+                                    name="excelFile"
+                                    className="form-control"
+                                    required
+                                    onChange={handleFile}
+                                />
+                                <button
+                                    type="submit"
+                                    className="my-2 mx-sm-2 my-sm-0 btn btn-outline-warning btn-md w-100 w-sm-0 fw-bold"
+                                    onClick={() => setModalShowExcel(true)}
+                                >
+                                    REVIEW
+                                </button>
+                            </form>
+                            <div className="col-sm-3"></div>
+                            <div className="col-12 col-sm-3">
+                                <button className="btn btn-primary w-100 float-end" onClick={() => setIsShowModalAdd(true)}>
+                                    Create New Vocal <i className="fa fa-plus" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="col-12">
+                            {typeError && <div className="alert alert-danger my-2" role="alert">{typeError}</div>}
                         </div>
                     </div>
-
-                    <div className="col-12">
-                        {typeError && <div className="alert alert-danger my-2" role="alert">{typeError}</div>}
+                    <hr />
+                    <div className="vocal-list-table mt-5">
+                        <TableVocal vocalList={vocalList} handleEditVocal={handleEditVocal} handleDeleteVocal={handleDeleteVocal} />
+                        <AppPaginate pathName="#" totalPages={5} handlePageClick={handlePageClick} />
                     </div>
                 </div>
-                <hr />
-                <div className="vocal-list-table mt-5">
-                    <TableVocal vocalList={vocalList} handleEditVocal={handleEditVocal} handleDeleteVocal={handleDeleteVocal} />
-                    <AppPaginate pathName="#" totalPages={5} handlePageClick={handlePageClick} />
-                </div>
-            </div>
+                : <div className="alert alert-primary text-center">No Data...!</div>
+            }
+            
             <ModalVocalAdd
                 isShowModalAdd={isShowModalAdd}
                 onHide={handleCloseModalAdd}
