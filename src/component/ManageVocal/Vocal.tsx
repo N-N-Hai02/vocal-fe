@@ -200,10 +200,9 @@ const Vocal = () => {
                 && vocalList && vocalList.length > 0
                 ? 
                 <div className="admin-vocal">
-                    <hr />
-                    <div className="row">
-                        <div className="d-sm-flex">
-                            <form className="d-sm-flex col-12 col-sm-6 form-group custom-form custom-file-button" onSubmit={handleFileSubmit}>
+                    <div className="row alert alert-primary mx-1">
+                        <div className="d-lg-flex">
+                            <form className="d-lg-flex col-12 col-lg-6 form-group custom-form custom-file-button" onSubmit={handleFileSubmit}>
                                 <label className="input-group-text fw-bold bg-warning" htmlFor="inputGroupFile">Import Excel File</label>
                                 <input
                                     type="file"
@@ -216,14 +215,14 @@ const Vocal = () => {
                                 />
                                 <button
                                     type="submit"
-                                    className="my-2 mx-sm-2 my-sm-0 btn btn-outline-warning btn-md w-100 w-sm-0 fw-bold"
+                                    className="my-2 mx-lg-2 my-lg-0 btn btn-outline-warning btn-md w-100 w-lg-0 fw-bold"
                                     onClick={() => setModalShowExcel(true)}
                                 >
                                     REVIEW
                                 </button>
                             </form>
-                            <div className="col-sm-3"></div>
-                            <div className="col-12 col-sm-3">
+                            <div className="col-lg-3"></div>
+                            <div className="col-12 col-lg-3">
                                 <button className="btn btn-primary w-100 float-end" onClick={() => setIsShowModalAdd(true)}>
                                     Create New Vocal <i className="fa fa-plus" aria-hidden="true"></i>
                                 </button>

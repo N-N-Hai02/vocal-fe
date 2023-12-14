@@ -11,7 +11,7 @@ const TableVocal = ({ vocalList, handleEditVocal, handleDeleteVocal }: TableVoca
         <>
             <div className="d-none d-sm-block">
                 <table className="table">
-                    <thead className="table-dark">
+                    <thead className="table-primary">
                         <tr className="text-end text-sm-center">
                             <th scope="col">No</th>
                             <th scope="col">English</th>
