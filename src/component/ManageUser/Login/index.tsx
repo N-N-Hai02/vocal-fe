@@ -65,17 +65,17 @@ const Login = () => {
         <div className="login-container py-3">
             <div className="container d-flex flex-column justify-content-center">
                 <div className="row mx-3">
-                    <div className="content-left d-none col-sm-7 d-sm-block">
-                        <div className="content-brand fs-1 fw-bold text-primary">
-                            Website Learn English
+                    <div className="content-left d-none col-lg-7 d-lg-block">
+                        <div className="content-brand fs-2 fw-bold text-primary alert alert-primary">
+                            Learn English Website
                         </div>
-                        <div className="content-detail fs-3">
-                            Website Learn English helps you connect and share with the people in your life
+                        <div className="content-detail fs-4">
+                            Learn English Website helps you connect and share with the people in your life
                         </div>
                     </div>
-                    <div className="content-right col-12 col-sm-5 d-flex flex-column gap-3 py-3">
-                        <div className="content-brand text-center fs-6 fw-bold text-primary d-sm-none">
-                            Website Learn English
+                    <div className="content-right col-12 col-lg-5 d-flex flex-column gap-3 py-3">
+                        <div className="content-brand text-center fs-6 fw-bold text-primary d-lg-none alert alert-primary">
+                            Learn English Website
                         </div>
                         <input
                             type="text"
@@ -92,13 +92,13 @@ const Login = () => {
                             onChange={(event) => setPassword(event.target.value)}
                             onKeyPress={(event) => handlePressEnter(event)}
                         />
-                        <button className="btn btn-primary" onClick={() => handleLogin()}>Log in</button>
+                        <button className="btn btn-primary fw-bold" onClick={() => handleLogin()}>Log in</button>
                         <span className="text-center">
                             <a href="/#" className="forgotten-password">Forgotten password?</a>
                         </span>
                         <hr />
                         <div className="text-center">
-                            <button className="btn btn-success" onClick={() => handleCreateNewAccount()}>Create new account</button>
+                            <button className="btn btn-outline-success fw-bold" onClick={() => handleCreateNewAccount()}>Create new account</button>
                         </div>
                     </div>
                 </div>

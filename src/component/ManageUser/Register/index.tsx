@@ -81,17 +81,17 @@ const Register = () => {
         <div className="register-container">
             <div className="container d-flex flex-column justify-content-center vh-100">
                 <div className="row mx-3">
-                    <div className="content-left d-none col-sm-7 d-sm-block">
-                        <div className="content-brand fs-1 fw-bold text-primary">
-                            Register Vocalbulary
+                    <div className="content-left d-none col-lg-7 d-lg-block">
+                        <div className="content-brand fs-2 fw-bold text-primary alert alert-primary">
+                            Register vocabulary learning account
                         </div>
-                        <div className="content-detail fs-3">
-                            Register Vocalbulary helps you connect and share with the people in your life
+                        <div className="content-detail fs-4">
+                            Register vocabulary learning account helps you connect and share with the people in your life
                         </div>
                     </div>
-                    <div className="content-right col-12 col-sm-5 d-flex flex-column gap-3 py-3">
-                        <div className="content-brand text-center fs-6 fw-bold text-primary d-sm-none">
-                            Register Nguyen Hai
+                    <div className="content-right col-12 col-lg-5 d-flex flex-column gap-3 py-3">
+                        <div className="content-brand text-center fs-6 fw-bold text-primary d-lg-none alert alert-primary">
+                            Register vocabulary learning account
                         </div>
                         <div className="form-group">
                             <label>Email:</label>
@@ -123,10 +123,10 @@ const Register = () => {
                                 value={conformPassword} onChange={(event) => setConformPassword(event.target.value)}
                             />
                         </div>
-                        <button className="btn btn-primary" type="button" onClick={() => handleRegister()}>Register</button>
+                        <button className="btn btn-primary fw-bold" type="button" onClick={() => handleRegister()}>Register</button>
                         <hr />
                         <div className="text-center">
-                            <Link href='/login' className="btn btn-success">Already have a login form</Link>
+                            <Link href='/login' className="btn btn-outline-success fw-bold">Already have a login form</Link>
                         </div>
                     </div>
                 </div>
