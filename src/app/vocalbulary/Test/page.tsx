@@ -75,27 +75,29 @@ export default function VocalbularyTest() {
                     <div className="card rounded-0 m-4" style={{ marginTop: "4.5rem!important" }}>
                         <h5 className="card-header text-uppercase">Example Test</h5>
                         <div className="card-body">
-                            <div className="row input-group mb-3">
-                                <div className="col-12 col-sm-4">
-                                    <label className="my-2 fw-bold text-warning">Level - english</label>
-                                    <select
-                                        className="form-select"
-                                        aria-label="Default select example"
-                                        onChange={(e) => setVlaue(+e.target.value)}
-                                    >
-                                        {levelVocal[0]?.map((item: any, index: number) => <option value={item.id} key={index}>{item.name}</option>)}
-                                    </select>
-                                </div>
-                                <div className="col-12 col-sm-4">
-                                    <label className="my-2 fw-bold text-warning">Language</label>
-                                    <select
-                                        className="form-select"
-                                        aria-label="Default select example"
-                                        onChange={(event) => handleChangeLanguage(event.target.value)}
-                                    >
-                                        <option value="en">English</option>
-                                        <option value="vn">Vietnamese</option>
-                                    </select>
+                            <div className="row input-group mb-3 mx-1 mx-lg-3">
+                                <div className='col-12 col-lg-8 d-lg-flex justify-content-around alert alert-primary'>
+                                    <div className="col-12 col-lg-4">
+                                        <label className="my-2 fw-bold text-warning">Level - english</label>
+                                        <select
+                                            className="form-select"
+                                            aria-label="Default select example"
+                                            onChange={(e) => setVlaue(+e.target.value)}
+                                        >
+                                            {levelVocal[0]?.map((item: any, index: number) => <option value={item.id} key={index}>{item.name}</option>)}
+                                        </select>
+                                    </div>
+                                    <div className="col-12 col-lg-4">
+                                        <label className="my-2 fw-bold text-warning">Language</label>
+                                        <select
+                                            className="form-select"
+                                            aria-label="Default select example"
+                                            onChange={(event) => handleChangeLanguage(event.target.value)}
+                                        >
+                                            <option value="en">English</option>
+                                            <option value="vn">Vietnamese</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <div className="card-body">
