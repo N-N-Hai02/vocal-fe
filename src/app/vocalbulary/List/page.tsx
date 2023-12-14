@@ -70,8 +70,9 @@ export default function VocabularyList() {
                             <thead>
                                 <tr className="table-dark">
                                     <th scope="col">No</th>
-                                    <th scope="col">Spelling</th>
                                     <th scope="col">English</th>
+                                    <th scope="col">Spelling</th>
+                                    <th scope="col">Pronunciation</th>
                                     <th scope="col">Vietnamese</th>
                                     <th scope="col">Status</th>
                                 </tr>
@@ -81,9 +82,10 @@ export default function VocabularyList() {
                                     <tr key={index}>
                                         <td>{index + 1}</td>
                                         <th scope="row" onClick={() => checkClickVocalbulary(index)}>
-                                            <Link href="/vocalbulary/Detail">{item.spelling}</Link>
+                                            <Link href="/vocalbulary/Detail">{item.en}</Link>
                                         </th>
-                                        <td>{item.en}</td>
+                                        <td>{item.spelling}</td>
+                                        <td>{item.pronunciation}</td>
                                         <td>{item.vn}</td>
                                         <td>
                                             <button className="btn btn-outline-warning" onClick={() => handleStatus(item)}>

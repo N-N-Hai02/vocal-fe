@@ -24,12 +24,14 @@ const TableVocal = ({ vocalList, handleEditVocal, handleDeleteVocal }: TableVoca
                     <tbody className="text-center">
                         {vocalList && vocalList.length > 0 &&
                             vocalList.map((item: any, index: number) => {
+                                console.log("check data : ", item)
+                                
                                 return (
                                     <tr key={index}>
                                         <th scope="row">{index + 1}</th>
                                         <td>{item.en}</td>
                                         <td>{item.spelling}</td>
-                                        <td>{'item.Pronunciation'}</td>
+                                        <td>{item.pronunciation}</td>
                                         <td>{item.vn}</td>
                                         <td>
                                             <Link href="" className="btn btn-warning d-block d-sm-inline" onClick={() => handleEditVocal(item)}>Edit</Link>
@@ -54,7 +56,7 @@ const TableVocal = ({ vocalList, handleEditVocal, handleDeleteVocal }: TableVoca
                                         <p className="card-title text-primary fw-bold">No: {index + 1}</p>
                                         <p className="card-text"><span className="fw-bold">English:</span> {item.en} </p>
                                         <p className="card-text"><span className="fw-bold">Spelling:</span> {item.spelling} </p>
-                                        <p className="card-text"><span className="fw-bold">Pronunciation:</span> {'item.Pronunciation'} </p>
+                                        <p className="card-text"><span className="fw-bold">Pronunciation:</span> {item.pronunciation} </p>
                                         <p className="card-text"><span className="fw-bold">Vietnamese:</span> {item.vn} </p>
                                         <div className="action">
                                             <p className="card-text fw-bold">Action: </p>
