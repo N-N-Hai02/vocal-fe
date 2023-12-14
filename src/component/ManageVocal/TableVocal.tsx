@@ -9,10 +9,10 @@ interface TableVocal {
 const TableVocal = ({ vocalList, handleEditVocal, handleDeleteVocal }: TableVocal) => {
     return (
         <>
-            <div className="d-none d-sm-block">
+            <div className="d-none d-md-block">
                 <table className="table">
                     <thead className="table-primary">
-                        <tr className="text-end text-sm-center">
+                        <tr className="text-end text-md-center">
                             <th scope="col">No</th>
                             <th scope="col">English</th>
                             <th scope="col">Spelling</th>
@@ -32,8 +32,22 @@ const TableVocal = ({ vocalList, handleEditVocal, handleDeleteVocal }: TableVoca
                                         <td>{item.pronunciation}</td>
                                         <td>{item.vn}</td>
                                         <td>
-                                            <Link href="" className="btn btn-warning d-block d-sm-inline" onClick={() => handleEditVocal(item)}>Edit</Link>
-                                            <Link href="" className="btn btn-danger mx-0 mx-sm-2 d-block d-sm-inline" onClick={() => handleDeleteVocal(item)}>Delete</Link>
+                                            <Link
+                                                href=""
+                                                className="btn btn-outline-warning d-block d-md-inline"
+                                                onClick={() => handleEditVocal(item)}
+                                            >
+                                                <i className="fa fa-pen me-2" />
+                                                Edit
+                                            </Link>
+                                            <Link
+                                                href=""
+                                                className="btn btn-outline-danger mx-0 mx-md-2 d-block d-md-inline"
+                                                onClick={() => handleDeleteVocal(item)}
+                                            >
+                                                <i className="fa fa-trash me-2" />
+                                                Delete
+                                            </Link>
                                         </td>
                                     </tr>
                                 )
@@ -44,7 +58,7 @@ const TableVocal = ({ vocalList, handleEditVocal, handleDeleteVocal }: TableVoca
             </div>
 
             {/* Reponsive mobile */}
-            <div className="card mb-3 d-block d-sm-none" style={{ maxWidth: '540px' }}>
+            <div className="card mb-3 d-block d-md-none" style={{ maxWidth: '540px' }}>
                 <div className="row g-0">
                     <div className="col-md-8">
                         {vocalList && vocalList.length > 0 &&
@@ -58,10 +72,18 @@ const TableVocal = ({ vocalList, handleEditVocal, handleDeleteVocal }: TableVoca
                                         <p className="card-text"><span className="fw-bold">Vietnamese:</span> {item.vn} </p>
                                         <div className="action">
                                             <p className="card-text fw-bold">Action: </p>
-                                            <Link href="" className="btn btn-warning d-block d-sm-inline"
-                                                onClick={() => handleEditVocal(item)}>Edit</Link>
-                                            <Link href="" className="btn btn-danger mx-0 my-2 mx-sm-2 d-block d-sm-inline"
-                                                onClick={() => handleDeleteVocal(item)}>Delete</Link>
+                                            <Link href="" className="btn btn-outline-warning d-block d-md-inline"
+                                                onClick={() => handleEditVocal(item)} 
+                                            >
+                                                <i className="fa fa-pen me-2" />
+                                                Edit
+                                            </Link>
+                                            <Link href="" className="btn btn-outline-danger mx-0 my-2 mx-md-2 d-block d-md-inline"
+                                                onClick={() => handleDeleteVocal(item)} 
+                                            >
+                                                <i className="fa fa-trash me-2" />
+                                                Delete
+                                            </Link>
                                         </div>
                                         <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                                         <hr />
