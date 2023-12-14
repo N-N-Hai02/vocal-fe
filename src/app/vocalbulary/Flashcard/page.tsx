@@ -28,8 +28,8 @@ export default function VocalbularyFlashcard() {
             <div className="card rounded-0 m-4">
                 <h5 className="card-header text-uppercase">FlashCard Vocalbulary</h5>
                 <div className="card-body">
-                    <div className="row input-group mb-3">
-                        <div className="col-12 col-sm-4">
+                    <div className="row input-group mb-3 text-center">
+                        <div className="col-12 col-sm-4 alert alert-primary mx-3">
                             <label className="my-2 fw-bold text-warning">Level - english</label>
                             <select
                                 className="form-select"
