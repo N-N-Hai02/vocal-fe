@@ -59,7 +59,7 @@ export default function VocabularyList() {
                         <h5 className="card-header text-uppercase">Danh sách từ</h5>
                         <div className="card-body">
                             <div className="row input-group mb-3">
-                                <div className="col-12 col-sm-4">
+                                <div className="mx-3 col-12 col-sm-4 alert alert-primary">
                                     <label className="my-2 fw-bold text-warning">Level - english</label>
                                     <select
                                         className="form-select"
@@ -73,7 +73,7 @@ export default function VocabularyList() {
                             <div className="d-none d-sm-block">
                                 <table className="table table-hover text-center">
                                     <thead>
-                                        <tr className="table-dark">
+                                        <tr className="table-primary">
                                             <th scope="col">No</th>
                                             <th scope="col">English</th>
                                             <th scope="col">Spelling</th>
