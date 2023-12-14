@@ -103,19 +103,20 @@ const GroupRole = () => {
                 user.isAuthenticated && listRoles && listRoles.length > 0
                     ?
                     <div className='group-role-container'>
-                        <h4>Group Role:</h4>
-                        <div className='assign-group-role'>
-                            <div className='col-12 col-sm-6 form-group'>
-                                <label>Select Group: (<span className='text-danger'>*</span>)</label>
-                                <select
-                                    className={'form-select'}
-                                    onChange={(event) => handleChangeGroup(event.target.value)}
-                                >
-                                    <option value="">Please select your group</option>
-                                    {userGroups.length > 0 &&
-                                        userGroups.map((userGroup: any, index: number) => <option key={`group-${index}`} value={userGroup.id}>{userGroup.name}</option>)
-                                    }
-                                </select>
+                        <div className='alert alert-primary'>
+                            <h4>Group Role:</h4>
+                            <div className='assign-group-role'>
+                                <div className='col-12 col-sm-6 form-group'>
+                                    <select
+                                        className={'form-select'}
+                                        onChange={(event) => handleChangeGroup(event.target.value)}
+                                    >
+                                        <option value="">Please select your group</option>
+                                        {userGroups.length > 0 &&
+                                            userGroups.map((userGroup: any, index: number) => <option key={`group-${index}`} value={userGroup.id}>{userGroup.name}</option>)
+                                        }
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <hr />
