@@ -207,18 +207,22 @@ export default function VocalbularyTest() {
                                 </div>
                         }
                     </div>
-                    <hr />
-                    <div className='text-center'>
-                        <button className='fw-bold btn btn-primary text-warning' onClick={() => handleNext()}>Tiếp Tục</button>
-                    </div>
+                   
+                    {
+                        
+                        showViewTest && saveTheCheckList.length > 0
+                        &&
+                        <div className='row'>
+                            <hr />
+                            <div className='row col-12 col-lg-8'>
+                                <button className='col-12 col-lg-2 fw-bold btn btn-primary text-warning me-2 mb-2 mb-lg-0' onClick={() => handleNext()}>Tiếp Tục</button>
+                                <button className='col-12 col-lg-6 fw-bold btn btn-outline-warning' onClick={() => downloadExcel(saveTheCheckList)}>
+                                    Export Result As Excel
+                                </button>
+                            </div>
+                        </div>
+                    }
                 </div>
-                {
-                    showViewTest && saveTheCheckList.length > 0
-                    &&
-                    <button className='fw-bold btn btn-outline-warning' onClick={() => downloadExcel(saveTheCheckList)}>
-                        Export Result As Excel
-                    </button>
-                }
             </div>
         </div>
     )
