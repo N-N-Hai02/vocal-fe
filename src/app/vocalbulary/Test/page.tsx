@@ -66,6 +66,18 @@ export default function VocalbularyTest() {
             XLSX.writeFile(workbook, "practiceTest.xlsx");
         }
     }
+    
+    const handleGetTotalTrueOrFalse = (value:boolean) => {
+        let checkTotal = saveTheCheckList.filter((item:any) => item.compareValue === value)
+        return checkTotal.length
+    }
+
+    const totalCheckTrue = handleGetTotalTrueOrFalse(true)
+    const totalCheckFalse = handleGetTotalTrueOrFalse(false)
+
+    console.log("check totalCheckTrue: ", totalCheckTrue)
+    console.log("check totalCheckFalse: ", totalCheckFalse)
+    
 
     return (
         <div className="h-100">
@@ -83,6 +95,7 @@ export default function VocalbularyTest() {
                                             className="form-select"
                                             aria-label="Default select example"
                                             onChange={(e) => setVlaue(+e.target.value)}
+                                            disabled={showViewTest && saveTheCheckList && saveTheCheckList.length > 0 && true}
                                         >
                                             {levelVocal[0]?.map((item: any, index: number) => <option value={item.id} key={index}>{item.name}</option>)}
                                         </select>
@@ -101,10 +114,15 @@ export default function VocalbularyTest() {
                                 </div>
                             </div>
                             <div className="card-body">
-                                <div className="input-group mb-3">
+                                <div className="row input-group mx-1">
                                     {
-                                        getRand_6 && getRand_6.length < 6
-                                            ? <h4 className='text-success'>Hoàng Thành</h4>
+                                        saveTheCheckList && showViewTest && showViewTest === true
+                                            ? 
+                                            <div className='col-12 col-lg-6 alert alert-primary d-lg-flex justify-content-around text-warning fw-bold'>
+                                                <h4 className='text-success m-0'>Hoàn Thành:</h4>
+                                                <p className='m-0 px-lg-2 pt-1'>Tổng câu đúng: <span className='text-secondary'>{totalCheckTrue}</span></p>
+                                                <p className='m-0 px-lg-2 pt-1'>Tổng câu sai: <span className='text-secondary'>{totalCheckFalse}</span></p>
+                                            </div>
                                             : <h4>{count} - {(language === 'en') ? getFirstElement?.vn : getFirstElement?.en}</h4>
                                     }
                                 </div>
@@ -205,12 +223,11 @@ export default function VocalbularyTest() {
                             </div>
 
                             {
-
                                 showViewTest && saveTheCheckList.length > 0
                                 &&
                                 <div className='row'>
                                     <hr />
-                                    <div className='row col-12 col-lg-8'>
+                                    <div className='row col-12 col-lg-8 mx-2 mx-lg-3'>
                                         <button className='col-12 col-lg-2 fw-bold btn btn-primary text-warning me-2 mb-2 mb-lg-0' onClick={() => handleNext()}>Tiếp Tục</button>
                                         <button className='col-12 col-lg-6 fw-bold btn btn-outline-warning' onClick={() => downloadExcel(saveTheCheckList)}>
                                             Export Result As Excel
