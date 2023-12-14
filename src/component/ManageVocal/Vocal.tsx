@@ -1,19 +1,18 @@
 "use client"
-import Link from "next/link"
 import AppPaginate from "@/component/app.paginate"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import _ from 'lodash'
 import { toast } from "react-toastify"
-import { levelVocal } from '@/contants/level'
 import { createNewVocal, deleteVocal, fechAllVocal } from "@/services/vocalService"
 import TableVocal from "./TableVocal"
-import ModalVocal from "./ModalVocal"
+import ModalVocalEdit from "./ModalVocalEdit"
 import * as XLSX from 'xlsx'
 import './Vocal.scss'
 import ModalImportExcel from "./ModalImportExcel"
+import ModalVocalAdd from "./ModalVocalAdd"
 
 const Vocal = () => {
-    const defaultVocalData: any = {
+    const defaultVocalDataNew: any = {
         en: "",
         vn: "",
         spelling: "",
@@ -29,17 +28,20 @@ const Vocal = () => {
         example_vn: true,
         levelId: true
     }
-    const [vocalData, setVocalData] = useState(defaultVocalData)
+    const [vocalDataNew, setVocalDataNew] = useState(defaultVocalDataNew)
     const [validInputs, setValidInputs] = useState(validInputsDefault)
     const [vocalList, setVocalList] = useState<[]>([])
-    const [dataModalVocal, setDataModalVocal] = useState({})
+    const [isShowModalAdd, setIsShowModalAdd] = useState(false)
+    const [isShowModalEdit, setIsShowModalEdit] = useState(false)
+    const [dataModalVocalEdit, setDataModalVocalEdit] = useState({})
 
-    // -------------import using file excel, csv
-
+    // import using file excel, csv
     const [excelFile, setExcelFile] = useState(null)
     const [typeError, setTypeError] = useState<string>('')
     const [excelData, setExcelData] = useState(null)
     const [modalShowExcel, setModalShowExcel] = useState(false)
+
+    const fileInputRef: any = useRef();
 
     const handleFile = (e: any) => {
         let fileTypes = ['application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'text/csv'];
@@ -63,8 +65,6 @@ const Vocal = () => {
             console.log('Please select your file');
         }
     }
-
-    // submit event
     const handleFileSubmit = (e: any) => {
         e.preventDefault();
         if (excelFile !== null) {
@@ -75,8 +75,14 @@ const Vocal = () => {
             setExcelData(data.slice(0, 10));
         }
     }
-
-    // -------------
+    const handleCloseModalExcel = () => setModalShowExcel(false)
+    const HandleClearDataExcel = () => {
+        setModalShowExcel(false)
+        setExcelFile(null)
+        setExcelData(null)
+        fileInputRef && (fileInputRef.current.value = null)
+    }
+    // end import excel
 
     const handlePageClick = () => { }
 
@@ -92,10 +98,11 @@ const Vocal = () => {
         getAllVocal()
     }, [])
 
+    // -------------------------- handle Add..! ---------------------------------
     const handleOnChangeInput = (value: string, name: string) => {
-        const _vocalData: any = _.cloneDeep(vocalData)
+        const _vocalData: any = _.cloneDeep(vocalDataNew)
         _vocalData[name] = value
-        setVocalData(_vocalData)
+        setVocalDataNew(_vocalData)
     }
     const checkValidInputs = () => {
         setValidInputs(validInputsDefault)
@@ -109,7 +116,7 @@ const Vocal = () => {
         }
         let check = true
         for (let i = 0; i < arr.length; i++) {
-            if (!vocalData[arr[i]]) {
+            if (!vocalDataNew[arr[i]]) {
                 let _ValidInputs: any = _.cloneDeep(validInputsDefault)
                 _ValidInputs[arr[i]] = false;
                 setValidInputs(_ValidInputs)
@@ -121,13 +128,20 @@ const Vocal = () => {
         return check
     }
 
-    const handleSubmitVocal = async () => {
+    const handleCloseModalAdd = () => {
+        setIsShowModalAdd(false)
+        setVocalDataNew(defaultVocalDataNew)
+        setValidInputs(validInputsDefault)
+    }
+
+    const handleConfirmAdd = async () => {
         if (modalShowExcel === false) {
             let check = checkValidInputs()
             if (check === true) {
-                let res: any = await createNewVocal([{ ...vocalData, levelId: vocalData.levelId === "" ? 1 : +vocalData.levelId }])
+                let res: any = await createNewVocal([{ ...vocalDataNew, levelId: vocalDataNew.levelId === "" ? 1 : +vocalDataNew.levelId }])
                 if (res && +res.EC === 0) {
-                    setVocalData(defaultVocalData)
+                    setVocalDataNew(defaultVocalDataNew)
+                    setIsShowModalAdd(false)
                     await getAllVocal()
                     toast.success(res.EM)
                 }
@@ -144,19 +158,18 @@ const Vocal = () => {
                 await getAllVocal()
                 toast.success(res.EM)
                 setModalShowExcel(false)
+                setExcelData(null)
+                fileInputRef && (fileInputRef.current.value = null)
             } else {
                 toast.error(res.EM)
             }
         }
-
     }
 
-    // handle Edit..!
-    const [isShowModalEdit, setIsShowModalEdit] = useState(false)
-
+    // -------------------------- handle Edit..! ---------------------------------
     const handleEditVocal = (vocal: any) => {
         setIsShowModalEdit(true)
-        setDataModalVocal(vocal)
+        setDataModalVocalEdit(vocal)
     }
     const handleDeleteVocal = async (vocal: any) => {
         if (vocal && confirm(`Delete this vocal: ${vocal.en}`) == true) {
@@ -177,140 +190,66 @@ const Vocal = () => {
     return (
         <>
             <div className="admin-vocal">
-                <div className="row">
-                    <form className="d-sm-flex col-12 col-sm-6 form-group custom-form custom-file-button" onSubmit={handleFileSubmit}>
-                        <label className="input-group-text fw-bold bg-warning" htmlFor="inputGroupFile">Import Excel File</label>
-                        <input type="file" id="inputGroupFile" className="form-control me-2" required onChange={handleFile} />
-                        <button
-                            type="submit"
-                            className="my-2 my-sm-0 btn btn-outline-warning btn-md w-100 w-sm-0"
-                            onClick={() => setModalShowExcel(true)}
-                        >
-                            PRIVEW
-                        </button>
-                    </form>
-                    <div className="col-12 py-2">
-                        {typeError && <div className="alert alert-danger" role="alert">{typeError}</div>}
-                    </div>
-                </div>
                 <hr />
-                <div className="row mb-5">
-                    <div className="col-12 col-sm-6 form-group my-2">
-                        <label htmlFor="en">English (<span className="text-danger">*</span>) </label>
-                        <input
-                            className={validInputs.en ? 'form-control' : 'form-control is-invalid'}
-                            type="text"
-                            id="en"
-                            name="en"
-                            value={vocalData.en}
-                            onChange={(event) => handleOnChangeInput(event.target.value, "en")}
-                        />
+                <div className="row">
+                    <div className="d-sm-flex">
+                        <form className="d-sm-flex col-12 col-sm-6 form-group custom-form custom-file-button" onSubmit={handleFileSubmit}>
+                            <label className="input-group-text fw-bold bg-warning" htmlFor="inputGroupFile">Import Excel File</label>
+                            <input
+                                type="file"
+                                ref={fileInputRef}
+                                id="inputGroupFile"
+                                name="excelFile"
+                                className="form-control"
+                                required
+                                onChange={handleFile}
+                            />
+                            <button
+                                type="submit"
+                                className="my-2 mx-sm-2 my-sm-0 btn btn-outline-warning btn-md w-100 w-sm-0 fw-bold"
+                                onClick={() => setModalShowExcel(true)}
+                            >
+                                REVIEW
+                            </button>
+                        </form>
+                        <div className="col-sm-3"></div>
+                        <div className="col-12 col-sm-3">
+                            <button className="btn btn-primary w-100 float-end" onClick={() => setIsShowModalAdd(true)}>
+                                Create New Vocal <i className="fa fa-plus" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div className="col-12 col-sm-6 form-group my-2">
-                        <label htmlFor="vn">Vietnamese (<span className="text-danger">*</span>) </label>
-                        <input
-                            className={validInputs.vn ? 'form-control' : 'form-control is-invalid'}
-                            type="text"
-                            id="vn"
-                            name="vn"
-                            value={vocalData.vn}
-                            onChange={(event) => handleOnChangeInput(event.target.value, "vn")}
-                        />
-                    </div>
-                    <div className="col-12 col-sm-6 form-group my-2">
-                        <label htmlFor="spelling">Spelling (<span className="text-danger">*</span>) </label>
-                        <input
-                            className={validInputs.spelling ? 'form-control' : 'form-control is-invalid'}
-                            type="text"
-                            id="spelling"
-                            name="spelling"
-                            value={vocalData.spelling}
-                            onChange={(event) => handleOnChangeInput(event.target.value, "spelling")}
-                        />
-                    </div>
-                    <div className="col-12 col-sm-6 form-group my-2">
-                        <label htmlFor="example_en">Example_English (<span className="text-danger">*</span>) </label>
-                        <input
-                            className={validInputs.example_en ? 'form-control' : 'form-control is-invalid'}
-                            type="text"
-                            id="example_en"
-                            name="example_en"
-                            value={vocalData.example_en}
-                            onChange={(event) => handleOnChangeInput(event.target.value, "example_en")}
-                        />
-                    </div>
-                    <div className="col-12 col-sm-6 form-group my-2">
-                        <label htmlFor="example_vn">Example_Vietnamese (<span className="text-danger">*</span>) </label>
-                        <input
-                            className={validInputs.example_vn ? 'form-control' : 'form-control is-invalid'}
-                            type="text"
-                            id="example_vn"
-                            name="example_vn"
-                            value={vocalData.example_vn}
-                            onChange={(event) => handleOnChangeInput(event.target.value, "example_vn")}
-                        />
-                    </div>
-                    <div className="col-12 col-sm-6 form-group my-2">
-                        <label htmlFor="levelId">Level (<span className="text-danger">*</span>) </label>
-                        <select
-                            className="form-select"
-                            value={vocalData.levelId}
-                            onChange={(event) => handleOnChangeInput(event.target.value, "levelId")}
-                        >
-                            {levelVocal[0]?.map((item: any, index: number) => <option value={item.id} key={index}>{item.name}</option>)}
-                        </select>
-                    </div>
-                    <div className="col-12 col-sm-6 mt-2">
-                        <button className="btn btn-primary w-100" onClick={() => handleSubmitVocal()}>
-                            Add <i className="fa fa-plus" aria-hidden="true"></i>
-                        </button>
+
+                    <div className="col-12">
+                        {typeError && <div className="alert alert-danger my-2" role="alert">{typeError}</div>}
                     </div>
                 </div>
                 <hr />
                 <div className="vocal-list-table mt-5">
-                    <div className="d-none d-sm-block">
-                        <TableVocal vocalList={vocalList} handleEditVocal={handleEditVocal} handleDeleteVocal={handleDeleteVocal} />
-                        <AppPaginate pathName="#" totalPages={5} handlePageClick={handlePageClick} />
-                    </div>
-
-                    {/* Reponsive mobile */}
-                    <div className="card mb-3 d-block d-sm-none" style={{ maxWidth: '540px' }}>
-                        <div className="row g-0">
-                            <div className="col-md-8">
-                                {vocalList && vocalList.length > 0 &&
-                                    vocalList.map((item: any, index: number) => {
-                                        return (
-                                            <div className="card-body" key={index}>
-                                                <p className="card-title text-primary fw-bold">No: {index + 1}</p>
-                                                <p className="card-text"><span className="fw-bold">English:</span> {item.en} </p>
-                                                <p className="card-text"><span className="fw-bold">Vietnamese:</span> {item.vn} </p>
-                                                <p className="card-text"><span className="fw-bold">Spelling:</span> {item.spelling} </p>
-                                                <div className="action">
-                                                    <p className="card-text fw-bold">Action: </p>
-                                                    <Link href="" className="btn btn-warning d-block d-sm-inline"
-                                                    onClick={() => handleEditVocal(item)}>Edit</Link>
-                                                    <Link href="" className="btn btn-danger mx-0 my-2 mx-sm-2 d-block d-sm-inline"
-                                                    onClick={() => handleDeleteVocal(item)}>Delete</Link>
-                                                    <Link href="" className="btn btn-info d-block d-sm-inline">View</Link>
-                                                </div>
-                                                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                                                <hr />
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
-                        </div>
-                    </div>
-                    {/* ----->>>>>>>>>>>------- */}
+                    <TableVocal vocalList={vocalList} handleEditVocal={handleEditVocal} handleDeleteVocal={handleDeleteVocal} />
+                    <AppPaginate pathName="#" totalPages={5} handlePageClick={handlePageClick} />
                 </div>
             </div>
-            <ModalVocal isShowModalEdit={isShowModalEdit} onHide={handleCloseModalEdit} dataModalVocal={dataModalVocal} />
+            <ModalVocalAdd
+                isShowModalAdd={isShowModalAdd}
+                onHide={handleCloseModalAdd}
+                handleConfirmAdd={handleConfirmAdd}
+                handleOnChangeInput={handleOnChangeInput}
+                validInputs={validInputs}
+                vocalDataNew={vocalDataNew}
+            />
+
+            <ModalVocalEdit
+                isShowModalEdit={isShowModalEdit}
+                onHide={handleCloseModalEdit}
+                dataModalVocalEdit={dataModalVocalEdit}
+            />
 
             <ModalImportExcel
                 show={modalShowExcel}
-                onHide={() => setModalShowExcel(false)}
-                onSave={() => handleSubmitVocal()}
+                onHide={() => handleCloseModalExcel()}
+                onSave={() => handleConfirmAdd()}
+                HandleClearDataExcel={() => HandleClearDataExcel()}
                 dataPrivew={excelData}
             />
         </>

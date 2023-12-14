@@ -5,13 +5,13 @@ import { useEffect, useState } from "react"
 import { Button, Modal } from "react-bootstrap"
 import { toast } from "react-toastify"
 
-interface ModalVocal {
+interface ModalVocalEdit {
     isShowModalEdit: boolean
     onHide: () => void
-    dataModalVocal: any
+    dataModalVocalEdit: any
 }
 
-const ModalVocal = ({ isShowModalEdit, onHide, dataModalVocal }: ModalVocal) => {
+const ModalVocalEdit = ({ isShowModalEdit, onHide, dataModalVocalEdit }: ModalVocalEdit) => {
     const defaultVocalData: any = {
         en: "",
         vn: "",
@@ -32,8 +32,8 @@ const ModalVocal = ({ isShowModalEdit, onHide, dataModalVocal }: ModalVocal) => 
     const [validInputs, setValidInputs] = useState(validInputsDefault)
 
     useEffect(() => {
-        setVocalData({ ...dataModalVocal, levelId: dataModalVocal.levelId ? dataModalVocal.levelId : '' })
-    }, [dataModalVocal])
+        setVocalData({ ...dataModalVocalEdit, levelId: dataModalVocalEdit.levelId ? dataModalVocalEdit.levelId : '' })
+    }, [dataModalVocalEdit])
 
     const handleOnChangeInput = (value: string, name: string) => {
         const _vocalData: any = _.cloneDeep(vocalData)
@@ -176,4 +176,4 @@ const ModalVocal = ({ isShowModalEdit, onHide, dataModalVocal }: ModalVocal) => 
     )
 }
 
-export default ModalVocal
+export default ModalVocalEdit
