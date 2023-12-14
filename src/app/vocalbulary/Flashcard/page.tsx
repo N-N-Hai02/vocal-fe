@@ -86,10 +86,11 @@ function Card({ card }: any) {
             </small>
             <div className="front text-center">
                 <h1>{card.en.trim()}</h1>
+                <div>{card.spelling.trim()}</div>
+                <div>{card.pronunciation.trim()}</div>
             </div>
             <div className="back text-center">
                 <h1>{card.vn.trim()}</h1>
-                <div>{card.spelling.trim()}</div>
                 <div>{card.example_vn.trim()}</div>
                 <div>{card.example_en.trim()}</div>
             </div>
