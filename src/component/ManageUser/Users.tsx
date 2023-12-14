@@ -210,12 +210,12 @@ const Users = () => {
                     {totalPages > 0 &&
                         <div className="user-footer">
                             <ReactPaginate
-                                nextLabel="next >"
+                                nextLabel={<i className="ms-2 fa fa-forward"></i>}
                                 onPageChange={handlePageClick}
-                                pageRangeDisplayed={3}
-                                marginPagesDisplayed={4}
+                                pageRangeDisplayed={1}
+                                marginPagesDisplayed={0}
                                 pageCount={totalPages}
-                                previousLabel="< previous"
+                                previousLabel={<i className="fa fa-backward"></i>}
                                 pageClassName="page-item"
                                 pageLinkClassName="page-link"
                                 previousClassName="page-item"
