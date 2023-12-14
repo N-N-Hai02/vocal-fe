@@ -16,6 +16,7 @@ const ModalVocalEdit = ({ isShowModalEdit, onHide, dataModalVocalEdit }: ModalVo
         en: "",
         vn: "",
         spelling: "",
+        pronunciation: "",
         example_en: "",
         example_vn: "",
         levelId: ""
@@ -24,6 +25,7 @@ const ModalVocalEdit = ({ isShowModalEdit, onHide, dataModalVocalEdit }: ModalVo
         en: true,
         vn: true,
         spelling: true,
+        pronunciation: true,
         example_en: true,
         example_vn: true,
         levelId: true
@@ -42,11 +44,12 @@ const ModalVocalEdit = ({ isShowModalEdit, onHide, dataModalVocalEdit }: ModalVo
     }
     const checkValidInputs = () => {
         setValidInputs(validInputsDefault)
-        let arr: string[] = ['en', 'vn', 'spelling', 'example_en', 'example_vn']
-        let arrChanges:any = {
-            en: 'English', 
-            vn: 'Vietnamese', 
-            spelling: 'Spelling', 
+        let arr: string[] = ['en', 'vn', 'spelling', 'pronunciation', 'example_en', 'example_vn']
+        let arrChanges: any = {
+            en: 'English',
+            vn: 'Vietnamese',
+            spelling: 'Spelling',
+            pronunciation: 'Pronunciation',
             example_en: 'Example_English',
             example_vn: 'Example_Vietnamese'
         }
@@ -84,95 +87,106 @@ const ModalVocalEdit = ({ isShowModalEdit, onHide, dataModalVocalEdit }: ModalVo
 
     return (
         <Modal
-        size="lg"
-        show={isShowModalEdit}
-        className='modal-user'
-        onHide={() => onHide()}
-        backdrop="static"
-    >
-        <Modal.Header closeButton>
-            <Modal.Title>EDIT VOCAL</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            <div className='modal-body'>
-                <div className="row mb-5">
-                    <div className="col-12 col-sm-6 form-group my-2">
-                        <label htmlFor="en">English (<span className="text-danger">*</span>) </label>
-                        <input
-                            className={validInputs.en ? 'form-control' : 'form-control is-invalid'}
-                            type="text"
-                            id="en"
-                            name="en"
-                            value={vocalData.en}
-                            onChange={(event) => handleOnChangeInput(event.target.value, "en")}
-                        />
-                    </div>
-                    <div className="col-12 col-sm-6 form-group my-2">
-                        <label htmlFor="vn">Vietnamese (<span className="text-danger">*</span>) </label>
-                        <input
-                            className={validInputs.vn ? 'form-control' : 'form-control is-invalid'}
-                            type="text"
-                            id="vn"
-                            name="vn"
-                            value={vocalData.vn}
-                            onChange={(event) => handleOnChangeInput(event.target.value, "vn")}
-                        />
-                    </div>
-                    <div className="col-12 col-sm-6 form-group my-2">
-                        <label htmlFor="spelling">Spelling (<span className="text-danger">*</span>) </label>
-                        <input
-                            className={validInputs.spelling ? 'form-control' : 'form-control is-invalid'}
-                            type="text"
-                            id="spelling"
-                            name="spelling"
-                            value={vocalData.spelling}
-                            onChange={(event) => handleOnChangeInput(event.target.value, "spelling")}
-                        />
-                    </div>
-                    <div className="col-12 col-sm-6 form-group my-2">
-                        <label htmlFor="example_en">Example_English (<span className="text-danger">*</span>) </label>
-                        <input
-                            className={validInputs.example_en ? 'form-control' : 'form-control is-invalid'}
-                            type="text"
-                            id="example_en"
-                            name="example_en"
-                            value={vocalData.example_en}
-                            onChange={(event) => handleOnChangeInput(event.target.value, "example_en")}
-                        />
-                    </div>
-                    <div className="col-12 col-sm-6 form-group my-2">
-                        <label htmlFor="example_vn">Example_Vietnamese (<span className="text-danger">*</span>) </label>
-                        <input
-                            className={validInputs.example_vn ? 'form-control' : 'form-control is-invalid'}
-                            type="text"
-                            id="example_vn"
-                            name="example_vn"
-                            value={vocalData.example_vn}
-                            onChange={(event) => handleOnChangeInput(event.target.value, "example_vn")}
-                        />
-                    </div>
-                    <div className="col-12 col-sm-6 form-group my-2">
-                        <label htmlFor="langueId">Level (<span className="text-danger">*</span>) </label>
-                        <select
-                            className="form-select"
-                            value={vocalData.levelId}
-                            onChange={(event) => handleOnChangeInput(event.target.value, "levelId")}
-                        >
-                            {levelVocal[0]?.map((item:any, index:number) => <option value={item.id} key={index}>{item.name}</option>)}
-                        </select>
+            size="lg"
+            show={isShowModalEdit}
+            className='modal-user'
+            onHide={() => onHide()}
+            backdrop="static"
+        >
+            <Modal.Header closeButton>
+                <Modal.Title>EDIT VOCAL</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <div className='modal-body'>
+                    <div className="row mb-5">
+                        <div className="col-12 col-sm-6 form-group my-2">
+                            <label htmlFor="en">English (<span className="text-danger">*</span>) </label>
+                            <input
+                                className={validInputs.en ? 'form-control' : 'form-control is-invalid'}
+                                type="text"
+                                id="en"
+                                name="en"
+                                value={vocalData.en}
+                                onChange={(event) => handleOnChangeInput(event.target.value, "en")}
+                            />
+                        </div>
+                        <div className="col-12 col-sm-6 form-group my-2">
+                            <label htmlFor="vn">Vietnamese (<span className="text-danger">*</span>) </label>
+                            <input
+                                className={validInputs.vn ? 'form-control' : 'form-control is-invalid'}
+                                type="text"
+                                id="vn"
+                                name="vn"
+                                value={vocalData.vn}
+                                onChange={(event) => handleOnChangeInput(event.target.value, "vn")}
+                            />
+                        </div>
+                        <div className="col-12 col-sm-6 form-group my-2">
+                            <label htmlFor="spelling">Spelling (<span className="text-danger">*</span>) </label>
+                            <input
+                                className={validInputs.spelling ? 'form-control' : 'form-control is-invalid'}
+                                type="text"
+                                id="spelling"
+                                name="spelling"
+                                value={vocalData.spelling}
+                                onChange={(event) => handleOnChangeInput(event.target.value, "spelling")}
+                            />
+                        </div>
+                        <div className="col-12 col-sm-6 form-group my-2">
+                            <label htmlFor="spelling">Pronunciation (<span className="text-danger">*</span>) </label>
+                            <input
+                                className={validInputs.pronunciation ? 'form-control' : 'form-control is-invalid'}
+                                type="text"
+                                id="pronunciation"
+                                name="pronunciation"
+                                value={vocalData.pronunciation}
+                                onChange={(event) => handleOnChangeInput(event.target.value, "pronunciation")}
+                            />
+                        </div>
+                        <div className="col-12 col-sm-6 form-group my-2">
+                            <label htmlFor="example_en">Example_English (<span className="text-danger">*</span>) </label>
+                            <input
+                                className={validInputs.example_en ? 'form-control' : 'form-control is-invalid'}
+                                type="text"
+                                id="example_en"
+                                name="example_en"
+                                value={vocalData.example_en}
+                                onChange={(event) => handleOnChangeInput(event.target.value, "example_en")}
+                            />
+                        </div>
+                        <div className="col-12 col-sm-6 form-group my-2">
+                            <label htmlFor="example_vn">Example_Vietnamese (<span className="text-danger">*</span>) </label>
+                            <input
+                                className={validInputs.example_vn ? 'form-control' : 'form-control is-invalid'}
+                                type="text"
+                                id="example_vn"
+                                name="example_vn"
+                                value={vocalData.example_vn}
+                                onChange={(event) => handleOnChangeInput(event.target.value, "example_vn")}
+                            />
+                        </div>
+                        <div className="col-12 col-sm-6 form-group my-2">
+                            <label htmlFor="langueId">Level (<span className="text-danger">*</span>) </label>
+                            <select
+                                className="form-select"
+                                value={vocalData.levelId}
+                                onChange={(event) => handleOnChangeInput(event.target.value, "levelId")}
+                            >
+                                {levelVocal[0]?.map((item: any, index: number) => <option value={item.id} key={index}>{item.name}</option>)}
+                            </select>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </Modal.Body>
-        <Modal.Footer>
-            <Button variant="secondary" onClick={() => onHide()}>
-                Close
-            </Button>
-            <Button variant='warning' onClick={() => handleConfirmEdit()}>
-                Update
-            </Button>
-        </Modal.Footer>
-    </Modal>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant="secondary" onClick={() => onHide()}>
+                    Close
+                </Button>
+                <Button variant='warning' onClick={() => handleConfirmEdit()}>
+                    Update
+                </Button>
+            </Modal.Footer>
+        </Modal>
     )
 }
 
