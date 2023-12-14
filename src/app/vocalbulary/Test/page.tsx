@@ -228,9 +228,16 @@ export default function VocalbularyTest() {
                                 <div className='row'>
                                     <hr />
                                     <div className='row col-12 col-lg-8 mx-2 mx-lg-3'>
-                                        <button className='col-12 col-lg-2 fw-bold btn btn-primary text-warning me-2 mb-2 mb-lg-0' onClick={() => handleNext()}>Tiếp Tục</button>
+                                        <button
+                                            className='col-12 col-lg-2 fw-bold btn btn-primary text-warning me-2 mb-2 mb-lg-0'
+                                            onClick={() => handleNext()}
+                                        >
+                                            Next 
+                                            <i className="ms-2 fa fa-forward"></i>
+                                        </button>
                                         <button className='col-12 col-lg-6 fw-bold btn btn-outline-warning' onClick={() => downloadExcel(saveTheCheckList)}>
                                             Export Result As Excel
+                                            <i className="ms-2 fa fa-file-export"></i>
                                         </button>
                                     </div>
                                 </div>
