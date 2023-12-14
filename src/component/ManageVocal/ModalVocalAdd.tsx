@@ -92,7 +92,7 @@ const ModalVocalAdd = ({ isShowModalAdd, onHide, handleConfirmAdd, handleOnChang
                                 onChange={(event) => handleOnChangeInput(event.target.value, "example_vn")}
                             />
                         </div>
-                        <div className="col-12 col-sm-6 form-group my-2">
+                        <div className="col-12 form-group my-2">
                             <label htmlFor="levelId">Level (<span className="text-danger">*</span>) </label>
                             <select
                                 className="form-select"
@@ -108,9 +108,10 @@ const ModalVocalAdd = ({ isShowModalAdd, onHide, handleConfirmAdd, handleOnChang
             <Modal.Footer>
                 <Button variant="outline-secondary" onClick={() => onHide()}>
                     Close
+                    <i className="ms-2 fa fa-lock"></i>
                 </Button>
                 <Button variant='primary' onClick={() => handleConfirmAdd()}>
-                    Add <i className="fa fa-plus" aria-hidden="true"></i>
+                    Add <i className="fa fa-plus"></i>
                 </Button>
             </Modal.Footer>
         </Modal>

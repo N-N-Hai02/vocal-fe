@@ -219,6 +219,7 @@ const Vocal = () => {
                                     onClick={() => setModalShowExcel(true)}
                                 >
                                     REVIEW
+                                    <i className="ms-2 fa fa-eye"></i>
                                 </button>
                             </form>
                             <div className="col-lg-3"></div>

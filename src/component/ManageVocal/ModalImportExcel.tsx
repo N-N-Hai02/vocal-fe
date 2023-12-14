@@ -68,12 +68,12 @@ const ModalImportExcel = (props: ModalImportExcel) => {
                     datas && datas.length > 0
                     &&
                     <>
-                        <Button variant="primary" onClick={props.onSave}>Save</Button>
-                        <Button variant="warning" onClick={() => props.HandleClearDataExcel()}>Clear</Button>
+                        <Button variant="primary" onClick={props.onSave}>Save <i className="me-2 fa fa-plus"></i></Button>
+                        <Button variant="warning" onClick={() => props.HandleClearDataExcel()}>Clear <i className="me-2 fa fa-trash" /></Button>
                     </>
                 }
                 
-                <Button variant="outline-secondary" onClick={props.onHide}>Close</Button>
+                <Button variant="outline-secondary" onClick={props.onHide}>Close <i className="ms-2 fa fa-lock"></i></Button>
             </Modal.Footer>
         </Modal>
     )
