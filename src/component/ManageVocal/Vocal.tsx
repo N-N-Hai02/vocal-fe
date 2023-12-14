@@ -16,6 +16,7 @@ const Vocal = () => {
         en: "",
         vn: "",
         spelling: "",
+        pronunciation: "",
         example_en: "",
         example_vn: "",
         levelId: ""
@@ -24,6 +25,7 @@ const Vocal = () => {
         en: true,
         vn: true,
         spelling: true,
+        pronunciation: true,
         example_en: true,
         example_vn: true,
         levelId: true
@@ -106,11 +108,12 @@ const Vocal = () => {
     }
     const checkValidInputs = () => {
         setValidInputs(validInputsDefault)
-        let arr: string[] = ['en', 'vn', 'spelling', 'example_en', 'example_vn']
+        let arr: string[] = ['en', 'vn', 'spelling', 'pronunciation', 'example_en', 'example_vn']
         let arrChanges: any = {
             en: 'English',
             vn: 'Vietnamese',
             spelling: 'Spelling',
+            pronunciation: 'Pronunciation',
             example_en: 'Example_English',
             example_vn: 'Example_Vietnamese'
         }
@@ -150,7 +153,7 @@ const Vocal = () => {
                     _ValidInputs[res.DT] = false;
                     setValidInputs(_ValidInputs)
                     toast.error(res.EM)
-                }
+                }                
             }
         } else if (modalShowExcel === true) {
             let res: any = await createNewVocal(excelData)

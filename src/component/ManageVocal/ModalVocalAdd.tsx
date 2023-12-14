@@ -60,6 +60,17 @@ const ModalVocalAdd = ({ isShowModalAdd, onHide, handleConfirmAdd, handleOnChang
                             />
                         </div>
                         <div className="col-12 col-sm-6 form-group my-2">
+                            <label htmlFor="spelling">Pronunciation (<span className="text-danger">*</span>) </label>
+                            <input
+                                className={validInputs.pronunciation ? 'form-control' : 'form-control is-invalid'}
+                                type="text"
+                                id="pronunciation"
+                                name="pronunciation"
+                                value={vocalDataNew.pronunciation}
+                                onChange={(event) => handleOnChangeInput(event.target.value, "pronunciation")}
+                            />
+                        </div>
+                        <div className="col-12 col-sm-6 form-group my-2">
                             <label htmlFor="example_en">Example_English (<span className="text-danger">*</span>) </label>
                             <input
                                 className={validInputs.example_en ? 'form-control' : 'form-control is-invalid'}

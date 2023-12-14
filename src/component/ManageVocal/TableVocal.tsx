@@ -24,8 +24,6 @@ const TableVocal = ({ vocalList, handleEditVocal, handleDeleteVocal }: TableVoca
                     <tbody className="text-center">
                         {vocalList && vocalList.length > 0 &&
                             vocalList.map((item: any, index: number) => {
-                                console.log("check data : ", item)
-                                
                                 return (
                                     <tr key={index}>
                                         <th scope="row">{index + 1}</th>

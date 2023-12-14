@@ -35,6 +35,7 @@ const ModalImportExcel = (props: ModalImportExcel) => {
                                 <th>EN</th>
                                 <th>VN</th>
                                 <th>Spelling</th>
+                                <th>Pronunciation</th>
                                 <th>Example English</th>
                                 <th>Example VietNam</th>
                                 <th>LevelID</th>
@@ -49,6 +50,7 @@ const ModalImportExcel = (props: ModalImportExcel) => {
                                             <td>{data.en}</td>
                                             <td>{data.vn}</td>
                                             <td>{data.spelling}</td>
+                                            <td>{data.pronunciation}</td>
                                             <td>{data.example_en}</td>
                                             <td>{data.example_vn}</td>
                                             <td>{data.levelId}</td>
