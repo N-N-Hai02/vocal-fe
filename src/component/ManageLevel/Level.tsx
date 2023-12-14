@@ -69,12 +69,12 @@ const Level = () => {
     return (
         <div className='role-container'>
             <div className='title-role'><h4>Add a new Level...</h4></div>
-            <div className='role-parent'>
+            <div className='role-parent alert alert-primary'>
                 {
                     Object.entries(listChild).map(([key, child], index) => {
                         return (
                             <div className={`row role-child ${key}`} key={`child-${key}`}>
-                                <div className='col-12 col-sm-5 form-group'>
+                                <div className='col-12 col-lg-5 form-group'>
                                     <label>Name:</label>
                                     <input
                                         type='text'
@@ -83,7 +83,7 @@ const Level = () => {
                                         onChange={(event) => handleOnchangeInput("name", event.target.value, key)}
                                     />
                                 </div>
-                                <div className='col-12 col-sm-5 form-group'>
+                                <div className='col-12 col-lg-5 form-group'>
                                     <label>Description:</label>
                                     <input
                                         type='text'

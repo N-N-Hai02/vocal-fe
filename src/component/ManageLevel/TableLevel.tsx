@@ -55,14 +55,14 @@ const TableLevel = forwardRef((props, ref) => {
                 <div className="d-none d-sm-block">
                     <table className="table table-hover table-bordered mt-3">
                         <thead>
-                            <tr className="text-center table-dark">
+                            <tr className="text-center table-primary">
                                 <th colSpan={7}>LEVELS LIST</th>
                             </tr>
                             <tr>
                                 <th scope="col">Id</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Description</th>
-                                <th scope="col">Actions</th>
+                                <th scope="col" className="text-center">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
