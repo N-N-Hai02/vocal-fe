@@ -73,7 +73,10 @@ const Users = () => {
     }
     return (
         <>
-            {user.isAuthenticated && userLists && userLists.length > 0
+            {user.isAuthenticated 
+            && user.account.groupWithRoles.id === 2 
+            && user.account.groupWithRoles.name === 'admin' 
+            && userLists && userLists.length > 0
                 ? <div className="manage-users-container">
                     <div className="user-header mt-2">
                         <div className="title">
