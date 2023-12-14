@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 // import { assignRolesToGroup, fetchAllRoles, fetchRolesByGroup } from '../../services/roleService'
 // import { fetchGroup } from '../../services/userService'
 import { toast } from 'react-toastify'
 import _ from 'lodash'
 import { fetchGroup } from '@/services/userService'
 import { assignRolesToGroup, fetchAllRoles, fetchRolesByGroup } from '@/services/roleService'
+import { UserContext } from '@/context/UserContext'
 
 const GroupRole = () => {
+    const { user } = useContext(UserContext)
     const [userGroups, setUserGroups] = useState([])
     const [listRoles, setListRoles] = useState([])
     const [selectGroup, setSelectGroup] = useState("")
@@ -96,53 +98,60 @@ const GroupRole = () => {
     }
 
     return (
-        <div className='group-role-container'>
-            <h4>Group Role:</h4>
-            <div className='assign-group-role'>
-                <div className='col-12 col-sm-6 form-group'>
-                    <label>Select Group: (<span className='text-danger'>*</span>)</label>
-                    <select
-                        className={'form-select'}
-                        onChange={(event) => handleChangeGroup(event.target.value)}
-                    >
-                        <option value="">Please select your group</option>
-                        {userGroups.length > 0 &&
-                            userGroups.map((userGroup: any, index: number) => <option key={`group-${index}`} value={userGroup.id}>{userGroup.name}</option>)
-                        }
-                    </select>
-                </div>
-            </div>
-            <hr />
+        <>
             {
-                selectGroup &&
-                <div className='roles'>
-                    <h5>Assign Roles:</h5>
-                    {
-                        assignRolesByGroup && assignRolesByGroup.length > 0
-                        && assignRolesByGroup.map((item: any, index: number) => {
-                            return (
-                                <div className="form-check" key={`list-role-${index}`}>
-                                    <input
-                                        className="form-check-input"
-                                        type="checkbox"
-                                        value={item.id}
-                                        id={`list-role-${index}`}
-                                        checked={item.isAssigned}
-                                        onChange={(event) => handleSelectRole(event.target.value)}
-                                    />
-                                    <label className="form-check-label" htmlFor={`list-role-${index}`}>
-                                        {item.url}
-                                    </label>
+                user.isAuthenticated && listRoles && listRoles.length > 0
+                    ?
+                    <div className='group-role-container'>
+                        <h4>Group Role:</h4>
+                        <div className='assign-group-role'>
+                            <div className='col-12 col-sm-6 form-group'>
+                                <label>Select Group: (<span className='text-danger'>*</span>)</label>
+                                <select
+                                    className={'form-select'}
+                                    onChange={(event) => handleChangeGroup(event.target.value)}
+                                >
+                                    <option value="">Please select your group</option>
+                                    {userGroups.length > 0 &&
+                                        userGroups.map((userGroup: any, index: number) => <option key={`group-${index}`} value={userGroup.id}>{userGroup.name}</option>)
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <hr />
+                        {
+                            selectGroup &&
+                            <div className='roles'>
+                                <h5>Assign Roles:</h5>
+                                {
+                                    assignRolesByGroup && assignRolesByGroup.length > 0
+                                    && assignRolesByGroup.map((item: any, index: number) => {
+                                        return (
+                                            <div className="form-check" key={`list-role-${index}`}>
+                                                <input
+                                                    className="form-check-input"
+                                                    type="checkbox"
+                                                    value={item.id}
+                                                    id={`list-role-${index}`}
+                                                    checked={item.isAssigned}
+                                                    onChange={(event) => handleSelectRole(event.target.value)}
+                                                />
+                                                <label className="form-check-label" htmlFor={`list-role-${index}`}>
+                                                    {item.url}
+                                                </label>
+                                            </div>
+                                        )
+                                    })
+                                }
+                                <div className='mt-3'>
+                                    <button className='btn btn-warning' onClick={() => handleSave()}>Save</button>
                                 </div>
-                            )
-                        })
-                    }
-                    <div className='mt-3'>
-                        <button className='btn btn-warning' onClick={() => handleSave()}>Save</button>
+                            </div>
+                        }
                     </div>
-                </div>
+                    : <div className="alert alert-primary text-center">No Data...!</div>
             }
-        </div>
+        </>
     )
 }
 
