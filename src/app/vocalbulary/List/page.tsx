@@ -9,7 +9,7 @@ import { toast } from "react-toastify"
 import ReactPaginate from "react-paginate"
 
 export default function VocabularyList() {
-    const { data, setLevelEnglish, levelEnglish, checkClickVocalbulary } = useContext(DataContexts)
+    const { levelEnglish, setLevelEnglish, checkClickVocalbulary, setDataVocalPagination } = useContext(DataContexts)
     const { user } = useContext(UserContext)
 
     const [vocalByUserList, setVocalByUserList] = useState([])
@@ -23,6 +23,7 @@ export default function VocabularyList() {
         if (response && response.EC === 0) {
             setTotalPages(response.DT.totalPages)
             setVocalList(response.DT.vocals)
+            setDataVocalPagination(response.DT.vocals)
         }
         setCurrentLimit(5)
     }, [currentPage, currentLimit, levelEnglish])
@@ -76,7 +77,7 @@ export default function VocabularyList() {
                 user.isAuthenticated && vocalList && vocalList.length > 0 && levelVocal[0] && levelVocal[0]?.length > 0
                     ?
                     <div className="card rounded-0">
-                        <h5 className="card-header text-uppercase">Danh sách từ</h5>
+                        <h5 className="card-header text-uppercase alert alert-primary">Danh sách từ</h5>
                         <div className="card-body">
                             <div className="row input-group mb-3">
                                 <div className="mx-3 col-12 col-sm-4 alert alert-primary">
@@ -140,7 +141,9 @@ export default function VocabularyList() {
                                                 return (
                                                     <div className="card-body" key={index}>
                                                         <p className="card-title text-primary fw-bold">No: {(currentPage - 1) * currentLimit + index + 1}</p>
-                                                        <p className="card-text"><span className="fw-bold">Spelling:</span> {item.en} </p>
+                                                        <p className="card-text" onClick={() => checkClickVocalbulary(index)}><span className="fw-bold me-2">Spelling:</span>
+                                                            <Link href="/vocalbulary/Detail">{item.en}</Link>
+                                                        </p>
                                                         <p className="card-text"><span className="fw-bold">English:</span> {item.vn} </p>
                                                         <p className="card-text"><span className="fw-bold">Vietnamese:</span> {item.spelling} </p>
                                                         <button className="btn btn-outline-warning" onClick={() => handleStatus(item)}>
@@ -161,26 +164,28 @@ export default function VocabularyList() {
                             </div>
                             {/* ----->>>>>>>>>>>------- */}
 
-                            <ReactPaginate
-                                nextLabel={<i className="ms-2 fa fa-forward"></i>}
-                                onPageChange={handlePageClick}
-                                pageRangeDisplayed={1}
-                                marginPagesDisplayed={0}
-                                pageCount={totalPages}
-                                previousLabel={<i className="fa fa-backward"></i>}
-                                pageClassName="page-item"
-                                pageLinkClassName="page-link"
-                                previousClassName="page-item"
-                                previousLinkClassName="page-link"
-                                nextClassName="page-item"
-                                nextLinkClassName="page-link"
-                                breakLabel="..."
-                                breakClassName="page-item"
-                                breakLinkClassName="page-link"
-                                containerClassName="pagination"
-                                activeClassName="active"
-                                renderOnZeroPageCount={null}
-                            />
+                            <div className="alert alert-primary">
+                                <ReactPaginate
+                                    nextLabel={<i className="ms-2 fa fa-forward"></i>}
+                                    onPageChange={handlePageClick}
+                                    pageRangeDisplayed={1}
+                                    marginPagesDisplayed={0}
+                                    pageCount={totalPages}
+                                    previousLabel={<i className="fa fa-backward"></i>}
+                                    pageClassName="page-item"
+                                    pageLinkClassName="page-link"
+                                    previousClassName="page-item"
+                                    previousLinkClassName="page-link"
+                                    nextClassName="page-item"
+                                    nextLinkClassName="page-link"
+                                    breakLabel="..."
+                                    breakClassName="page-item"
+                                    breakLinkClassName="page-link"
+                                    containerClassName="pagination"
+                                    activeClassName="active"
+                                    renderOnZeroPageCount={null}
+                                />
+                            </div>
                         </div>
                     </div>
                     : <div className="alert alert-primary text-center">No Data...!</div>

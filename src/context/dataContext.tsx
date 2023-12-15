@@ -4,20 +4,24 @@ import { usePathname } from 'next/navigation'
 
 type GlobalContent = {
     data: [],
-    setLevelEnglish: (id: number) => void,
     levelEnglish: number,
-    checkClickVocalbulary: (id: number) => void,
     index: number,
     toggle: boolean,
+    dataVocalPagination: [], 
+    setDataVocalPagination: (value: any) => void,
+    setLevelEnglish: (id: number) => void,
+    checkClickVocalbulary: (id: number) => void,
     setToggle: (value: boolean) => void,
 }
 const DataContexts = createContext<GlobalContent>({ 
     data: [], 
-    setLevelEnglish: () => {}, 
     levelEnglish: 0,
-    checkClickVocalbulary: () => {}, 
     index: 0,
     toggle: false,
+    dataVocalPagination: [], 
+    setDataVocalPagination: () => ([]),
+    setLevelEnglish: () => {}, 
+    checkClickVocalbulary: () => {}, 
     setToggle: () => {}, 
 })
 
@@ -25,6 +29,7 @@ const DataProvider = ({ children }: { children: any} ) => {
     const pathname = usePathname()
     // list vocalbulary
     const [data, setData] = useState<[]>([])
+    const [dataVocalPagination, setDataVocalPagination] = useState<[]>([])
     const [levelEnglish, setLevelEnglish] = useState<number>(0)
     const [index, setIndex] = useState<number>(0)
     const [toggle, setToggle] = useState<boolean>(false)
@@ -50,7 +55,19 @@ const DataProvider = ({ children }: { children: any} ) => {
     }, [levelEnglish])
 
     return (
-        <DataContexts.Provider value={{ data, index, toggle, setToggle, setLevelEnglish, levelEnglish, checkClickVocalbulary }}>
+        <DataContexts.Provider value={
+            { 
+                data, 
+                index, 
+                toggle, 
+                dataVocalPagination, 
+                levelEnglish,
+                setDataVocalPagination, 
+                setToggle, 
+                setLevelEnglish, 
+                checkClickVocalbulary 
+            }}
+        >
             {children}
         </DataContexts.Provider>
     )
