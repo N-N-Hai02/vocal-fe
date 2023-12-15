@@ -54,10 +54,7 @@ const TableLevel = forwardRef((props, ref) => {
             <div className="table-content">
                 <div className="d-none d-sm-block">
                     <table className="table table-hover table-bordered mt-3">
-                        <thead>
-                            <tr className="text-center table-primary">
-                                <th colSpan={7}>LEVELS LIST</th>
-                            </tr>
+                        <thead className="table-primary">
                             <tr>
                                 <th scope="col">Id</th>
                                 <th scope="col">Name</th>
@@ -127,8 +124,8 @@ const TableLevel = forwardRef((props, ref) => {
                     </div>
                 </div>
                 {/* ----->>>>>>>>>>>------- */}
-
-                <div className="role-paginate">
+                <hr />
+                <div className="role-paginate alert alert-primary">
                     <ReactPaginate
                         nextLabel="next >"
                         onPageChange={handlePageClick}

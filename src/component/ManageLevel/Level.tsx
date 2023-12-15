@@ -68,7 +68,7 @@ const Level = () => {
 
     return (
         <div className='role-container'>
-            <div className='title-role'><h4>Add a new Level...</h4></div>
+            <span className='title-role fs-4 fw-bold alert alert-primary p-2 my-4'>Level Management</span><hr />
             <div className='role-parent alert alert-primary'>
                 {
                     Object.entries(listChild).map(([key, child], index) => {
@@ -107,6 +107,7 @@ const Level = () => {
                     <button className='btn btn-warning px-5' onClick={() => handleSave()}>save</button>
                 </div>
             </div>
+            <hr />
             <div className='table-role mt-3'>
                 <TableLevel ref={childRef} />
             </div>

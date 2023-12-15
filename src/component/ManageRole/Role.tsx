@@ -72,7 +72,7 @@ const Role = () => {
         <>
             {user.isAuthenticated ?
                 <div className='role-container'>
-                    <div className='title-role'><h4>Add a new role...</h4></div>
+                    <span className='title-role fs-6 fs-sm-4 fw-bold alert alert-primary p-2 my-4'>Roles Management</span><hr />
                     <div className='role-parent alert alert-primary'>
                         {
                             Object.entries(listChild).map(([key, child], index) => {
@@ -111,6 +111,7 @@ const Role = () => {
                             <button className='btn btn-warning px-5' onClick={() => handleSave()}>save</button>
                         </div>
                     </div>
+                    <hr />
                     <div className='table-role mt-3'>
                         <TableRole ref={childRef} user={user} />
                     </div>

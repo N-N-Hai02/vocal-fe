@@ -34,7 +34,7 @@ export default function VocalbularyHome() {
     return (
         <div className="h-100">
             <div className="card rounded-0 m-4" style={{ marginTop: "4.5rem!important" }}>
-                <h5 className="card-header text-uppercase">Look up vocabulary</h5>
+                <h5 className="card-header text-uppercase alert alert-primary">Look up vocabulary</h5>
                 <div className="card-body">
                     <div className="input-group mb-3">
                         <input

@@ -200,7 +200,8 @@ const Vocal = () => {
                 && vocalList && vocalList.length > 0
                 ? 
                 <div className="admin-vocal">
-                    <div className="row alert alert-primary mx-1">
+                    <span className='title-role fs-6 fs-sm-4 fw-bold alert alert-primary p-2 my-4'>Users Management</span><hr />
+                    <div className="row alert alert-primary mx-1 mb-0">
                         <div className="d-lg-flex">
                             <form className="d-lg-flex col-12 col-lg-6 form-group custom-form custom-file-button" onSubmit={handleFileSubmit}>
                                 <label className="input-group-text fw-bold bg-warning" htmlFor="inputGroupFile">Import Excel File</label>
@@ -235,9 +236,12 @@ const Vocal = () => {
                         </div>
                     </div>
                     <hr />
-                    <div className="vocal-list-table mt-5">
+                    <div className="vocal-list-table">
                         <TableVocal vocalList={vocalList} handleEditVocal={handleEditVocal} handleDeleteVocal={handleDeleteVocal} />
-                        <AppPaginate pathName="#" totalPages={5} handlePageClick={handlePageClick} />
+                        <hr />
+                        <div className="alert alert-primary">
+                            <AppPaginate totalPages={5} handlePageClick={handlePageClick} />
+                        </div>
                     </div>
                 </div>
                 : <div className="alert alert-primary text-center">No Data...!</div>

@@ -103,8 +103,8 @@ const GroupRole = () => {
                 user.isAuthenticated && listRoles && listRoles.length > 0
                     ?
                     <div className='group-role-container'>
+                        <span className='title-role fs-6 fs-sm-4 fw-bold alert alert-primary p-2 my-4'>Group-Roles Management</span><hr />
                         <div className='alert alert-primary'>
-                            <h4>Group Role:</h4>
                             <div className='assign-group-role'>
                                 <div className='col-12 col-sm-6 form-group'>
                                     <select

@@ -85,7 +85,7 @@ export default function VocalbularyTest() {
                 user.isAuthenticated && levelVocal[0] && levelVocal[0].length > 0 && orderSortData && orderSortData.length > 1
                     ?
                     <div className="card rounded-0 m-4" style={{ marginTop: "4.5rem!important" }}>
-                        <h5 className="card-header text-uppercase">Example Test</h5>
+                        <h5 className="card-header text-uppercase alert alert-primary">Example Test</h5>
                         <div className="card-body">
                             <div className="row input-group mb-3 mx-1 mx-lg-3">
                                 <div className='col-12 col-lg-8 d-lg-flex justify-content-around alert alert-primary'>
@@ -221,13 +221,12 @@ export default function VocalbularyTest() {
                                         </div>
                                 }
                             </div>
-
+                            <hr />
                             {
                                 showViewTest && saveTheCheckList.length > 0
                                 &&
-                                <div className='row'>
-                                    <hr />
-                                    <div className='row col-12 col-lg-8 mx-2 mx-lg-3'>
+                                <div className='alert alert-primary'>
+                                    <div className='row'>
                                         <button
                                             className='col-12 col-lg-2 fw-bold btn btn-primary text-warning me-2 mb-2 mb-lg-0'
                                             onClick={() => handleNext()}

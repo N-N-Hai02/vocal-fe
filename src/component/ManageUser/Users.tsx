@@ -79,11 +79,9 @@ const Users = () => {
             && userLists && userLists.length > 0
                 ? <div className="manage-users-container">
                     <div className="user-header mt-2">
-                        <div className="title">
-                            <h3>Manage User</h3>
-                        </div>
+                        <span className='title-role fs-6 fs-sm-4 fw-bold alert alert-primary p-2 my-4'>Users Management</span><hr />
                         <div className="row mx-1">
-                            <div className="col-12 col-lg-6 alert alert-primary d-lg-flex justify-content-around">
+                            <div className="col-12 col-lg-6 alert alert-primary d-lg-flex justify-content-around m-0">
                                 <button
                                     className="col-12 col-lg-6 btn btn-success me-2 mb-2 mb-lg-0"
                                     onClick={() => window.location.reload()}
@@ -104,13 +102,11 @@ const Users = () => {
                             </div>
                         </div>
                     </div>
+                    <hr />
                     <div className="user-body">
                         <div className="d-none d-sm-block">
                             <table className="table table-hover table-bordered mt-3">
-                                <thead>
-                                    <tr className="text-center table-primary">
-                                        <th colSpan={7}>USERS LIST</th>
-                                    </tr>
+                                <thead className="table-primary">
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Id</th>
@@ -207,8 +203,9 @@ const Users = () => {
                         </div>
                         {/* ----->>>>>>>>>>>------- */}
                     </div>
+                    <hr />
                     {totalPages > 0 &&
-                        <div className="user-footer">
+                        <div className="user-footer alert alert-primary">
                             <ReactPaginate
                                 nextLabel={<i className="ms-2 fa fa-forward"></i>}
                                 onPageChange={handlePageClick}
