@@ -1,9 +1,8 @@
 "use client"
-import AppPaginate from "@/component/app.paginate"
-import { useContext, useEffect, useRef, useState } from "react"
+import { useCallback, useContext, useEffect, useRef, useState } from "react"
 import _ from 'lodash'
 import { toast } from "react-toastify"
-import { createNewVocal, deleteVocal, fechAllVocal } from "@/services/vocalService"
+import { createNewVocal, deleteVocal, fechAllVocal, fechAllVocalWithPaginate } from "@/services/vocalService"
 import TableVocal from "./TableVocal"
 import ModalVocalEdit from "./ModalVocalEdit"
 import * as XLSX from 'xlsx'
@@ -11,9 +10,14 @@ import './Vocal.scss'
 import ModalImportExcel from "./ModalImportExcel"
 import ModalVocalAdd from "./ModalVocalAdd"
 import { UserContext } from "@/context/UserContext"
+import ReactPaginate from "react-paginate"
+import { DataContexts } from "@/context/dataContext"
+import { levelVocal } from "@/contants/level"
 
 const Vocal = () => {
     const { user } = useContext(UserContext)
+    const { levelEnglish, setLevelEnglish } = useContext(DataContexts)
+
     const defaultVocalDataNew: any = {
         en: "",
         vn: "",
@@ -38,6 +42,9 @@ const Vocal = () => {
     const [isShowModalAdd, setIsShowModalAdd] = useState(false)
     const [isShowModalEdit, setIsShowModalEdit] = useState(false)
     const [dataModalVocalEdit, setDataModalVocalEdit] = useState({})
+    const [currentPage, setCurrentPage] = useState(1)
+    const [currentLimit, setCurrentLimit] = useState(3)
+    const [totalPages, setTotalPages] = useState(2)
 
     // import using file excel, csv
     const [excelFile, setExcelFile] = useState(null)
@@ -88,19 +95,32 @@ const Vocal = () => {
     }
     // end import excel
 
-    const handlePageClick = () => { }
+    // const getAllVocal = async () => {
+    //     let res: any = await fechAllVocal()
+    //     if (res && res.DT) {
+    //         let datas = res.DT
+    //         setVocalList(datas)
+    //     }
+    // }
+    // useEffect(() => {
+    //     getAllVocal()
+    // }, [])
 
-    const getAllVocal = async () => {
-        let res: any = await fechAllVocal()
-        if (res && res.DT) {
-            let datas = res.DT
-            setVocalList(datas)
+    // pagination
+    const getVocals = useCallback(async () => {
+        let response: any = await fechAllVocalWithPaginate(currentPage, currentLimit, +levelEnglish)
+        if (response && response.EC === 0) {
+            setTotalPages(response.DT.totalPages)
+            setVocalList(response.DT.vocals)
         }
-    }
+        setCurrentLimit(5)
+    }, [currentPage, currentLimit, levelEnglish])
 
     useEffect(() => {
-        getAllVocal()
-    }, [])
+        getVocals()
+    }, [getVocals])
+
+    const handlePageClick = (event: any) => setCurrentPage(+event.selected + 1)
 
     // -------------------------- handle Add..! ---------------------------------
     const handleOnChangeInput = (value: string, name: string) => {
@@ -147,7 +167,7 @@ const Vocal = () => {
                 if (res && +res.EC === 0) {
                     setVocalDataNew(defaultVocalDataNew)
                     setIsShowModalAdd(false)
-                    await getAllVocal()
+                    await getVocals()
                     toast.success(res.EM)
                 }
                 if (res && +res.EC !== 0) {
@@ -160,7 +180,7 @@ const Vocal = () => {
         } else if (modalShowExcel === true) {
             let res: any = await createNewVocal(excelData)
             if (res && +res.EC === 0) {
-                await getAllVocal()
+                await getVocals()
                 toast.success(res.EM)
                 setModalShowExcel(false)
                 setExcelData(null)
@@ -181,7 +201,7 @@ const Vocal = () => {
             let res: any = await deleteVocal(vocal)
             if (res && +res.EC === 0) {
                 toast.success(res.EM)
-                getAllVocal()
+                getVocals()
             } else {
                 toast.error(res.EM)
             }
@@ -189,7 +209,7 @@ const Vocal = () => {
     }
     const handleCloseModalEdit = () => {
         setIsShowModalEdit(false)
-        getAllVocal()
+        getVocals()
     }
 
     return (
@@ -223,7 +243,15 @@ const Vocal = () => {
                                     <i className="ms-2 fa fa-eye"></i>
                                 </button>
                             </form>
-                            <div className="col-lg-3"></div>
+                            <div className="col-lg-3 me-sm-2 mb-2 mb-lg-0">
+                                <select
+                                    className="form-select"
+                                    aria-label="Default select example"
+                                    onChange={(e) => setLevelEnglish(+e.target.value)}
+                                >
+                                    {levelVocal[0]?.map((item: any, index: number) => <option key={index} value={item.id}>{item.name}</option>)}
+                                </select>
+                            </div>
                             <div className="col-12 col-lg-3">
                                 <button className="btn btn-primary w-100 float-end" onClick={() => setIsShowModalAdd(true)}>
                                     Create New Vocal <i className="fa fa-plus" aria-hidden="true"></i>
@@ -239,8 +267,27 @@ const Vocal = () => {
                     <div className="vocal-list-table">
                         <TableVocal vocalList={vocalList} handleEditVocal={handleEditVocal} handleDeleteVocal={handleDeleteVocal} />
                         <hr />
-                        <div className="alert alert-primary">
-                            <AppPaginate totalPages={5} handlePageClick={handlePageClick} />
+                        <div className="alert alert-primary mb-0">
+                            <ReactPaginate
+                                nextLabel={<i className="ms-2 fa fa-forward"></i>}
+                                onPageChange={handlePageClick}
+                                pageRangeDisplayed={1}
+                                marginPagesDisplayed={0}
+                                pageCount={totalPages}
+                                previousLabel={<i className="fa fa-backward"></i>}
+                                pageClassName="page-item"
+                                pageLinkClassName="page-link"
+                                previousClassName="page-item"
+                                previousLinkClassName="page-link"
+                                nextClassName="page-item"
+                                nextLinkClassName="page-link"
+                                breakLabel="..."
+                                breakClassName="page-item"
+                                breakLinkClassName="page-link"
+                                containerClassName="pagination"
+                                activeClassName="active"
+                                renderOnZeroPageCount={null}
+                            />
                         </div>
                     </div>
                 </div>
