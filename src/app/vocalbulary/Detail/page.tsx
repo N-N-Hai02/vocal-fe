@@ -9,7 +9,7 @@ import { UserContext } from '@/context/UserContext';
 const VocalbularyDetail = () => {
     const { data, index } = useContext(DataContexts)
     const { user } = useContext(UserContext)
-    const [vocalDetail, setDataList] = useState<any[]>([])
+    const [vocalDetail, setVocalDetail] = useState<any[]>([])
     const [totalPages, setTotalPages] = useState<number>(0)
     const [currentPage, setCurrentPage] = useState<number>(0)
     const handlePageClick = (event: any) => setCurrentPage(+event.selected)
@@ -19,7 +19,7 @@ const VocalbularyDetail = () => {
     }, [])
 
     useEffect(() => {
-        setDataList([data[currentPage]])
+        setVocalDetail([data[currentPage]])
         setTotalPages(data.length)
     }, [currentPage, data])
 

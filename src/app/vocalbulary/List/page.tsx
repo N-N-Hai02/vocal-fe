@@ -1,17 +1,37 @@
 "use client"
-import { useContext, useEffect, useState } from "react"
+import { useCallback, useContext, useEffect, useState } from "react"
 import Link from 'next/link'
 import { DataContexts } from '@/context/dataContext'
 import { levelVocal } from '@/contants/level'
 import { UserContext } from "@/context/UserContext"
-import { fechAllVocalByUser, vocalAssignToUser } from "@/services/vocalService"
+import { fechAllVocalWithPaginate, fechAllVocalByUser, vocalAssignToUser } from "@/services/vocalService"
 import { toast } from "react-toastify"
+import ReactPaginate from "react-paginate"
 
 export default function VocabularyList() {
-    const { data, setVlaue, checkClickVocalbulary } = useContext(DataContexts)
+    const { data, setVlaue, value, checkClickVocalbulary } = useContext(DataContexts)
     const { user } = useContext(UserContext)
 
     const [vocalByUserList, setVocalByUserList] = useState([])
+    const [vocalList, setVocalList] = useState<[]>([])
+    const [currentPage, setCurrentPage] = useState(1)
+    const [currentLimit, setCurrentLimit] = useState(3)
+    const [totalPages, setTotalPages] = useState(0)
+
+    const getVocals = useCallback(async () => {
+        let response: any = await fechAllVocalWithPaginate(currentPage, currentLimit, +value)
+        if (response && response.EC === 0) {
+            setTotalPages(response.DT.totalPages)
+            setVocalList(response.DT.vocals)
+        }
+        setCurrentLimit(5)
+    }, [currentPage, currentLimit, value])
+
+    useEffect(() => {
+        getVocals()
+    }, [getVocals])
+
+    const handlePageClick = (event: any) => setCurrentPage(+event.selected + 1)
 
     useEffect(() => setVlaue(1), [])
 
@@ -53,7 +73,7 @@ export default function VocabularyList() {
     return (
         <div className="h-100">
             {
-                user.isAuthenticated && data && data.length > 0 && levelVocal[0] && levelVocal[0]?.length > 0
+                user.isAuthenticated && vocalList && vocalList.length > 0 && levelVocal[0] && levelVocal[0]?.length > 0
                     ?
                     <div className="card rounded-0">
                         <h5 className="card-header text-uppercase">Danh sách từ</h5>
@@ -75,6 +95,7 @@ export default function VocabularyList() {
                                     <thead>
                                         <tr className="table-primary">
                                             <th scope="col">No</th>
+                                            <th scope="col">ID</th>
                                             <th scope="col">English</th>
                                             <th scope="col">Spelling</th>
                                             <th scope="col">Pronunciation</th>
@@ -83,9 +104,12 @@ export default function VocabularyList() {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {data.map((item: any, index: number) => (
+                                        {vocalList && vocalList.length > 0
+                                        && 
+                                        vocalList.map((item: any, index: number) => (
                                             <tr key={index}>
-                                                <td>{index + 1}</td>
+                                                <td>{(currentPage - 1) * currentLimit + index + 1}</td>
+                                                <td>{item.id}</td>
                                                 <th scope="row" onClick={() => checkClickVocalbulary(index)}>
                                                     <Link href="/vocalbulary/Detail">{item.en}</Link>
                                                 </th>
@@ -111,11 +135,11 @@ export default function VocabularyList() {
                             <div className="card mb-3 d-block d-sm-none" style={{ maxWidth: '540px' }}>
                                 <div className="row g-0">
                                     <div className="col-md-8">
-                                        {data && data.length > 0 &&
-                                            data.map((item: any, index: number) => {
+                                        {vocalList && vocalList.length > 0 &&
+                                            vocalList.map((item: any, index: number) => {
                                                 return (
                                                     <div className="card-body" key={index}>
-                                                        <p className="card-title text-primary fw-bold">No: {index + 1}</p>
+                                                        <p className="card-title text-primary fw-bold">No: {(currentPage - 1) * currentLimit + index + 1}</p>
                                                         <p className="card-text"><span className="fw-bold">Spelling:</span> {item.en} </p>
                                                         <p className="card-text"><span className="fw-bold">English:</span> {item.vn} </p>
                                                         <p className="card-text"><span className="fw-bold">Vietnamese:</span> {item.spelling} </p>
@@ -136,6 +160,27 @@ export default function VocabularyList() {
                                 </div>
                             </div>
                             {/* ----->>>>>>>>>>>------- */}
+
+                            <ReactPaginate
+                                nextLabel={<i className="ms-2 fa fa-forward"></i>}
+                                onPageChange={handlePageClick}
+                                pageRangeDisplayed={1}
+                                marginPagesDisplayed={0}
+                                pageCount={totalPages}
+                                previousLabel={<i className="fa fa-backward"></i>}
+                                pageClassName="page-item"
+                                pageLinkClassName="page-link"
+                                previousClassName="page-item"
+                                previousLinkClassName="page-link"
+                                nextClassName="page-item"
+                                nextLinkClassName="page-link"
+                                breakLabel="..."
+                                breakClassName="page-item"
+                                breakLinkClassName="page-link"
+                                containerClassName="pagination"
+                                activeClassName="active"
+                                renderOnZeroPageCount={null}
+                            />
                         </div>
                     </div>
                     : <div className="alert alert-primary text-center">No Data...!</div>

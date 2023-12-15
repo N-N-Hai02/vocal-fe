@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 type GlobalContent = {
     data: [],
     setVlaue: (id: number) => void,
+    value: number,
     checkClickVocalbulary: (id: number) => void,
     index: number,
     toggle: boolean,
@@ -13,6 +14,7 @@ type GlobalContent = {
 const DataContexts = createContext<GlobalContent>({ 
     data: [], 
     setVlaue: () => {}, 
+    value: 0,
     checkClickVocalbulary: () => {}, 
     index: 0,
     toggle: false,
@@ -48,7 +50,7 @@ const DataProvider = ({ children }: { children: any} ) => {
     }, [value])
 
     return (
-        <DataContexts.Provider value={{ data, index, toggle, setToggle, setVlaue, checkClickVocalbulary }}>
+        <DataContexts.Provider value={{ data, index, toggle, setToggle, setVlaue, value, checkClickVocalbulary }}>
             {children}
         </DataContexts.Provider>
     )
