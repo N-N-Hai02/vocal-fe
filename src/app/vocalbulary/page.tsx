@@ -20,8 +20,6 @@ export default function VocalbularyHome() {
                 })
             }
         }
-        console.log("check resultSearch: ", resultSearch)
-        
         resultSearch && resultSearch.length > 0 && setAllVocals(resultSearch)
     }
 

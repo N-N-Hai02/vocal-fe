@@ -75,10 +75,6 @@ export default function VocalbularyTest() {
     const totalCheckTrue = handleGetTotalTrueOrFalse(true)
     const totalCheckFalse = handleGetTotalTrueOrFalse(false)
 
-    console.log("check totalCheckTrue: ", totalCheckTrue)
-    console.log("check totalCheckFalse: ", totalCheckFalse)
-    
-
     return (
         <div className="h-100">
             {
