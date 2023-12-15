@@ -79,7 +79,7 @@ const Users = () => {
             && userLists && userLists.length > 0
                 ? <div className="manage-users-container">
                     <div className="user-header mt-2">
-                        <span className='title-role fs-6 fs-sm-4 fw-bold alert alert-primary p-2 my-4'>Users Management</span><hr />
+                        <span className='title-role fs-6 fw-bold alert alert-primary p-2 my-4'>Users Management</span><hr />
                         <div className="row mx-1">
                             <div className="col-12 col-lg-6 alert alert-primary d-lg-flex justify-content-around m-0">
                                 <button

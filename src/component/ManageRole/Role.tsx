@@ -72,7 +72,7 @@ const Role = () => {
         <>
             {user.isAuthenticated ?
                 <div className='role-container'>
-                    <span className='title-role fs-6 fs-sm-4 fw-bold alert alert-primary p-2 my-4'>Roles Management</span><hr />
+                    <span className='title-role fs-6 fw-bold alert alert-primary p-2 my-4'>Roles Management</span><hr />
                     <div className='role-parent alert alert-primary'>
                         {
                             Object.entries(listChild).map(([key, child], index) => {
