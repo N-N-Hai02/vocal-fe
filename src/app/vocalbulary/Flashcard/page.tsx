@@ -6,11 +6,11 @@ import { levelVocal } from '@/contants/level'
 import { UserContext } from "@/context/UserContext";
 
 export default function VocalbularyFlashcard() {
-    const { data, setVlaue } = useContext(DataContexts)
+    const { data, setLevelEnglish } = useContext(DataContexts)
     const { user } = useContext(UserContext)
     const [flashcarddata, setFlashcarddata] = useState<[]>([]);
 
-    useEffect(() => setVlaue(1), [])
+    useEffect(() => setLevelEnglish(1), [])
 
     useEffect(() => {
         setFlashcarddata(data)
@@ -34,7 +34,7 @@ export default function VocalbularyFlashcard() {
                             <select
                                 className="form-select"
                                 aria-label="Default select example"
-                                onChange={(e) => setVlaue(+e.target.value)}
+                                onChange={(e) => setLevelEnglish(+e.target.value)}
                             >
                                 {levelVocal[0]?.map((item: any, index: number) => <option value={item.id} key={index}>{item.name}</option>)}
                             </select>

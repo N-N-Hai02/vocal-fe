@@ -9,7 +9,7 @@ import { toast } from "react-toastify"
 import ReactPaginate from "react-paginate"
 
 export default function VocabularyList() {
-    const { data, setVlaue, value, checkClickVocalbulary } = useContext(DataContexts)
+    const { data, setLevelEnglish, levelEnglish, checkClickVocalbulary } = useContext(DataContexts)
     const { user } = useContext(UserContext)
 
     const [vocalByUserList, setVocalByUserList] = useState([])
@@ -19,13 +19,13 @@ export default function VocabularyList() {
     const [totalPages, setTotalPages] = useState(0)
 
     const getVocals = useCallback(async () => {
-        let response: any = await fechAllVocalWithPaginate(currentPage, currentLimit, +value)
+        let response: any = await fechAllVocalWithPaginate(currentPage, currentLimit, +levelEnglish)
         if (response && response.EC === 0) {
             setTotalPages(response.DT.totalPages)
             setVocalList(response.DT.vocals)
         }
         setCurrentLimit(5)
-    }, [currentPage, currentLimit, value])
+    }, [currentPage, currentLimit, levelEnglish])
 
     useEffect(() => {
         getVocals()
@@ -33,7 +33,7 @@ export default function VocabularyList() {
 
     const handlePageClick = (event: any) => setCurrentPage(+event.selected + 1)
 
-    useEffect(() => setVlaue(1), [])
+    useEffect(() => setLevelEnglish(1), [])
 
     const handleStatus = async (data: any) => {
         let resultData = {
@@ -84,7 +84,7 @@ export default function VocabularyList() {
                                     <select
                                         className="form-select"
                                         aria-label="Default select example"
-                                        onChange={(e) => setVlaue(+e.target.value)}
+                                        onChange={(e) => setLevelEnglish(+e.target.value)}
                                     >
                                         {levelVocal[0]?.map((item: any, index: number) => <option key={index} value={item.id}>{item.name}</option>)}
                                     </select>

@@ -7,10 +7,10 @@ import * as XLSX from 'xlsx';
 import { UserContext } from '@/context/UserContext'
 
 export default function VocalbularyTest() {
-    const { data, setVlaue } = useContext(DataContexts)
+    const { data, setLevelEnglish } = useContext(DataContexts)
     const { user } = useContext(UserContext)
 
-    useEffect(() => setVlaue(1), [])
+    useEffect(() => setLevelEnglish(1), [])
 
     const [language, setLanguage] = useState("en")
     const handleChangeLanguage = (value: string) => setLanguage(value)
@@ -94,7 +94,7 @@ export default function VocalbularyTest() {
                                         <select
                                             className="form-select"
                                             aria-label="Default select example"
-                                            onChange={(e) => setVlaue(+e.target.value)}
+                                            onChange={(e) => setLevelEnglish(+e.target.value)}
                                             disabled={showViewTest && saveTheCheckList && saveTheCheckList.length > 0 && true}
                                         >
                                             {levelVocal[0]?.map((item: any, index: number) => <option value={item.id} key={index}>{item.name}</option>)}

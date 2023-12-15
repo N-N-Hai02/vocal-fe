@@ -4,8 +4,8 @@ import { usePathname } from 'next/navigation'
 
 type GlobalContent = {
     data: [],
-    setVlaue: (id: number) => void,
-    value: number,
+    setLevelEnglish: (id: number) => void,
+    levelEnglish: number,
     checkClickVocalbulary: (id: number) => void,
     index: number,
     toggle: boolean,
@@ -13,8 +13,8 @@ type GlobalContent = {
 }
 const DataContexts = createContext<GlobalContent>({ 
     data: [], 
-    setVlaue: () => {}, 
-    value: 0,
+    setLevelEnglish: () => {}, 
+    levelEnglish: 0,
     checkClickVocalbulary: () => {}, 
     index: 0,
     toggle: false,
@@ -25,17 +25,17 @@ const DataProvider = ({ children }: { children: any} ) => {
     const pathname = usePathname()
     // list vocalbulary
     const [data, setData] = useState<[]>([])
-    const [value, setVlaue] = useState<number>(0)
+    const [levelEnglish, setLevelEnglish] = useState<number>(0)
     const [index, setIndex] = useState<number>(0)
     const [toggle, setToggle] = useState<boolean>(false)
 
     const checkClickVocalbulary = (index:number) => setIndex(index)
 
-    const getAllVocal = async (value:number) => {
+    const getAllVocal = async (levelId:number) => {
         let response:any = await fechAllVocal()
         if (response && response.DT) {
             let datas = response.DT
-            let result =  datas.filter((item:any) => +item.levelId === value)
+            let result =  datas.filter((item:any) => +item.levelId === levelId)
             setData(result)
         }
     }
@@ -46,11 +46,11 @@ const DataProvider = ({ children }: { children: any} ) => {
     }, [pathname, toggle])
 
     useEffect(() => {
-        getAllVocal(value)
-    }, [value])
+        getAllVocal(levelEnglish)
+    }, [levelEnglish])
 
     return (
-        <DataContexts.Provider value={{ data, index, toggle, setToggle, setVlaue, value, checkClickVocalbulary }}>
+        <DataContexts.Provider value={{ data, index, toggle, setToggle, setLevelEnglish, levelEnglish, checkClickVocalbulary }}>
             {children}
         </DataContexts.Provider>
     )
