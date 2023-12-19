@@ -1,12 +1,14 @@
 "use client"
-import { useContext, useState } from "react";
-import { useRouter } from 'next/navigation'
 import "./index.scss"
-import { toast } from "react-toastify";
-import { UserContext } from "@/context/UserContext";
-import { loginUser } from "@/services/userService";
+import { useContext, useState } from "react"
+import { useRouter } from 'next/navigation'
+import { toast } from "react-toastify"
+import { UserContext } from "@/context/UserContext"
+import { loginUser } from "@/services/userService"
+import { useSession, signIn } from "next-auth/react"
 
 const Login = () => {
+    const { data: session  }:any = useSession()
     const { user, loginContext } = useContext(UserContext)
     const router = useRouter()
 
@@ -61,6 +63,14 @@ const Login = () => {
         }
     }
 
+    const handleSignIn = async () => {
+        await signIn("providers", {
+          callbackUrl: "/vocalbulary",
+        })
+    }
+
+    session !== null && session?.user !== undefined && router.push("/")
+    
     return (
         <div className="login-container py-3">
             <div className="container d-flex flex-column justify-content-center">
@@ -98,7 +108,8 @@ const Login = () => {
                         </span>
                         <hr />
                         <div className="text-center">
-                            <button className="btn btn-outline-success fw-bold" onClick={() => handleCreateNewAccount()}>Create new account</button>
+                            <button className="col-12 col-sm-6 btn btn-outline-warning fw-bold me-sm-3" onClick={() => handleSignIn()}>Log in with another account</button>
+                            <button className="col-12 col-sm-5 btn btn-outline-success fw-bold mt-2 mt-sm-0 ms-sm-2" onClick={() => handleCreateNewAccount()}>Create new account</button>
                         </div>
                     </div>
                 </div>

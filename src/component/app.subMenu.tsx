@@ -3,9 +3,11 @@ import { useContext } from 'react'
 import { Dropdown } from 'react-bootstrap'
 import { UserContext } from '@/context/UserContext'
 import './subMenu.scss'
+import { useSession } from "next-auth/react"
 
 const SubMenu = () => {
     const { user } = useContext(UserContext)
+    const { data: session }: any = useSession()
 
     return (
         <>
@@ -14,7 +16,7 @@ const SubMenu = () => {
                     Is the loading..!
                 </div>
             }
-            {user.isAuthenticated && user.isAuthenticated === true &&
+            {user.isAuthenticated && user.isAuthenticated === true || session?.user &&
                 <div className="fixed-bottom">
                     <div className="dropdown position-absolute bottom-0 end-0 m-4">
                         <Dropdown>

@@ -9,8 +9,10 @@ import logo from '../app/logo_2.svg'
 import './app.header.scss'
 import Image from 'next/image'
 import { DataContexts } from '@/context/dataContext'
+import { useSession, signOut } from "next-auth/react"
 
 const AppHeader = (): JSX.Element | any => {
+    const { data: session }: any = useSession()
     const router = useRouter()
     const pathname = usePathname()
 
@@ -23,12 +25,15 @@ const AppHeader = (): JSX.Element | any => {
         let res: any = await logoutUser() // clear cookies
         localStorage.removeItem('jwt') // clear localstorage
         logoutContext() // clear context
-        if (res && res.EC === 0) {
+
+        if (res && res.EC === 0 || session?.user) {
             router.push('/login')
-            toast.success("Logout successfully..!")
+            session?.user ? toast.success("Logout google successfully..!") : toast.success("Logout successfully..!")
         } else {
             toast.error(res.EM)
         }
+
+        session?.user && signOut({ redirect: false })
     }
 
     const handleClickNavhiden = () => toggle && setToggle(false)
@@ -39,7 +44,7 @@ const AppHeader = (): JSX.Element | any => {
         return <div>Is the loading..!</div>
     }
 
-    if ((user.isAuthenticated && user.isAuthenticated === true) || pathname === '/' || pathname === '/vocalbulary') {
+    if ((user.isAuthenticated && user.isAuthenticated === true || session?.user) || pathname === '/' || pathname === '/vocalbulary') {
         return (
             <div className='navbar-header'>
                 <Navbar expand="lg" className="bg-primary fixed-top" expanded={expanded}>
@@ -57,7 +62,7 @@ const AppHeader = (): JSX.Element | any => {
                         <Navbar.Toggle onClick={() => setToggle(!toggle)} />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="nav-body me-auto my-2 my-lg-0">
-                                {user && user.isAuthenticated === true
+                                {user && user.isAuthenticated === true || session?.user
                                     &&
                                     <>
                                         <Link onClick={handleClickNavhiden} href="/vocalbulary" className='text-light py-2 text-decoration-none'>
@@ -88,17 +93,17 @@ const AppHeader = (): JSX.Element | any => {
                                     </NavDropdown>
                                 }
                             </Nav>
-                            {user && user.isAuthenticated === true
+                            {user && user.isAuthenticated === true || session?.user
                                 ?
                                 <Nav className='mt-lg-auto'>
-                                    <Nav.Item className='nav-link mt-lg-auto text-light'>Welcome, {user.account.username}!</Nav.Item>
+                                    <Nav.Item className='nav-link mt-lg-auto text-light'>Welcome, { session?.user ? session?.user.name : user.account.username }!</Nav.Item>
                                     <NavDropdown title="Action" id="Action-dropdown">
                                         <NavDropdown.Item href="#">Change Password</NavDropdown.Item>
                                         <NavDropdown.Divider />
                                         <NavDropdown.Item>
                                             <Link
                                                 href="#"
-                                                className='w-100 btn btn-success text-light py-2 text-decoration-none'
+                                                className={`${!session?.user ? 'w-100 btn btn-success text-light py-2 text-decoration-none' : 'w-100 btn btn-warning text-light py-2 text-decoration-none'}`}
                                                 onClick={() => handleLogoutUser()}
                                             >
                                                 Log out user

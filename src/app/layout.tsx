@@ -8,6 +8,7 @@ import SubMenu from '@/component/app.subMenu'
 import AppFooter from '@/component/app.footer'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import AuthGoogleProviders from '@/component/ManageAuthGoogle/Providers'
 
 
 export default function RootLayout({
@@ -21,30 +22,32 @@ export default function RootLayout({
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" />
          </head>
          <body>
-            <UserProvider>
-               <DataProvider>
-                  <AppHeader />
-                  <div id='childrenContent' className='container'>
-                     {children}
-                     <div className='vh-100'></div>
-                  </div>
-                  <SubMenu />
-                  <ToastContainer
-                     position="bottom-right"
-                     className="mb-5"
-                     autoClose={5000}
-                     hideProgressBar={false}
-                     newestOnTop={false}
-                     closeOnClick
-                     rtl={false}
-                     pauseOnFocusLoss
-                     draggable
-                     pauseOnHover
-                     theme="light"
-                  />
-                  <AppFooter />
-               </DataProvider>
-            </UserProvider>
+            <AuthGoogleProviders>
+               <UserProvider>
+                  <DataProvider>
+                     <AppHeader />
+                     <div id='childrenContent' className='container'>
+                        {children}
+                        <div className='vh-100'></div>
+                     </div>
+                     <SubMenu />
+                     <ToastContainer
+                        position="bottom-right"
+                        className="mb-5"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="light"
+                     />
+                     <AppFooter />
+                  </DataProvider>
+               </UserProvider>
+            </AuthGoogleProviders>
          </body>
       </html>
    )
