@@ -62,8 +62,8 @@ const AppHeader = (): JSX.Element | any => {
                         <Navbar.Toggle onClick={() => setToggle(!toggle)} />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="nav-body me-auto my-2 my-lg-0">
-                                {user && user.isAuthenticated === true || session?.user
-                                    &&
+                                {
+                                    ((user && user.isAuthenticated === true) || (session !== null && session?.user !== undefined)) &&
                                     <>
                                         <Link onClick={handleClickNavhiden} href="/vocalbulary" className='text-light py-2 text-decoration-none'>
                                             Home Vocalbulary

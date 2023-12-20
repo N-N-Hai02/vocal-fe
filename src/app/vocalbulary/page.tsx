@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import { fechAllVocal } from '@/services/vocalService'
 
-
 export default function VocalbularyHome() {
     const [valueSearch, setValueSearch] = useState("")
     const [allVocals, setAllVocals] = useState<[]>([])

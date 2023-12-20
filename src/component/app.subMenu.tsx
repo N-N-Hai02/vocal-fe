@@ -16,7 +16,7 @@ const SubMenu = () => {
                     Is the loading..!
                 </div>
             }
-            {user.isAuthenticated && user.isAuthenticated === true || session?.user &&
+            {(user.isAuthenticated && user.isAuthenticated === true || session?.user) &&
                 <div className="fixed-bottom">
                     <div className="dropdown position-absolute bottom-0 end-0 m-4">
                         <Dropdown>

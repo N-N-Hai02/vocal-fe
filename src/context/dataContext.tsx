@@ -1,6 +1,8 @@
-import { createContext, useEffect, useState } from "react"
+import { createContext, useContext, useEffect, useState } from "react"
 import { fechAllVocal } from '../services/vocalService'
 import { usePathname } from 'next/navigation'
+import { UserContext } from "./UserContext"
+import { useSession } from "next-auth/react"
 
 type GlobalContent = {
     data: [],
@@ -26,7 +28,9 @@ const DataContexts = createContext<GlobalContent>({
 })
 
 const DataProvider = ({ children }: { children: any} ) => {
+    const { data: session  }:any = useSession()
     const pathname = usePathname()
+    const { user } = useContext(UserContext)
     // list vocalbulary
     const [data, setData] = useState<[]>([])
     const [dataVocalPagination, setDataVocalPagination] = useState<[]>([])
@@ -51,7 +55,7 @@ const DataProvider = ({ children }: { children: any} ) => {
     }, [pathname, toggle])
 
     useEffect(() => {
-        getAllVocal(levelEnglish)
+        (user.isAuthenticated || (session !== null && session?.user !== undefined)) && getAllVocal(levelEnglish)
     }, [levelEnglish])
 
     return (

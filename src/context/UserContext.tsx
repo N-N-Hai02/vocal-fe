@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react"
 import { getUserAccount } from '../services/userService'
+import { useSession } from "next-auth/react"
 interface user {
     isLoading: boolean
     isAuthenticated: boolean,
@@ -26,6 +27,7 @@ const UserContext = createContext<GlobalContent>({
 })
 
 const UserProvider  = ({ children }: {children: any}) => {
+    const { data: session  }:any = useSession()
     // User is the name of the "data" that gets stored in context
     const userDefaullt = {
         isLoading: true,
@@ -63,7 +65,7 @@ const UserProvider  = ({ children }: {children: any}) => {
     }
     
     useEffect(() => {
-        fetchUser()
+        (user.isAuthenticated || (session !== null && session?.user !== undefined)) ? fetchUser() : setUser({...userDefaullt, isLoading: false})
     }, [])
 
     return (

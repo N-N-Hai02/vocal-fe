@@ -64,9 +64,7 @@ const Login = () => {
     }
 
     const handleSignIn = async () => {
-        await signIn("providers", {
-          callbackUrl: "/vocalbulary",
-        })
+        await signIn("providers", { redirect: false, callbackUrl: "/vocalbulary" })
     }
 
     session !== null && session?.user !== undefined && router.push("/")
