@@ -7,8 +7,10 @@ import { UserContext } from "@/context/UserContext"
 import { fechAllVocalWithPaginate, fechAllVocalByUser, vocalAssignToUser } from "@/services/vocalService"
 import { toast } from "react-toastify"
 import ReactPaginate from "react-paginate"
+import { useSession } from "next-auth/react"
 
 export default function VocabularyList() {
+    const { data: session }: any = useSession()
     const { levelEnglish, setLevelEnglish, checkClickVocalbulary, setDataVocalPagination } = useContext(DataContexts)
     const { user } = useContext(UserContext)
 
@@ -37,19 +39,23 @@ export default function VocabularyList() {
     useEffect(() => setLevelEnglish(1), [])
 
     const handleStatus = async (data: any) => {
-        let resultData = {
-            userId: user.account.groupWithRoles.id,
-            vocalId: data.id
-        }
-
-        if (data && confirm(`Assign: ${data.en} to ${user.account.username}`) == true) {
-            let res: any = await vocalAssignToUser(resultData)
-            if (res && res.EC === 0) {
-                toast.success(res.EM)
-                getAllVocalByUser()
-            } else {
-                toast.error(res.EM)
+        if (session?.user === undefined) {
+            let resultData = {
+                userId: user.account.groupWithRoles.id,
+                vocalId: data.id
             }
+    
+            if (data && confirm(`Assign: ${data.en} to ${user.account.username}`) == true) {
+                let res: any = await vocalAssignToUser(resultData)
+                if (res && res.EC === 0) {
+                    toast.success(res.EM)
+                    getAllVocalByUser()
+                } else {
+                    toast.error(res.EM)
+                }
+            }
+        } else {
+            alert("TODO...")
         }
     }
 
@@ -74,7 +80,7 @@ export default function VocabularyList() {
     return (
         <div className="h-100">
             {
-                user.isAuthenticated && vocalList && vocalList.length > 0 && levelVocal[0] && levelVocal[0]?.length > 0
+                ((user.isAuthenticated && vocalList && vocalList.length > 0 && levelVocal[0] && levelVocal[0]?.length > 0) || (session !== null && session?.user !== undefined))
                     ?
                     <div className="card rounded-0">
                         <h5 className="card-header text-uppercase alert alert-primary">Danh sách từ</h5>

@@ -1,13 +1,15 @@
 
 "use client"
-import { useCallback, useContext, useEffect, useState } from 'react';
-import AppPaginate from '@/component/app.paginate';
-import { DataContexts } from '@/context/dataContext';
-import { levelVocal } from '@/contants/level';
-import { UserContext } from '@/context/UserContext';
-import { fechAllVocalWithPaginate } from '@/services/vocalService';
+import { useCallback, useContext, useEffect, useState } from 'react'
+import AppPaginate from '@/component/app.paginate'
+import { DataContexts } from '@/context/dataContext'
+import { levelVocal } from '@/contants/level'
+import { UserContext } from '@/context/UserContext'
+import { fechAllVocalWithPaginate } from '@/services/vocalService'
+import { useSession } from "next-auth/react"
 
 const VocalbularyDetail = () => {
+    const { data: session }: any = useSession()
     const { data, index, levelEnglish, dataVocalPagination } = useContext(DataContexts)
     const { user } = useContext(UserContext)
 
@@ -39,7 +41,7 @@ const VocalbularyDetail = () => {
     return (
         <div className="h-100">
             {
-                user.isAuthenticated && vocalDetail && vocalDetail.length > 0 && getLevel
+                ((user.isAuthenticated && vocalDetail && vocalDetail.length > 0 && getLevel) || (session !== null && session?.user !== undefined))
                     ?
                     <div className="card rounded-0 m-4" style={{ marginTop: "4.5rem!important" }}>
                         <div className="card-header alert alert-primary">

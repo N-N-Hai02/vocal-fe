@@ -5,8 +5,10 @@ import { levelVocal } from '@/contants/level'
 import _ from 'lodash'
 import * as XLSX from 'xlsx';
 import { UserContext } from '@/context/UserContext'
+import { useSession } from "next-auth/react"
 
 export default function VocalbularyTest() {
+    const { data: session }: any = useSession()
     const { data, setLevelEnglish } = useContext(DataContexts)
     const { user } = useContext(UserContext)
 
@@ -78,7 +80,7 @@ export default function VocalbularyTest() {
     return (
         <div className="h-100">
             {
-                user.isAuthenticated && levelVocal[0] && levelVocal[0].length > 0 && orderSortData && orderSortData.length > 1
+                ((user.isAuthenticated && levelVocal[0] && levelVocal[0].length > 0 && orderSortData && orderSortData.length > 1) || (session !== null && session?.user !== undefined))
                     ?
                     <div className="card rounded-0 m-4" style={{ marginTop: "4.5rem!important" }}>
                         <h5 className="card-header text-uppercase alert alert-primary">Example Test</h5>
