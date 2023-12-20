@@ -3,7 +3,7 @@ import GoogleProvider from "next-auth/providers/google"
 import GitHubProvider from "next-auth/providers/github"
 // import CredentialsProvider from '@/component/ManageAuthGoogle/credentials'
 
-const options:any = {
+const options: any = {
     session: {
         strategy: 'jwt'
     },
@@ -32,8 +32,35 @@ const options:any = {
             }
         },
     },
+    cookies: {
+        sessionToken: {
+            name: 'HaiNguyen.session-token',
+            options: {
+                httpOnly: true,
+                sameSite: 'none',
+                path: '/',
+                secure: process.env.NODE_ENV && process.env.NODE_ENV === 'production' ? true : false
+            }
+        },
+        callbackUrl: {
+            name: 'HaiNguyen.callback-url',
+            options: {
+                sameSite: 'none',
+                path: '/',
+                secure: process.env.NODE_ENV && process.env.NODE_ENV === 'production' ? true : false
+            }
+        },
+        csrfToken: {
+            name: 'HaiNguyen.csrf-token',
+            options: {
+                sameSite: 'none',
+                path: '/',
+                secure: process.env.NODE_ENV && process.env.NODE_ENV === 'production' ? true : false
+            }
+        }
+    }
 }
 
-const handler = (req:any, res:any) => NextAuth(req, res, options)
+const handler = (req: any, res: any) => NextAuth(req, res, options)
 
 export { handler as GET, handler as POST }
