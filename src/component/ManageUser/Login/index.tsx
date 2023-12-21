@@ -1,6 +1,6 @@
 "use client"
 import "./index.scss"
-import { useContext, useState } from "react"
+import { use, useContext, useState } from "react"
 import { useRouter } from 'next/navigation'
 import { toast } from "react-toastify"
 import { UserContext } from "@/context/UserContext"
@@ -19,8 +19,6 @@ const Login = () => {
         isValidPassword: true
     }
     const [objValidInput, setObjValidInput] = useState(defaultObjValidInput)
-
-    user && user.isAuthenticated === true && router.push("/vocalbulary")
 
     const handleCreateNewAccount = () => router.push("/register")
 
@@ -67,7 +65,7 @@ const Login = () => {
         await signIn("providers", { redirect: false, callbackUrl: "/vocalbulary" })
     }
 
-    session !== null && session?.user !== undefined && router.push("/")
+    user && user.isAuthenticated && router.push("/vocalbulary")
     
     return (
         <div className="login-container py-3">

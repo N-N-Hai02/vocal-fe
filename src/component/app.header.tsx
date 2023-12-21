@@ -10,6 +10,7 @@ import './app.header.scss'
 import Image from 'next/image'
 import { DataContexts } from '@/context/dataContext'
 import { useSession, signOut } from "next-auth/react"
+import { removeCookie } from './Cookie/actionCookie'
 
 const AppHeader = (): JSX.Element | any => {
     const { data: session }: any = useSession()
@@ -25,7 +26,7 @@ const AppHeader = (): JSX.Element | any => {
         let res: any = await logoutUser() // clear cookies
         localStorage.removeItem('jwt') // clear localstorage
         logoutContext() // clear context
-
+        
         if (res && res.EC === 0 || session?.user) {
             router.push('/login')
             session?.user ? toast.success("Logout google successfully..!") : toast.success("Logout successfully..!")
@@ -33,7 +34,12 @@ const AppHeader = (): JSX.Element | any => {
             toast.error(res.EM)
         }
 
-        session?.user && signOut({ redirect: false })
+        if (session !== null && session?.user !== undefined) {
+           removeCookie()
+           router.push('/login')
+        }
+
+        (session !== null && session?.user !== undefined) && signOut({ redirect: false })
     }
 
     const handleClickNavhiden = () => toggle && setToggle(false)

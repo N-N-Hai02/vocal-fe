@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react"
 import { getUserAccount } from '../services/userService'
 import { useSession } from "next-auth/react"
+import { setCookie } from "@/component/Cookie/actionCookie"
 interface user {
     isLoading: boolean
     isAuthenticated: boolean,
@@ -28,6 +29,11 @@ const UserContext = createContext<GlobalContent>({
 
 const UserProvider  = ({ children }: {children: any}) => {
     const { data: session  }:any = useSession()
+    
+    useEffect(() => {
+        (session !== null && session?.user !== undefined) && setCookie(JSON.stringify(session?.user))
+    }, [session])
+
     // User is the name of the "data" that gets stored in context
     const userDefaullt = {
         isLoading: true,
@@ -63,9 +69,9 @@ const UserProvider  = ({ children }: {children: any}) => {
             setUser({ ...userDefaullt, isLoading: false });
         }
     }
-    
     useEffect(() => {
-        (user.isAuthenticated || (session !== null && session?.user !== undefined)) ? fetchUser() : setUser({...userDefaullt, isLoading: false})
+        // (user.isAuthenticated || (session !== null && session?.user !== undefined)) ? fetchUser() : setUser({...userDefaullt, isLoading: false})
+        user.account.groupWithRoles !== undefined ? fetchUser() : setUser({...userDefaullt, isLoading: false})
     }, [])
 
     return (
