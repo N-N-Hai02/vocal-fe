@@ -4,15 +4,10 @@ import { API_URL, GET_JWT_LOCAL_STORAGE } from "./contants";
 
 // Set config defaults when creating the instance
 const instance = axios.create({
-    baseURL: API_URL,
-    withCredentials: true,
-    // headers: {
-    //     "Content-Type": "application/json",
-    //     "Access-Control-Allow-Credentials": false,
-    // },
+    baseURL: API_URL
 });
 
-// instance.defaults.withCredentials = false
+instance.defaults.withCredentials = true
 
 // Alter defaults after instance has been created
 // instance.defaults.headers.common['Authorization'] = `Bearer ${GET_JWT_LOCAL_STORAGE}`

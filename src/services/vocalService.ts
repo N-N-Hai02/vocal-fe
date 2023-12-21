@@ -1,15 +1,15 @@
 import { VERSION } from "@/setup/contants"
 import axios from "../setup/axios"
 
-const fechAllVocal = () => axios.get(`${VERSION}/vocal/read`)
+const fechAllVocal = () => axios.get(`${VERSION}/vocal/read`, { withCredentials: true })
 
-const fechAllVocalWithPaginate = (page:number, limit:number, levelId:number) => axios.get(`${VERSION}/vocal/read?page=${page}&limit=${limit}&levelId=${levelId}`)
+const fechAllVocalWithPaginate = (page:number, limit:number, levelId:number) => axios.get(`${VERSION}/vocal/read?page=${page}&limit=${limit}&levelId=${levelId}`, { withCredentials: true })
 
 const createNewVocal = (vocalData:any) => axios.post(`${VERSION}/vocal/create`, [...vocalData])
 
 const vocalAssignToUser = (data:any) => axios.post(`${VERSION}/vocal/assign-to-user`, {...data})
 
-const fechAllVocalByUser = () => axios.get(`${VERSION}/vocal/by-user/read`)
+const fechAllVocalByUser = () => axios.get(`${VERSION}/vocal/by-user/read`, { withCredentials: true })
 
 const updateCurrentVocal = (vocalData: any) => axios.put(`${VERSION}/vocal/update`, {...vocalData})
 
