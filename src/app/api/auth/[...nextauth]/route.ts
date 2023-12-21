@@ -37,15 +37,16 @@ const options: any = {
             name: 'HaiNguyen.session-token',
             options: {
                 httpOnly: true,
-                sameSite: 'lax',
+                sameSite: 'none',
                 path: '/',
-                secure: process.env.NODE_ENV && process.env.NODE_ENV === 'production' ? true : false
+                secure: process.env.NODE_ENV && process.env.NODE_ENV === 'production' ? true : false,
+                maxAge: 60 * 60 * 1000
             }
         },
         callbackUrl: {
             name: 'HaiNguyen.callback-url',
             options: {
-                sameSite: 'lax',
+                sameSite: 'none',
                 path: '/',
                 secure: process.env.NODE_ENV && process.env.NODE_ENV === 'production' ? true : false
             }
@@ -53,7 +54,7 @@ const options: any = {
         csrfToken: {
             name: 'HaiNguyen.csrf-token',
             options: {
-                sameSite: 'lax',
+                sameSite: 'none',
                 path: '/',
                 secure: process.env.NODE_ENV && process.env.NODE_ENV === 'production' ? true : false
             }
