@@ -12,6 +12,16 @@ const setCookie = async (user:any) => {
         sameSite: 'none', 
         maxAge: 60 * 60 * 1000
     })
+    cookies().set({
+        name: 'vocal-auth-google',
+        value: user,
+        secure: true,
+        httpOnly: true,
+        path: '/',
+        domain: 'nguyenhaikendy-api-be-vocal.onrender.com',
+        sameSite: 'none', 
+        maxAge: 60 * 60 * 1000
+    })
 }
 
 const removeCookie = () => cookies().delete('vocal-auth-google')
