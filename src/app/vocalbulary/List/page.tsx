@@ -23,7 +23,7 @@ export default function VocabularyList() {
     const getVocals = useCallback(async () => {
         let response: any = await fechAllVocalWithPaginate(currentPage, currentLimit, +levelEnglish)
         if (response && response.EC === 0) {
-            setTotalPages(response.DT.totalPages)
+            setTotalPages(Math.ceil(response.DT.totalPages))
             setVocalList(response.DT.vocals)
             setDataVocalPagination(response.DT.vocals)
         }
