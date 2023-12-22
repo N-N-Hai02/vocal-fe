@@ -1,11 +1,16 @@
-import { useState, forwardRef, useEffect, useImperativeHandle } from "react"
+import { useState, forwardRef, useEffect, useImperativeHandle, useContext } from "react"
 import ReactPaginate from 'react-paginate';
 import { toast } from "react-toastify";
 import ModalLevel from "./ModalLevel";
 import { deleteLevel, fechAllLevel } from "@/services/levelServices";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
+import { UserContext } from "@/context/UserContext";
 
 const TableLevel = forwardRef((props, ref) => {
+    const { data: session }: any = useSession()
+    const { user } = useContext(UserContext)
+
     const [isShow, setIsShow] = useState(false)
     const [dataModalLevel, setDataModalLevel] = useState({})
     const [listLevel, setListLevel] = useState([])
@@ -16,12 +21,12 @@ const TableLevel = forwardRef((props, ref) => {
     }
 
     useEffect(() => {
-        getAllLevel()
+        (user.isAuthenticated || (session?.user !== undefined)) && getAllLevel()
     }, [])
 
     useImperativeHandle(ref, () => ({
         fetchChildTableLevel() {
-            getAllLevel()
+           (user.isAuthenticated || (session?.user !== undefined)) && getAllLevel()
         }
     }));
 

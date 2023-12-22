@@ -2,7 +2,7 @@
 import { useCallback, useContext, useEffect, useRef, useState } from "react"
 import _ from 'lodash'
 import { toast } from "react-toastify"
-import { createNewVocal, deleteVocal, fechAllVocal, fechAllVocalWithPaginate } from "@/services/vocalService"
+import { createNewVocal, deleteVocal, fechAllVocalWithPaginate } from "@/services/vocalService"
 import TableVocal from "./TableVocal"
 import ModalVocalEdit from "./ModalVocalEdit"
 import * as XLSX from 'xlsx'

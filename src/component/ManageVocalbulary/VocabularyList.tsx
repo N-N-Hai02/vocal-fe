@@ -5,9 +5,9 @@ import { DataContexts } from '@/context/dataContext'
 import { levelVocal } from '@/contants/level'
 import { UserContext } from "@/context/UserContext"
 import { fechAllVocalWithPaginate, fechAllVocalByUser, vocalAssignToUser } from "@/services/vocalService"
-import { toast } from "react-toastify"
 import ReactPaginate from "react-paginate"
 import { useSession } from "next-auth/react"
+import { toast } from "react-toastify"
 
 export default function VocabularyList() {
     const { data: session }: any = useSession()
@@ -31,7 +31,7 @@ export default function VocabularyList() {
     }, [currentPage, currentLimit, levelEnglish])
 
     useEffect(() => {
-        getVocals()
+        (user.isAuthenticated || (session?.user !== undefined)) && getVocals()
     }, [getVocals])
 
     const handlePageClick = (event: any) => setCurrentPage(+event.selected + 1)
@@ -60,7 +60,7 @@ export default function VocabularyList() {
     }
 
     useEffect(() => {
-        getAllVocalByUser()
+        (user.isAuthenticated || (session?.user !== undefined)) && getAllVocalByUser()
     }, [])
 
     const getAllVocalByUser = async () => {

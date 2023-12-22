@@ -10,7 +10,7 @@ import { useSession } from "next-auth/react"
 
 const VocalbularyDetail = () => {
     const { data: session }: any = useSession()
-    const { data, index, levelEnglish, dataVocalPagination } = useContext(DataContexts)
+    const { index, levelEnglish, dataVocalPagination } = useContext(DataContexts)
     const { user } = useContext(UserContext)
 
     const [vocalDetail, setVocalDetail] = useState<any>([])
@@ -33,7 +33,7 @@ const VocalbularyDetail = () => {
     }, [currentPage, levelEnglish])
 
     useEffect(() => {
-        getVocalDetail()
+        (user.isAuthenticated || (session?.user !== undefined)) && getVocalDetail()
     }, [getVocalDetail])
 
     const getLevel = levelVocal[0]?.find((element: any) => element.id === levelEnglish)

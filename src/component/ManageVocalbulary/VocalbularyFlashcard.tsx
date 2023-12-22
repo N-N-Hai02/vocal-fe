@@ -1,6 +1,6 @@
 "use client"
-import React, { useState, useEffect, useContext } from "react";
 import "./CardsStyles.css";
+import React, { useState, useEffect, useContext } from "react";
 import { DataContexts } from "@/context/dataContext";
 import { levelVocal } from '@/contants/level'
 import { UserContext } from "@/context/UserContext";

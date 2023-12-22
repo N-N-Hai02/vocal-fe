@@ -1,6 +1,6 @@
 import { fechAllLevel } from "@/services/levelServices"
 
-let levelVocal:any = []
+var levelVocal:any = []
 
 const getAllLevel = async () => {
     let res:any = await fechAllLevel()
@@ -8,4 +8,4 @@ const getAllLevel = async () => {
 }
 getAllLevel()
 
-export { levelVocal , getAllLevel}
+export { levelVocal }
