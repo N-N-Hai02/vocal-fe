@@ -8,7 +8,7 @@ const setCookie = async (user:any) => {
         secure: true,
         httpOnly: true,
         path: '/',
-        domain: process.env.BE_URL_DOMAIN,
+        domain: process.env.DOMAiN_CL,
         sameSite: 'none',
         maxAge: 60 * 60 * 1000
     })
@@ -19,7 +19,7 @@ const setCookie = async (user:any) => {
         secure: true,
         httpOnly: true,
         path: '/',
-        domain: process.env.BE_URL_DOMAIN,
+        domain: process.env.DOMAiN_SV,
         sameSite: 'lax', 
         maxAge: 60 * 60 * 1000
     })
