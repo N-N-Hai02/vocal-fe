@@ -8,7 +8,7 @@ const setCookie = async (user:any) => {
         secure: true,
         httpOnly: true,
         path: '/',
-        domain: ".nguyenngochai-vocalbulary-english-v3.vercel.app",
+        domain: "nguyenngochai-vocalbulary-english-v3.vercel.app",
         sameSite: 'none',
         maxAge: 60 * 60 * 1000
     })
