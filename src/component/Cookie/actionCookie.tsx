@@ -20,7 +20,7 @@ const setCookie = async (user:any) => {
         httpOnly: true,
         path: '/',
         domain: "nguyenhaikendy-api-be-vocal.onrender.com",
-        sameSite: 'lax', 
+        sameSite: 'none', 
         maxAge: 60 * 60 * 1000
     })
 }
