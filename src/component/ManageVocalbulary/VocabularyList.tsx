@@ -171,7 +171,7 @@ export default function VocabularyList() {
                             {/* ----->>>>>>>>>>>------- */}
 
                             <div className="alert alert-primary">
-                                {/* <ReactPaginate
+                                <ReactPaginate
                                     nextLabel={<i className="ms-2 fa fa-forward"></i>}
                                     onPageChange={handlePageClick}
                                     pageRangeDisplayed={1}
@@ -190,20 +190,6 @@ export default function VocabularyList() {
                                     containerClassName="pagination"
                                     activeClassName="active"
                                     renderOnZeroPageCount={null}
-                                /> */}
-                                <ReactPaginate
-                                    breakLabel="..."
-                                    nextLabel="next >"
-                                    onPageChange={handlePageClick}
-                                    pageRangeDisplayed={3}
-                                    pageCount={totalPages}
-                                    previousLabel="< previous"
-                                    renderOnZeroPageCount={null}
-                                    containerClassName="pagination"
-                                    pageLinkClassName="page-num"
-                                    previousLinkClassName="page-num"
-                                    nextLinkClassName="page-num"
-                                    activeLinkClassName="activee boxx"
                                 />
                             </div>
                         </div>
