@@ -22,9 +22,9 @@ export default function RootLayout({
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" />
          </head>
          <body>
-            <AuthGoogleProviders>
-               <UserProvider>
-                  <DataProvider>
+            <UserProvider>
+               <DataProvider>
+                  <AuthGoogleProviders>
                      <AppHeader />
                      <div id='childrenContent' className='container'>
                         {children}
@@ -45,9 +45,9 @@ export default function RootLayout({
                         theme="light"
                      />
                      <AppFooter />
-                  </DataProvider>
-               </UserProvider>
-            </AuthGoogleProviders>
+                  </AuthGoogleProviders>
+               </DataProvider>
+            </UserProvider>
          </body>
       </html>
    )

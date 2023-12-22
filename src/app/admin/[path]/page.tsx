@@ -7,7 +7,6 @@ import Vocal from '@/component/ManageVocal/Vocal'
 import { UserContext } from '@/context/UserContext'
 import { usePathname } from 'next/navigation'
 import { useContext } from 'react'
-import { toast } from 'react-toastify'
 
 const AppRoutes = () => {
     const pathname = usePathname()
@@ -15,8 +14,6 @@ const AppRoutes = () => {
 
     // check permission step 1
     let authenticated:boolean = user.isAuthenticated && user.account.groupWithRoles.id === 2 && user.account.groupWithRoles.name === 'admin'
-
-    !authenticated && toast.error(`You don't have the permission hahahha...`)
 
     switch (pathname) {
         case '/admin/users':

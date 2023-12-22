@@ -7,7 +7,6 @@ import { UserContext } from '@/context/UserContext'
 import { useSession } from 'next-auth/react'
 import { usePathname } from 'next/navigation'
 import { useContext } from 'react'
-import { toast } from 'react-toastify'
 
 const VocalBularyRoute = () => {
     const pathname = usePathname()
@@ -16,8 +15,6 @@ const VocalBularyRoute = () => {
 
     // check permission step 1
     let authenticated:boolean = (user.isAuthenticated || (session?.user !== undefined))
-
-    !authenticated && toast.error(`You don't have the permission vocalbulary...`)
 
     switch (pathname) {
         case '/vocalbulary/Detail':

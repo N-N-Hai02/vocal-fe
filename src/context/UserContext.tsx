@@ -28,11 +28,11 @@ const UserContext = createContext<GlobalContent>({
 })
 
 const UserProvider  = ({ children }: {children: any}) => {
-    const { data: session  }:any = useSession()
+    // const { data: session  }:any = useSession()
     
-    useEffect(() => {
-        (session !== null && session?.user !== undefined) && setCookie(JSON.stringify(session?.user))
-    }, [session])
+    // useEffect(() => {
+    //     (session !== null && session?.user !== undefined) && setCookie(JSON.stringify(session?.user))
+    // }, [session])
 
     // User is the name of the "data" that gets stored in context
     const userDefaullt = {
@@ -72,6 +72,7 @@ const UserProvider  = ({ children }: {children: any}) => {
     useEffect(() => {
         // (user.isAuthenticated || (session !== null && session?.user !== undefined)) ? fetchUser() : setUser({...userDefaullt, isLoading: false})
         user.account.groupWithRoles !== undefined ? fetchUser() : setUser({...userDefaullt, isLoading: false})
+        // fetchUser()
     }, [])
 
     return (

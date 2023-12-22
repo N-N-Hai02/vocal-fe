@@ -69,7 +69,7 @@ const AppHeader = (): JSX.Element | any => {
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="nav-body me-auto my-2 my-lg-0">
                                 {
-                                    ((user && user.isAuthenticated === true) || (session !== null && session?.user !== undefined)) &&
+                                    ((user && user.isAuthenticated) || (session !== null && session?.user !== undefined)) &&
                                     <>
                                         <Link onClick={handleClickNavhiden} href="/vocalbulary" className='text-light py-2 text-decoration-none'>
                                             Home Vocalbulary
@@ -99,7 +99,7 @@ const AppHeader = (): JSX.Element | any => {
                                     </NavDropdown>
                                 }
                             </Nav>
-                            {user && user.isAuthenticated === true || session?.user
+                            {((user && user.isAuthenticated) || (session !== null && session?.user !== undefined))
                                 ?
                                 <Nav className='mt-lg-auto'>
                                     <Nav.Item className='nav-link mt-lg-auto text-light'>Welcome, { session?.user ? session?.user.name : user.account.username }!</Nav.Item>

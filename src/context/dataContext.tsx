@@ -28,7 +28,7 @@ const DataContexts = createContext<GlobalContent>({
 })
 
 const DataProvider = ({ children }: { children: any} ) => {
-    const { data: session  }:any = useSession()
+    // const { data: session  }:any = useSession()
     const pathname = usePathname()
     const { user } = useContext(UserContext)
     // list vocalbulary
@@ -55,7 +55,7 @@ const DataProvider = ({ children }: { children: any} ) => {
     }, [pathname, toggle])
 
     useEffect(() => {
-        (user.isAuthenticated || (session !== null && session?.user !== undefined)) && getAllVocal(levelEnglish)
+        getAllVocal(levelEnglish)
     }, [levelEnglish])
 
     return (
