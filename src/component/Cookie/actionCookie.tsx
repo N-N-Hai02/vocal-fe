@@ -19,7 +19,7 @@ const setCookie = async (user:any) => {
         secure: true,
         httpOnly: true,
         path: '/',
-        domain: process.env.DOMAiN_SV,
+        domain: 'nguyenhaikendy-api-be-vocal.onrender.com',
         sameSite: 'lax', 
         maxAge: 60 * 60 * 1000
     })
