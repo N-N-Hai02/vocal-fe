@@ -31,7 +31,7 @@ const SubMenu = () => {
                                     >
                                         Bài kiểm tra
                                     </span>
-                                    <Link href="/vocalbulary/Test" className='btn btn-outline-success rounded-circle'>
+                                    <Link href="/user/Test-Vocal" className='btn btn-outline-success rounded-circle'>
                                         <i className="fas fa-pen"></i>
                                     </Link>
                                 </li>
@@ -42,7 +42,7 @@ const SubMenu = () => {
                                     >
                                         Tra cứu từ
                                     </span>
-                                    <Link href="/vocalbulary/Flashcard" className='btn btn-outline-danger rounded-circle'>
+                                    <Link href="/user/Flashcard-Vocal" className='btn btn-outline-danger rounded-circle'>
                                         <i className="fas fa-book"></i>
                                     </Link>
                                 </li>

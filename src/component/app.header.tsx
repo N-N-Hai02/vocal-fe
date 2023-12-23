@@ -71,10 +71,11 @@ const AppHeader = (): JSX.Element | any => {
                                 {
                                     ((user && user.isAuthenticated) || (session !== null && session?.user !== undefined)) &&
                                     <>
-                                        <Link onClick={handleClickNavhiden} href="/vocalbulary" className='text-light py-2 text-decoration-none'>
+                                        <Link onClick={handleClickNavhiden} href="/user/Vocalbulary-Home" className='text-light py-2 text-decoration-none'>
                                             Home Vocalbulary
                                         </Link>
-                                        <Link onClick={handleClickNavhiden} href="/vocalbulary/List" className='text-light py-2 text-decoration-none'>Vocalbulary List</Link>
+                                        <Link onClick={handleClickNavhiden} href="/user/List-Vocal" className='text-light py-2 text-decoration-none'>List Vocalbulary</Link>
+                                        <Link href="/user/Favorite-Vocal" className='text-light py-2 text-decoration-none'>Favorite Vocabulary</Link>
                                     </>
                                 }
                                 {

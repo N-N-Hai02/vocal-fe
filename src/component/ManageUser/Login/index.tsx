@@ -1,14 +1,13 @@
 "use client"
 import "./index.scss"
-import { use, useContext, useState } from "react"
+import { useContext, useState } from "react"
 import { useRouter } from 'next/navigation'
 import { toast } from "react-toastify"
 import { UserContext } from "@/context/UserContext"
 import { loginUser } from "@/services/userService"
-import { useSession, signIn } from "next-auth/react"
+import { signIn } from "next-auth/react"
 
 const Login = () => {
-    const { data: session  }:any = useSession()
     const { user, loginContext } = useContext(UserContext)
     const router = useRouter()
 
@@ -47,7 +46,7 @@ const Login = () => {
             }
             localStorage.setItem('jwt', access_token)
             loginContext(data)
-            router.push("/vocalbulary")
+            router.push("/user/Vocalbulary-Home")
         }
         if (response &&  response.EC !== 0) {
             // error
@@ -62,10 +61,10 @@ const Login = () => {
     }
 
     const handleSignIn = async () => {
-        await signIn("providers", { redirect: false, callbackUrl: "/vocalbulary" })
+        await signIn("providers", { redirect: false, callbackUrl: "/user/Vocalbulary-Home" })
     }
 
-    user && user.isAuthenticated && router.push("/vocalbulary")
+    user && user.isAuthenticated && router.push("/user/Vocalbulary-Home")
     
     return (
         <div className="login-container py-3">
