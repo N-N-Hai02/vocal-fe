@@ -26,7 +26,7 @@ const AppHeader = (): JSX.Element | any => {
         let res: any = await logoutUser() // clear cookies
         localStorage.removeItem('jwt') // clear localstorage
         logoutContext() // clear context
-        
+
         if (res && res.EC === 0 || session?.user) {
             router.push('/login')
             session?.user ? toast.success("Logout google successfully..!") : toast.success("Logout successfully..!")
@@ -35,8 +35,8 @@ const AppHeader = (): JSX.Element | any => {
         }
 
         if (session !== null && session?.user !== undefined) {
-           removeCookie()
-           router.push('/login')
+            removeCookie()
+            router.push('/login')
         }
 
         (session !== null && session?.user !== undefined) && signOut({ redirect: false })
@@ -79,21 +79,27 @@ const AppHeader = (): JSX.Element | any => {
                                     </>
                                 }
                                 {
-                                    showMenuAdmin && showMenuAdmin.name === "admin"
+                                    showMenuAdmin && (showMenuAdmin.name === "member" || showMenuAdmin.name === "admin")
                                     &&
                                     <NavDropdown title="Admin Menu" id="AdminMenu-dropdown">
                                         <NavDropdown.Item>
                                             <Link onClick={handleClickNavhiden} href="/admin/vocal" className='text-dark py-2 text-decoration-none'>Admin Vocalbulary</Link>
                                         </NavDropdown.Item>
-                                        <NavDropdown.Item>
-                                            <Link onClick={handleClickNavhiden} href="/admin/users" className='text-dark py-2 text-decoration-none'>Admin Users</Link>
-                                        </NavDropdown.Item>
-                                        <NavDropdown.Item>
-                                            <Link onClick={handleClickNavhiden} href="/admin/roles" className='text-dark py-2 text-decoration-none'>Admin Roles</Link>
-                                        </NavDropdown.Item>
-                                        <NavDropdown.Item>
-                                            <Link onClick={handleClickNavhiden} href="/admin/group-role" className='text-dark py-2 text-decoration-none'>Admin Group Roles</Link>
-                                        </NavDropdown.Item>
+                                        {
+                                            showMenuAdmin.name === "admin"
+                                            &&
+                                            <div>
+                                                <NavDropdown.Item>
+                                                    <Link onClick={handleClickNavhiden} href="/admin/users" className='text-dark py-2 text-decoration-none'>Admin Users</Link>
+                                                </NavDropdown.Item>
+                                                <NavDropdown.Item>
+                                                    <Link onClick={handleClickNavhiden} href="/admin/roles" className='text-dark py-2 text-decoration-none'>Admin Roles</Link>
+                                                </NavDropdown.Item>
+                                                <NavDropdown.Item>
+                                                    <Link onClick={handleClickNavhiden} href="/admin/group-role" className='text-dark py-2 text-decoration-none'>Admin Group Roles</Link>
+                                                </NavDropdown.Item>
+                                            </div>
+                                        }
                                         <NavDropdown.Item>
                                             <Link onClick={handleClickNavhiden} href="/admin/level" className='text-dark py-2 text-decoration-none'>Admin levels</Link>
                                         </NavDropdown.Item>
@@ -103,7 +109,7 @@ const AppHeader = (): JSX.Element | any => {
                             {((user && user.isAuthenticated) || (session !== null && session?.user !== undefined))
                                 ?
                                 <Nav className='mt-lg-auto'>
-                                    <Nav.Item className='nav-link mt-lg-auto text-light'>Welcome, { session?.user ? session?.user.name : user.account.username }!</Nav.Item>
+                                    <Nav.Item className='nav-link mt-lg-auto text-light'>Welcome, {session?.user ? session?.user.name : user.account.username}!</Nav.Item>
                                     <NavDropdown title="Action" id="Action-dropdown">
                                         <NavDropdown.Item href="#">Change Password</NavDropdown.Item>
                                         <NavDropdown.Divider />
