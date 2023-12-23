@@ -50,7 +50,7 @@ const AppHeader = (): JSX.Element | any => {
         return <div>Is the loading..!</div>
     }
 
-    if ((user.isAuthenticated && user.isAuthenticated === true || session?.user) || pathname === '/' || pathname === '/vocalbulary') {
+    if (user.isAuthenticated || (session?.user !== undefined) || pathname === '/' || pathname === '/vocalbulary') {
         return (
             <div className='navbar-header'>
                 <Navbar expand="lg" className="bg-primary fixed-top" expanded={expanded}>
