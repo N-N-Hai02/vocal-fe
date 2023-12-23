@@ -1,15 +1,40 @@
 import { UserContext } from "@/context/UserContext"
+import { DataContexts } from "@/context/dataContext"
+import { fechAllVocalByUser } from "@/services/vocalService"
 import { useSession } from "next-auth/react"
-import { useContext } from "react"
+import Link from "next/link"
+import { useContext, useEffect, useState } from "react"
 import ReactPaginate from "react-paginate"
 
 
 const VocalbularyFavorite = () => {
     const { data: session }: any = useSession()
     const { user } = useContext(UserContext)
+    const { data } = useContext(DataContexts)
+
+    const [vocalByUserList, setVocalByUserList] = useState([])
 
     const handlePageClick = () => { }
 
+    const getAllVocalByUser = async () => {
+        let res: any = await fechAllVocalByUser()
+        res && res.EC === 0 && setVocalByUserList(res.DT)
+    }
+
+    useEffect(() => {
+        (user.isAuthenticated || (session?.user !== undefined)) && getAllVocalByUser()
+    }, [])
+
+    const vocalList = vocalByUserList.reduce((accumulator: any, currentValue: any) => {
+        if (currentValue.userId === user.account.groupWithRoles?.id) {
+            let vocalFavorite = data.filter((item:any) => item.id === currentValue.vocalId)
+            accumulator.push(...vocalFavorite)
+        }
+        return accumulator
+    }, [])
+
+    if (user.isLoading) return <></>
+    
     return (
         <div className="h-100">
             {
@@ -31,29 +56,18 @@ const VocalbularyFavorite = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {/* {vocalList && vocalList.length > 0
+                                        {vocalList && vocalList.length > 0
                                         && 
                                         vocalList.map((item: any, index: number) => (
                                             <tr key={index}>
-                                                <td>{(currentPage - 1) * currentLimit + index + 1}</td>
-                                                <td>{item.id}</td>
-                                                <th scope="row" onClick={() => checkClickVocalbulary(index)}>
-                                                    <Link href="/vocalbulary/Detail">{item.en}</Link>
-                                                </th>
+                                                <td>{index + 1}</td>
+                                                <td><button className="btn btn-outline-warning"><i className="fas fa-star"></i></button></td>
+                                                <th>{item.en}</th>
                                                 <td>{item.spelling}</td>
                                                 <td>{item.pronunciation}</td>
                                                 <td>{item.vn}</td>
-                                                <td>
-                                                    <button className="btn btn-outline-warning" onClick={() => handleStatus(item)}>
-                                                        {
-                                                            vocalId && vocalId.includes(item.id)
-                                                                ? <i className="fas fa-star"></i>
-                                                                : <i className="far fa-star"></i>
-                                                        }
-                                                    </button>
-                                                </td>
                                             </tr>
-                                        ))} */}
+                                        ))}
                                     </tbody>
                                 </table>
                             </div>
@@ -62,29 +76,21 @@ const VocalbularyFavorite = () => {
                             <div className="card mb-3 d-block d-sm-none" style={{ maxWidth: '540px' }}>
                                 <div className="row g-0">
                                     <div className="col-md-8">
-                                        {/* {vocalList && vocalList.length > 0 &&
+                                        {vocalList && vocalList.length > 0 &&
                                             vocalList.map((item: any, index: number) => {
                                                 return (
                                                     <div className="card-body" key={index}>
-                                                        <p className="card-title text-primary fw-bold">No: {(currentPage - 1) * currentLimit + index + 1}</p>
-                                                        <p className="card-text" onClick={() => checkClickVocalbulary(index)}><span className="fw-bold me-2">Spelling:</span>
-                                                            <Link href="/vocalbulary/Detail">{item.en}</Link>
-                                                        </p>
+                                                        <p className="card-title text-primary fw-bold">No: {index + 1}</p>
+                                                        <p className="card-text"><span className="fw-bold me-2">Spelling:</span>{item.en}</p>
                                                         <p className="card-text"><span className="fw-bold">English:</span> {item.vn} </p>
                                                         <p className="card-text"><span className="fw-bold">Vietnamese:</span> {item.spelling} </p>
-                                                        <button className="btn btn-outline-warning" onClick={() => handleStatus(item)}>
-                                                            {
-                                                                vocalId && vocalId.includes(item.id)
-                                                                    ? <i className="fas fa-star"></i>
-                                                                    : <i className="far fa-star"></i>
-                                                            }
-                                                        </button>
+                                                        <button className="btn btn-outline-warning"><i className="fas fa-star"></i></button>
                                                         <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                                                         <hr />
                                                     </div>
                                                 )
                                             })
-                                        } */}
+                                        }
                                     </div>
                                 </div>
                             </div>
