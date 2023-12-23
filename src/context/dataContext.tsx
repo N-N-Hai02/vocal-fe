@@ -37,11 +37,13 @@ const DataProvider = ({ children }: { children: any} ) => {
     const checkClickVocalbulary = (index:number) => setIndex(index)
 
     const getAllVocal = async (levelId:number) => {
-        let response:any = await fechAllVocal()
-        if (response && response.DT) {
-            let datas = response.DT
-            let result =  datas.filter((item:any) => +item.levelId === levelId)
-            setData(result)
+        if (levelId !== 0) {
+            let response:any = await fechAllVocal()
+            if (response && response.DT) {
+                let datas = response.DT
+                let result =  datas.filter((item:any) => +item.levelId === levelId)
+                setData(result)
+            }
         }
     }
 

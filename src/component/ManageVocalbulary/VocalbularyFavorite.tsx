@@ -16,7 +16,7 @@ const VocalbularyFavorite = () => {
     }
 
     useEffect(() => {
-        getAllVocalList()
+        (user.isAuthenticated || (session?.user !== undefined)) && getAllVocalList()
     }, [])
 
     const getAllVocalByUser = async () => {
