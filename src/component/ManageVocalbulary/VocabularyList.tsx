@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { DataContexts } from '@/context/dataContext'
 import { levelVocal } from '@/contants/level'
 import { UserContext } from "@/context/UserContext"
-import { fechAllVocalWithPaginate, fechAllVocalByUser, vocalAssignToUser } from "@/services/vocalService"
+import { fechAllVocalWithPaginate, fechAllVocalByUser, vocalAssignToUser, deleteVocalAssignToUser } from "@/services/vocalService"
 import ReactPaginate from "react-paginate"
 import { useSession } from "next-auth/react"
 import { toast } from "react-toastify"
@@ -38,35 +38,14 @@ export default function VocabularyList() {
 
     useEffect(() => setLevelEnglish(1), [])
 
-    const handleStatus = async (data: any) => {
-        if (session?.user === undefined) {
-            let resultData = {
-                userId: user.account.groupWithRoles.id,
-                vocalId: data.id
-            }
-    
-            if (data && confirm(`Assign: ${data.en} to ${user.account.username}`) == true) {
-                let res: any = await vocalAssignToUser(resultData)
-                if (res && res.EC === 0) {
-                    toast.success(res.EM)
-                    getAllVocalByUser()
-                } else {
-                    toast.error(res.EM)
-                }
-            }
-        } else {
-            alert("TODO...")
-        }
+    const getAllVocalByUser = async () => {
+        let res: any = await fechAllVocalByUser()
+        res && res.EC === 0 && setVocalByUserList(res.DT)
     }
 
     useEffect(() => {
         (user.isAuthenticated || (session?.user !== undefined)) && getAllVocalByUser()
     }, [])
-
-    const getAllVocalByUser = async () => {
-        let res: any = await fechAllVocalByUser()
-        res && res.EC === 0 && setVocalByUserList(res.DT)
-    }
 
     const vocalId = vocalByUserList.reduce((accumulator: any, currentValue: any) => {
         if (currentValue.userId === user.account.groupWithRoles?.id) {
@@ -74,6 +53,42 @@ export default function VocabularyList() {
         }
         return accumulator
     }, [])
+
+    const handleStatus = async (data: any) => {
+        if (session?.user === undefined) {
+
+            let checkExitVocalId = vocalId.includes(data.id)
+
+            let resultData = {
+                userId: user.account.groupWithRoles.id,
+                vocalId: data.id
+            }
+
+            if (checkExitVocalId) {
+                if (confirm(`Un Assign To User: ${data.en} to ${user.account.username}`) == true) {
+                    let res: any = await deleteVocalAssignToUser(resultData)
+                    if (res && res.EC === 0) {
+                        toast.success(res.EM)
+                        getAllVocalByUser()
+                    } else {
+                        toast.error(res.EM)
+                    }
+                }
+            } else {
+                if (data && confirm(`Assign: ${data.en} to ${user.account.username}`) == true) {
+                    let res: any = await vocalAssignToUser(resultData)
+                    if (res && res.EC === 0) {
+                        toast.success(res.EM)
+                        getAllVocalByUser()
+                    } else {
+                        toast.error(res.EM)
+                    }
+                }
+            }
+        } else {
+            alert("TODO...")
+        }
+    }
 
     if (user.isLoading) return <></>
     
@@ -118,7 +133,7 @@ export default function VocabularyList() {
                                                 <td>{(currentPage - 1) * currentLimit + index + 1}</td>
                                                 <td>{item.id}</td>
                                                 <th scope="row" onClick={() => checkClickVocalbulary(index)}>
-                                                    <Link href="/vocalbulary/Detail">{item.en}</Link>
+                                                    <Link href="/user/Detail-Vocal">{item.en}</Link>
                                                 </th>
                                                 <td>{item.spelling}</td>
                                                 <td>{item.pronunciation}</td>

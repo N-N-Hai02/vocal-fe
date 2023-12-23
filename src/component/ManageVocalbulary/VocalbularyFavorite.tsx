@@ -1,20 +1,23 @@
 import { UserContext } from "@/context/UserContext"
-import { DataContexts } from "@/context/dataContext"
-import { fechAllVocalByUser } from "@/services/vocalService"
+import { fechAllVocal, fechAllVocalByUser } from "@/services/vocalService"
 import { useSession } from "next-auth/react"
-import Link from "next/link"
 import { useContext, useEffect, useState } from "react"
-import ReactPaginate from "react-paginate"
-
 
 const VocalbularyFavorite = () => {
     const { data: session }: any = useSession()
     const { user } = useContext(UserContext)
-    const { data } = useContext(DataContexts)
 
     const [vocalByUserList, setVocalByUserList] = useState([])
+    const [vocalList, setVocalList] = useState([])
 
-    const handlePageClick = () => { }
+    const getAllVocalList = async () => {
+        let response:any = await fechAllVocal()
+        if (response && response.DT) setVocalList(response.DT)
+    }
+
+    useEffect(() => {
+        getAllVocalList()
+    }, [])
 
     const getAllVocalByUser = async () => {
         let res: any = await fechAllVocalByUser()
@@ -25,16 +28,16 @@ const VocalbularyFavorite = () => {
         (user.isAuthenticated || (session?.user !== undefined)) && getAllVocalByUser()
     }, [])
 
-    const vocalList = vocalByUserList.reduce((accumulator: any, currentValue: any) => {
+    const vocalListFavorite = vocalByUserList.reduce((accumulator: any, currentValue: any) => {
         if (currentValue.userId === user.account.groupWithRoles?.id) {
-            let vocalFavorite = data.filter((item:any) => item.id === currentValue.vocalId)
+            let vocalFavorite = vocalList.filter((item: any) => item.id === currentValue.vocalId)
             accumulator.push(...vocalFavorite)
         }
         return accumulator
     }, [])
 
     if (user.isLoading) return <></>
-    
+
     return (
         <div className="h-100">
             {
@@ -56,18 +59,18 @@ const VocalbularyFavorite = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {vocalList && vocalList.length > 0
-                                        && 
-                                        vocalList.map((item: any, index: number) => (
-                                            <tr key={index}>
-                                                <td>{index + 1}</td>
-                                                <td><button className="btn btn-outline-warning"><i className="fas fa-star"></i></button></td>
-                                                <th>{item.en}</th>
-                                                <td>{item.spelling}</td>
-                                                <td>{item.pronunciation}</td>
-                                                <td>{item.vn}</td>
-                                            </tr>
-                                        ))}
+                                        {vocalListFavorite && vocalListFavorite.length > 0
+                                            &&
+                                            vocalListFavorite.map((item: any, index: number) => (
+                                                <tr key={index}>
+                                                    <td>{index + 1}</td>
+                                                    <td><button className="btn btn-outline-warning"><i className="fas fa-star"></i></button></td>
+                                                    <th>{item.en}</th>
+                                                    <td>{item.spelling}</td>
+                                                    <td>{item.pronunciation}</td>
+                                                    <td>{item.vn}</td>
+                                                </tr>
+                                            ))}
                                     </tbody>
                                 </table>
                             </div>
@@ -76,8 +79,8 @@ const VocalbularyFavorite = () => {
                             <div className="card mb-3 d-block d-sm-none" style={{ maxWidth: '540px' }}>
                                 <div className="row g-0">
                                     <div className="col-md-8">
-                                        {vocalList && vocalList.length > 0 &&
-                                            vocalList.map((item: any, index: number) => {
+                                        {vocalListFavorite && vocalListFavorite.length > 0 &&
+                                            vocalListFavorite.map((item: any, index: number) => {
                                                 return (
                                                     <div className="card-body" key={index}>
                                                         <p className="card-title text-primary fw-bold">No: {index + 1}</p>
@@ -95,29 +98,6 @@ const VocalbularyFavorite = () => {
                                 </div>
                             </div>
                             {/* ----->>>>>>>>>>>------- */}
-
-                            <div className="alert alert-primary">
-                                <ReactPaginate
-                                    nextLabel={<i className="ms-2 fa fa-forward"></i>}
-                                    onPageChange={handlePageClick}
-                                    pageRangeDisplayed={1}
-                                    marginPagesDisplayed={0}
-                                    pageCount={5}
-                                    previousLabel={<i className="fa fa-backward"></i>}
-                                    pageClassName="page-item"
-                                    pageLinkClassName="page-link"
-                                    previousClassName="page-item"
-                                    previousLinkClassName="page-link"
-                                    nextClassName="page-item"
-                                    nextLinkClassName="page-link"
-                                    breakLabel="..."
-                                    breakClassName="page-item"
-                                    breakLinkClassName="page-link"
-                                    containerClassName="pagination"
-                                    activeClassName="active"
-                                    renderOnZeroPageCount={null}
-                                />
-                            </div>
                         </div>
                     </div>
                     : <div className="alert alert-primary text-center">No Data...!</div>

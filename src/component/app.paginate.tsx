@@ -32,7 +32,7 @@ const AppPaginate = ({totalPages, handlePageClick}: AppPaginate) => {
                 />
             </div>
             <div className="col-12 col-sm-6">
-                <Link href="/vocalbulary/List" className="btn btn-outline-primary w-100 mt-2 mt-sm-0">
+                <Link href="/user/List-Vocal" className="btn btn-outline-primary w-100 mt-2 mt-sm-0">
                     <i className="fa fa-backward me-2"></i>
                     Go back
                 </Link>

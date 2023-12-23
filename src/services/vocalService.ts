@@ -9,10 +9,12 @@ const createNewVocal = (vocalData:any) => axios.post(`${VERSION}/vocal/create`, 
 
 const vocalAssignToUser = (data:any) => axios.post(`${VERSION}/vocal/assign-to-user`, {...data})
 
+const deleteVocalAssignToUser = (vocalAssign:any) => axios.delete(`${VERSION}/vocal/delete-assign-to-user`, { data: {...vocalAssign}})
+
 const fechAllVocalByUser = () => axios.get(`${VERSION}/vocal/by-user/read`, { withCredentials: true })
 
 const updateCurrentVocal = (vocalData: any) => axios.put(`${VERSION}/vocal/update`, {...vocalData})
 
 const deleteVocal = (vocal: any) => axios.delete(`${VERSION}/vocal/delete`, { data: { id: vocal.id } })
 
-export { fechAllVocal, fechAllVocalWithPaginate, createNewVocal, updateCurrentVocal, deleteVocal, vocalAssignToUser, fechAllVocalByUser }
+export { fechAllVocal, fechAllVocalWithPaginate, createNewVocal, updateCurrentVocal, deleteVocal, vocalAssignToUser, fechAllVocalByUser, deleteVocalAssignToUser }
