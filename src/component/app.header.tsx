@@ -81,9 +81,9 @@ const AppHeader = (): JSX.Element | any => {
                                 {
                                     showMenuAdmin && (showMenuAdmin.name === "member" || showMenuAdmin.name === "admin")
                                     &&
-                                    <NavDropdown title="Admin Menu" id="AdminMenu-dropdown">
+                                    <NavDropdown title={showMenuAdmin.name === "admin" ? "Admin Menu" : "User Menu"} id="AdminMenu-dropdown">
                                         <NavDropdown.Item>
-                                            <Link onClick={handleClickNavhiden} href="/admin/vocal" className='text-dark py-2 text-decoration-none'>Admin Vocalbulary</Link>
+                                            <Link onClick={handleClickNavhiden} href="/admin/vocal" className='text-dark py-2 text-decoration-none'>{showMenuAdmin.name === "admin" ? "Admin Vocalbulary" : "User Vocalbulary"}</Link>
                                         </NavDropdown.Item>
                                         {
                                             showMenuAdmin.name === "admin"
@@ -101,7 +101,7 @@ const AppHeader = (): JSX.Element | any => {
                                             </div>
                                         }
                                         <NavDropdown.Item>
-                                            <Link onClick={handleClickNavhiden} href="/admin/level" className='text-dark py-2 text-decoration-none'>Admin levels</Link>
+                                            <Link onClick={handleClickNavhiden} href="/admin/level" className='text-dark py-2 text-decoration-none'>{showMenuAdmin.name === "admin" ? "Admin levels" : "User levels"}</Link>
                                         </NavDropdown.Item>
                                     </NavDropdown>
                                 }

@@ -220,7 +220,7 @@ const Vocal = () => {
                 user.isAuthenticated && vocalList && vocalList.length > 0
                 ? 
                 <div className="admin-vocal">
-                    <span className='title-role fs-6 fw-bold alert alert-primary p-2 my-4'>Users Management</span><hr />
+                    <span className='title-role fs-6 fw-bold alert alert-primary p-2 my-4'>Vocal Management</span><hr />
                     <div className="row alert alert-primary mx-1 mb-0">
                         <div className="d-lg-flex">
                             <form className="d-lg-flex col-12 col-lg-6 form-group custom-form custom-file-button" onSubmit={handleFileSubmit}>
