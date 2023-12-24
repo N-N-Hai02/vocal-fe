@@ -6,7 +6,7 @@ import './subMenu.scss'
 import { useSession } from "next-auth/react"
 
 const SubMenu = () => {
-    const { user } = useContext(UserContext)
+    const { user }: any = useContext(UserContext)
     const { data: session }: any = useSession()
 
     return (

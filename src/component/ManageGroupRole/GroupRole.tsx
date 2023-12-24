@@ -8,7 +8,7 @@ import { assignRolesToGroup, fetchAllRoles, fetchRolesByGroup } from '@/services
 import { UserContext } from '@/context/UserContext'
 
 const GroupRole = () => {
-    const { user } = useContext(UserContext)
+    const { user }: any = useContext(UserContext)
     const [userGroups, setUserGroups] = useState([])
     const [listRoles, setListRoles] = useState([])
     const [selectGroup, setSelectGroup] = useState("")

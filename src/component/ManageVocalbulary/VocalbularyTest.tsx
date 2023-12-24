@@ -10,7 +10,7 @@ import _ from 'lodash'
 export default function VocalbularyTest() {
     const { data: session }: any = useSession()
     const { data, setLevelEnglish } = useContext(DataContexts)
-    const { user } = useContext(UserContext)
+    const { user }: any = useContext(UserContext)
 
     useEffect(() => setLevelEnglish(1), [])
 

@@ -7,7 +7,7 @@ import { createNewRoles } from '@/services/roleService';
 import { UserContext } from '@/context/UserContext';
 
 const Role = () => {
-    const { user } = useContext(UserContext)
+    const { user }: any = useContext(UserContext)
     const dataChildDefault = { url: '', description: '', isValidUrl: true }
     const [listChild, setListChild] = useState({
         child_1: dataChildDefault

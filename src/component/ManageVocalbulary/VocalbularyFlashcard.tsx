@@ -7,7 +7,7 @@ import { UserContext } from "@/context/UserContext";
 
 export default function VocalbularyFlashcard() {
     const { data, setLevelEnglish } = useContext(DataContexts)
-    const { user } = useContext(UserContext)
+    const { user }: any = useContext(UserContext)
     const [flashcarddata, setFlashcarddata] = useState<[]>([]);
 
     useEffect(() => setLevelEnglish(1), [])

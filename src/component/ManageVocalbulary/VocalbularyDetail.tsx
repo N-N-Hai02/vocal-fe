@@ -11,7 +11,7 @@ import { useSession } from "next-auth/react"
 const VocalbularyDetail = () => {
     const { data: session }: any = useSession()
     const { index, levelEnglish, dataVocalPagination } = useContext(DataContexts)
-    const { user } = useContext(UserContext)
+    const { user }: any = useContext(UserContext)
 
     const [vocalDetail, setVocalDetail] = useState<any>([])
     const [totalPages, setTotalPages] = useState<number>(0)

@@ -15,7 +15,7 @@ import { DataContexts } from "@/context/dataContext"
 import { levelVocal } from "@/contants/level"
 
 const Vocal = () => {
-    const { user } = useContext(UserContext)
+    const { user }: any = useContext(UserContext)
     const { levelEnglish, setLevelEnglish } = useContext(DataContexts)
 
     useEffect(() => setLevelEnglish(1), [])

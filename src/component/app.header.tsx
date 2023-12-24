@@ -17,7 +17,7 @@ const AppHeader = (): JSX.Element | any => {
     const router = useRouter()
     const pathname = usePathname()
 
-    const { user, logoutContext } = useContext(UserContext)
+    const { user, logoutContext }: any = useContext(UserContext)
     const { toggle, setToggle } = useContext(DataContexts)
     const [expanded, setExpanded] = useState(false)
     useEffect(() => setExpanded(toggle), [toggle])

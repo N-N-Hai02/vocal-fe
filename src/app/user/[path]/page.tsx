@@ -13,7 +13,7 @@ import { useContext } from 'react'
 const VocalBularyRoute = () => {
     const pathname = usePathname()
     const { data: session }: any = useSession()
-    const { user } = useContext(UserContext)
+    const { user }: any = useContext(UserContext)
 
     // check permission step 1
     let authenticated:boolean = (user.isAuthenticated || (session?.user !== undefined))

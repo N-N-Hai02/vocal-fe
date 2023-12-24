@@ -9,7 +9,7 @@ import { UserContext } from "@/context/UserContext";
 
 const TableLevel = forwardRef((props, ref) => {
     const { data: session }: any = useSession()
-    const { user } = useContext(UserContext)
+    const { user }: any = useContext(UserContext)
 
     const [isShow, setIsShow] = useState(false)
     const [dataModalLevel, setDataModalLevel] = useState({})

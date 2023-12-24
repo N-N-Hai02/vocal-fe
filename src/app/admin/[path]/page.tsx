@@ -10,7 +10,7 @@ import { useContext } from 'react'
 
 const AppRoutes = () => {
     const pathname = usePathname()
-    const { user } = useContext(UserContext)
+    const { user }: any = useContext(UserContext)
 
     // check permission step 1
     const authenAdmin:boolean = user.isAuthenticated && (user.account.groupWithRoles.id === 2 && user.account.groupWithRoles.name === 'admin')

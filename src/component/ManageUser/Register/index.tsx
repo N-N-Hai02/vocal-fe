@@ -8,7 +8,7 @@ import { UserContext } from "@/context/UserContext";
 import { registerNewUser } from "@/services/userService";
 
 const Register = () => {
-    const { user } = useContext(UserContext)
+    const { user }: any = useContext(UserContext)
     const router = useRouter()
 
     const [email, setEmail] = useState<string>("");

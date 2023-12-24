@@ -9,7 +9,7 @@ import Link from "next/link"
 import { UserContext } from "@/context/UserContext"
 
 const Users = () => {
-    const { user } = useContext(UserContext)
+    const { user }: any = useContext(UserContext)
     const [userLists, setUserList] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
     const [currentLimit, setCurrentLimit] = useState(3)
