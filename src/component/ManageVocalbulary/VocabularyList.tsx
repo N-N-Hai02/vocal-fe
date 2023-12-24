@@ -12,7 +12,7 @@ import { toast } from "react-toastify"
 export default function VocabularyList() {
     const { data: session }: any = useSession()
     const { levelEnglish, setLevelEnglish, checkClickVocalbulary, setDataVocalPagination } = useContext(DataContexts)
-    const { user } = useContext(UserContext)
+    const { user }: any = useContext(UserContext)
 
     const [vocalByUserList, setVocalByUserList] = useState([])
     const [vocalList, setVocalList] = useState<[]>([])
@@ -48,7 +48,7 @@ export default function VocabularyList() {
     }, [])
 
     const vocalId = vocalByUserList.reduce((accumulator: any, currentValue: any) => {
-        if (currentValue.userId === user.account.groupWithRoles?.id) {
+        if (currentValue.userId === user.account.id) {
             accumulator.push(currentValue.vocalId)
         }
         return accumulator
@@ -60,7 +60,7 @@ export default function VocabularyList() {
             let checkExitVocalId = vocalId.includes(data.id)
 
             let resultData = {
-                userId: user.account.groupWithRoles.id,
+                userId: user.account.id,
                 vocalId: data.id
             }
 

@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react"
 
 const VocalbularyFavorite = () => {
     const { data: session }: any = useSession()
-    const { user } = useContext(UserContext)
+    const { user }: any = useContext(UserContext)
 
     const [vocalByUserList, setVocalByUserList] = useState([])
     const [vocalList, setVocalList] = useState([])
@@ -29,7 +29,7 @@ const VocalbularyFavorite = () => {
     }, [])
 
     const vocalListFavorite = vocalByUserList.reduce((accumulator: any, currentValue: any) => {
-        if (currentValue.userId === user.account.groupWithRoles?.id) {
+        if (currentValue.userId === user.account?.id) {
             let vocalFavorite = vocalList.filter((item: any) => item.id === currentValue.vocalId)
             accumulator.push(...vocalFavorite)
         }

@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react"
 import { getUserAccount } from '../services/userService'
-interface user {
+interface UserType {
     isLoading: boolean
     isAuthenticated: boolean,
     token: string,
@@ -8,12 +8,12 @@ interface user {
 }
 
 type GlobalContent = {
-    user: user,
-    setUser: (user:user) => void
+    user: UserType,
+    setUser: (user: UserType) => void
     loginContext: (userData: any) => void,
     logoutContext: () => void,
 }
-const UserContext = createContext<GlobalContent>({ 
+const UserContext:any = createContext<GlobalContent>({ 
     user: {
         isLoading: true,
         isAuthenticated: false,
@@ -34,7 +34,7 @@ const UserProvider  = ({ children }: {children: any}) => {
         account: { }
     }
 
-    const [user, setUser] = useState<user>(userDefaullt)
+    const [user, setUser] = useState<UserType>(userDefaullt)
     
     // Login updates the user data with a name parameter
     const loginContext = (userData: any) => {
@@ -48,12 +48,12 @@ const UserProvider  = ({ children }: {children: any}) => {
 
     const fetchUser  = async () => {
         let response: any = await getUserAccount()
-        if (response && response.EC === 0) {
-            let { groupWithRoles, email, username, access_token } = response.DT
+        if (response && response.EC === 0) {            
+            let { groupWithRoles, email, username, access_token, id } = response.DT
             let data = {
                 isAuthenticated: true,
                 token: access_token,
-                account: { groupWithRoles, email, username },
+                account: { groupWithRoles, email, username, id },
                 isLoading: false
             }
             groupWithRoles?.Roles !== undefined ? setUser({...userDefaullt, ...data}) : setUser({...userDefaullt, isLoading: false})

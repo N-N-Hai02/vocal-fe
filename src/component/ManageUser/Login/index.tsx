@@ -8,7 +8,7 @@ import { loginUser } from "@/services/userService"
 import { signIn } from "next-auth/react"
 
 const Login = () => {
-    const { user, loginContext } = useContext(UserContext)
+    const { user, loginContext }: any = useContext(UserContext)
     const router = useRouter()
 
     const [valueLogin, setValueLogin] = useState("")
@@ -38,11 +38,11 @@ const Login = () => {
 
         if (response && +response.EC === 0) {
             // success
-            let { groupWithRoles, email, username, access_token } = response.DT
+            let { groupWithRoles, email, username, access_token, id } = response.DT
             let data = {
                 isAuthenticated: true,
                 token: access_token,
-                account: { groupWithRoles, email, username }
+                account: { groupWithRoles, email, username, id }
             }
             localStorage.setItem('jwt', access_token)
             loginContext(data)
