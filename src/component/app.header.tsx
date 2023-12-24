@@ -75,7 +75,7 @@ const AppHeader = (): JSX.Element | any => {
                                             Home Vocalbulary
                                         </Link>
                                         <Link onClick={handleClickNavhiden} href="/user/List-Vocal" className='text-light py-2 text-decoration-none'>List Vocalbulary</Link>
-                                        <Link href="/user/Favorite-Vocal" className='text-light py-2 text-decoration-none'>Favorite Vocabulary</Link>
+                                        {user.isAuthenticated && <Link href="/user/Favorite-Vocal" className='text-light py-2 text-decoration-none'>Favorite Vocabulary</Link>}
                                     </>
                                 }
                                 {

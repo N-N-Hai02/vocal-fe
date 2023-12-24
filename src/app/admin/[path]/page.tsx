@@ -13,19 +13,20 @@ const AppRoutes = () => {
     const { user } = useContext(UserContext)
 
     // check permission step 1
-    let authenticated:boolean = user.isAuthenticated && user.account.groupWithRoles.id === 2 && user.account.groupWithRoles.name === 'admin'
+    const authenAdmin:boolean = user.isAuthenticated && (user.account.groupWithRoles.id === 2 && user.account.groupWithRoles.name === 'admin')
+    const authenMember:boolean = user.isAuthenticated && (user.account.groupWithRoles.id === 1 && user.account.groupWithRoles.name === 'member')
 
     switch (pathname) {
         case '/admin/users':
-            return <>{authenticated && <Users />}</>
+            return <>{authenAdmin && <Users />}</>
         case '/admin/roles':
-            return <>{authenticated && <Role />}</>
+            return <>{authenAdmin && <Role />}</>
         case '/admin/group-role':
-            return <>{authenticated && <GroupRole />}</>
+            return <>{authenAdmin && <GroupRole />}</>
         case '/admin/vocal':
-            return <>{authenticated && <Vocal />}</>
+            return <>{(authenAdmin || authenMember) && <Vocal />}</>
         case '/admin/level':
-            return <>{authenticated && <Level />}</>
+            return <>{(authenAdmin || authenMember) && <Level />}</>
         default:
             return <div className='container'>404 not found</div>
     }

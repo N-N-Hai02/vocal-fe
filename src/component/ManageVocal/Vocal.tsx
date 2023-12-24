@@ -18,6 +18,8 @@ const Vocal = () => {
     const { user } = useContext(UserContext)
     const { levelEnglish, setLevelEnglish } = useContext(DataContexts)
 
+    useEffect(() => setLevelEnglish(1), [])
+
     const defaultVocalDataNew: any = {
         en: "",
         vn: "",
@@ -215,7 +217,7 @@ const Vocal = () => {
     return (
         <>
             {   
-                user.isAuthenticated && user.account.groupWithRoles.name === 'admin' && vocalList && vocalList.length > 0
+                user.isAuthenticated && vocalList && vocalList.length > 0
                 ? 
                 <div className="admin-vocal">
                     <span className='title-role fs-6 fw-bold alert alert-primary p-2 my-4'>Users Management</span><hr />
