@@ -6,6 +6,7 @@ import { toast } from "react-toastify"
 import { UserContext } from "@/context/UserContext"
 import { loginUser } from "@/services/userService"
 import { signIn } from "next-auth/react"
+import Link from "next/link"
 
 const Login = () => {
     const { user, loginContext }: any = useContext(UserContext)
@@ -18,6 +19,7 @@ const Login = () => {
         isValidPassword: true
     }
     const [objValidInput, setObjValidInput] = useState(defaultObjValidInput)
+    const [showPassword, setShowPassword] = useState(false)
 
     const handleCreateNewAccount = () => router.push("/register")
 
@@ -89,14 +91,21 @@ const Login = () => {
                             value={valueLogin}
                             onChange={(event) => setValueLogin(event.target.value)}
                         />
-                        <input
-                            type="password"
-                            className={objValidInput.isValidPassword ? "form-control" : "form-control is-invalid"}
-                            placeholder="Password" 
-                            value={password}
-                            onChange={(event) => setPassword(event.target.value)}
-                            onKeyPress={(event) => handlePressEnter(event)}
-                        />
+                        <div className="position-relative">
+                            <input
+                                type={`${showPassword ? 'text' : 'password'}`}
+                                className={objValidInput.isValidPassword ? "form-control" : "form-control is-invalid"}
+                                placeholder="Password" 
+                                value={password}
+                                onChange={(event) => setPassword(event.target.value)}
+                                onKeyPress={(event) => handlePressEnter(event)}
+                            />
+                            <Link href="#" onClick={() => setShowPassword(!showPassword)}>
+                                <div className="position-absolute end-0 top-0 m-0 px-2 py-2">
+                                    {showPassword ? <i className="fa fa-eye"></i> : <i className="fa fa-eye-slash"></i>}
+                                </div>
+                            </Link>
+                        </div>
                         <button className="btn btn-primary fw-bold" onClick={() => handleLogin()}>Log in</button>
                         <span className="text-center">
                             <a href="/#" className="forgotten-password">Forgotten password?</a>
