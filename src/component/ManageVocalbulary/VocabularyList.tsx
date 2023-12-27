@@ -163,7 +163,7 @@ export default function VocabularyList() {
                                                     <div className="card-body" key={index}>
                                                         <p className="card-title text-primary fw-bold">No: {(currentPage - 1) * currentLimit + index + 1}</p>
                                                         <p className="card-text" onClick={() => checkClickVocalbulary(index)}><span className="fw-bold me-2">Spelling:</span>
-                                                            <Link href="/vocalbulary/Detail">{item.en}</Link>
+                                                            <Link href="/user/Detail-Vocal">{item.en}</Link>
                                                         </p>
                                                         <p className="card-text"><span className="fw-bold">English:</span> {item.vn} </p>
                                                         <p className="card-text"><span className="fw-bold">Vietnamese:</span> {item.spelling} </p>
