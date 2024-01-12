@@ -4,6 +4,7 @@ import { Dropdown } from 'react-bootstrap'
 import { UserContext } from '@/context/UserContext'
 import './subMenu.scss'
 import { useSession } from "next-auth/react"
+import SpinnerLoading from './LoaderSpinner'
 
 const SubMenu = () => {
     const { user }: any = useContext(UserContext)
@@ -12,9 +13,7 @@ const SubMenu = () => {
     return (
         <>
             {user.isLoading && user.isLoading === true &&
-                <div>
-                    Is the loading..!
-                </div>
+                <div className='text-center'><SpinnerLoading /></div>
             }
             {(user.isAuthenticated && user.isAuthenticated === true || session?.user) &&
                 <div className="fixed-bottom">

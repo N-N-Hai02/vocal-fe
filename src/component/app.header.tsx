@@ -11,6 +11,7 @@ import Image from 'next/image'
 import { DataContexts } from '@/context/dataContext'
 import { useSession, signOut } from "next-auth/react"
 import { removeCookie } from './Cookie/actionCookie'
+import SpinnerLoading from './LoaderSpinner'
 
 const AppHeader = (): JSX.Element | any => {
     const { data: session }: any = useSession()
@@ -47,7 +48,7 @@ const AppHeader = (): JSX.Element | any => {
     const showMenuAdmin = user.account.groupWithRoles
 
     if (user.isLoading && user.isLoading === true) {
-        return <div>Is the loading..!</div>
+        return <div className='text-center'><SpinnerLoading /></div>
     }
 
     if (user.isAuthenticated || (session?.user !== undefined) || pathname === '/' || pathname === '/vocalbulary') {

@@ -1,8 +1,5 @@
+import Home from "@/component/ManageUser/Home"
 
 export default function App() {
-  return (
-    <div className="app-root text-center">
-      <div className="alert alert-primary">Learning English Vocalbulary Languege..!</div>
-    </div>
-  )
+  return <Home />
 }
